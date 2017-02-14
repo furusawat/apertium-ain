@@ -1,0 +1,143 @@
+Config:
+  hfst:
+    App: hfst-lookup
+    Gen: ../ain.autogen.hfst
+    Morph: ../ain.automorf.hfst
+Tests:
+  Adjectivalization:
+    ama<adj>: chiama
+    kuba<adj>: chikuba
+    pereba<adj>: chipereba
+    tereke<adj>: chitereke
+    ye<adj>: chiye
+  Adjective:
+    ashkan<adj>: ashkanne
+    haro<adj>: haro koro
+    hek<adj>: hekai
+    kem<adj>: kem-ush
+    kera<adj>: kera an
+    ki<adj>: ki-o
+    nuchak<adj>: nuchaktek
+    paro<adj>: paro-un
+    ra<adj>: ram
+    ramu<adj>: ramu-sak
+    reta<adj>: retara
+    shise<adj>: shisak
+  Adjective Comparison:
+    pirika<adj><comp>: naa pirika
+    pirika<adj><sup>: iyotta pirika
+    pon<adj><comp>: naa pon
+    pon<adj><sup>: iyotta pon
+  Adjective Pluralization:
+    harokoro<adj>: harokoropa
+    pirika<adj><pl>: pirikapa
+    pon<adj>: ponpa
+    wen<adj>: wenpa
+  Adverb:
+    ashiri<adv>: ashin'no
+    moire<adv>: moire-tara
+    ratchi<adv>: ratchi-tara
+    son<adv>: sonno
+  Article:
+    ainu<det>: shine ainu
+    ainu<sg>: shine ainu
+    chep<det><def>: nei chep
+    chikoikip<det>: shine chikoikip
+    chisei<det>: shine chisei
+    guru<det><def>: nei guru
+    shiwentep<sg>: shine shiwentep
+  Diminuitive:
+    chi-ika-nai<n><dim>: chi-ika-nai-po
+    chikap<n><dim>: chikap-po
+    chishnai<n><dim>: chishnai-po
+    ise<vblex><dim>: isepo
+    okkai<n><dim>: okkai-po
+    ponbe<n><dim>: ponbepo
+    tukara<n><dim>: tukarapo
+  Intensifier:
+    se<vblex><int>: ise
+  Letter changes: {}
+  Nominalizing:
+    ae<n>: aep
+    aye<n>: ayep
+    itak<n><abs>: itak-ambe
+    nupeki<n><abs>: nupeki-ambe
+    pase<n>: pasep
+    poro<n>: porop
+  Noun:
+    ainu<n>: ainu
+    ainu<n><pl>: ainu-utara
+    ainu<n><sg>: shine-ainu
+  Noun Gender:
+    chikap<n><f>: matne chikap
+    chikap<n><m>: pinne chikap
+    kamui<n><m>: okkai-kamui
+    seta<n><f>: matne seta
+    seta<n><m>: pinne seta
+  Noun affinity:
+    aak<n><endear>: aak-tonoge
+    aak<n><honor>: aak-nishpake
+    ak<n><endear>: ak-po
+    amichi<n><endear>: amichi-tonoge
+    anish<n><endear>: anish-tonoge
+    apoho<n><endear>: apoho-tonoge
+    atono<n><honor>: atono-nishpake
+    ayupo<n><endear>: ayupo-tonoge
+    ayupo<n><honor>: ayupo-nishpake
+    turesh<n><endear>: turesh-po
+  Noun number:
+    aiai<n><pl>: aiai-utara
+    ainu<n><pl>: ainu-utara
+    am<n><pl>: amu
+    ashikipet<n><pl>: ashikipettu
+    at<n><pl>: atu
+    chep<n><pl>: chep-nu
+    hura<n><pl>: huranu
+    ikushpe<n><pl>: ukushpe
+    iriwak<n><pl>: uiriwak
+    itak<n><pl>: itaku
+    kema<n><pl>: ukema
+    kut<n><pl>: kuttu
+    nimaki<n><pl>: unimaki
+    nishi<n><pl>: nishu
+    pe<n><pl>: pepe
+    pet<n><pl>: petcha
+    umma<n><pl>: umma-utara
+  Parts of Speech: {}
+  Pronoun:
+    Anokai<pn><p1><sg><mf>: Anokai
+    Chokai<pn><p1><sg><mf>: Chokai
+    anokai<pn><p2><sg><mf>: anokai
+    aokai<pn><p2><sg><mf>: aokai
+    apkash<pn><p2><mf>: e apkash
+    chi<pn><px1pl><mf>: chi koro
+    e<pn><px2sg><mf>: e koro
+    eani<pn><p2><sg><mf>: eani
+    echi<pn><px2pl><mf>: echi koro
+    ekashi<pn><px1pl>: akoro ekashi
+    kani<pn><p1><sg><mf>: kani
+    ku<pn><px1sg><mf>: ku koro
+    kuani<pn><p1><sg><mf>: kuani
+    michi<pn><px1pl>: akoro michi
+    nishpa<pn><px1pl>: akon nishpa
+    pe<pn><px1pl>: akorope
+    raige<pn><p2><mf>: e raige
+    yani<pn><p2><sg><mf>: yani
+  To be completed and not considered for part of Ainu grammar assignment: {}
+  Verb:
+    ku kik<vblex><vaux><pres>: ku kik shiri ne
+  Verb Passification:
+    nu<vblex><pasv>: a-nu
+    nuye<vblex><pasv>: a-nuye
+    raige<vblex><pasv>: a-raige
+  Verb Transitivity:
+    kira<vblex><tv>: ekira
+    mik<vblex><tv>: emik
+    mina<vblex><tv>: emina
+  Verbalization:
+    attush<vblex>: attush-kara
+    chisei<vblex>: chisei-kara
+    hau<vblex>: hau-koro
+    honi<vblex>: honi-koro
+    ikiri<vblex>: ikiri-kara
+    kaya<vblex>: kaya-koro
