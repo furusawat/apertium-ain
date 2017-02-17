@@ -6,14 +6,14 @@ Config:
     Morph: ../ain.automorf.hfst
 Tests:
   Most Common Words:
-    ネ<unk>: ネ
+    ネ<vblex><vbser>: ネ
     カ<unk>: カ
     アン<unk>: アン
     タ<unk>: タ
     ワ<unk>: ワ
-    コ<unk>: コ
+    コ<cnjsub>: コ
     イ<unk>: イ
-    ヒ<unk>: ヒ
+    ヒ<nx>: ヒ
     ピ<unk>: ピ
     ルウェ<unk>: ルウェ
     パ<unk>: パ

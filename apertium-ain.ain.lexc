@@ -9,6 +9,7 @@ Multichar_Symbols
 %<adj%> ! Adjective
 %<pn%> ! Pronoun
 %<det%> ! Determiner
+%<cnjsub%> ! subordinating conjunction
 
 ! Noun tags
 %<abs%> ! Abstract qualities
@@ -30,6 +31,7 @@ Multichar_Symbols
 %<vaux%> ! Auxiliary Verb
 %<vx%> ! Verbalization
 %<tvx%> ! Make verb transitive
+%<vbser%> ! copula
 
 ! Tense tags
 %<pres%> ! Present Tense
@@ -126,6 +128,7 @@ Multichar_Symbols
 
 LEXICON Root
 
+Conjunction ;
 Prefix ;
 
 LEXICON Prefix
@@ -209,12 +212,19 @@ LEXICON RegVerbInfl
 %<vblex%>%<pasv%>%[%+pasv%]: # ;
 %<vblex%>%<iv%>%<tvx%>%[%+tvx%]:  # ;
 
+LEXICON Copula
 
+%<vblex%>%<vbser%>:  # ;
+RegVerbInfl ;
 
 LEXICON CompoundAdj
 
 %<adj%>:%>%{ADJc%} RegAdjectiveInfl ;
 %<adj%>:%>%{ADJc%} # ;
+
+LEXICON ConjunctionInfl
+
+%<cnjsub%>:  # ;
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -314,8 +324,11 @@ LEXICON VerbRoot
 ヌ:ヌ RegVerbInfl ; ! to be spoken
 ヌイェ:ヌイェ RegVerbInfl ; ! to be spoken
 ライケ:ライケ RegVerbInfl ; ! to be spoken
+ネ:ネ Copula ; ! copula
 
+LEXICON Conjunction
 
+コ:コ ConjunctionInfl ;
 
 
 
