@@ -4,6 +4,51 @@ Multichar_Symbols
 
 ! Part of speech categories
 %<n%>   ! Noun
+%<vblex%> ! Verb
+%<adv%> ! Adverb
+%<adj%> ! Adjective
+%<pn%> ! Pronoun
+%<det%> ! Determiner
+
+! Noun tags
+%<abs%> ! Abstract qualities
+%<m%> ! Noun male gender
+%<f%> ! Noun female gender
+%<mf%> ! Noun male or female gender
+%<endear%> ! Noun affinity tag ("=my dear x")
+%<honor%> ! Noun honorable tag ("=my honored x")
+%<px1sg%> ! First person singular possessive
+%<px2sg%> ! Second person singular possessive
+%<px1pl%> ! First person plural possessive
+%<px2pl%> ! Second person plural possessive
+%<nx%> ! Nominalization
+ 
+! Verb tags
+%<pasv%> ! Passive Voice
+%<tv%> ! Transitive Verb
+%<iv%> ! Intransitive Verb
+%<vaux%> ! Auxiliary Verb
+%<vx%> ! Verbalization
+%<tvx%> ! Make verb transitive
+
+! Tense tags
+%<pres%> ! Present Tense
+
+! Mood tags
+%<pri%> ! Indicative Mood
+
+! Person tags
+%<p1%> ! First Person
+%<p2%> ! Second Person
+
+
+! Adjective tags
+%<comp%> ! Comparative
+%<sup%> ! Superlative
+%<adjx%> ! Adjectivization
+
+! Article tags
+%<def%> ! Definite Article
 
 ! Number morphology
 %<pl%>  ! Plural
@@ -11,7 +56,69 @@ Multichar_Symbols
 
 ! Other symbols
 %>      ! Morpheme boundary
+%<dim%> ! Diminutive Particle
+%<int%> ! Intensifying Particle  
 
+%{I%} ! can be イ or ヒ or null
+
+%{ko%} ! Adjectival suffixes or nulls
+%{ro%}
+%{sa%}
+%{te%}
+%{kk%}
+%{ne%}
+%{nn%}
+%{u%}
+%{ss%}
+%{o%}
+%{a%}
+%{ne%}
+%{i%}
+
+%{Mm%}  ! mu mm or null
+%{Tt%}  ! tu tt or null
+%{Kk%} ! ku kk or null
+%{t%}  ! small tsu or null
+
+
+%{pe%} ! pe or null
+%{P%} ! pp or pe
+%{K%} ! ka or ko
+%{R%} ! ra or ro
+%{mm%} ! mm or null
+
+%{RV%} ! ra, re, ri
+%{U%}  ! all sorts of stuff
+
+%[%+adjx%] ! + adjectivalization
+%[%-adjx%] ! + adjectivalization
+
+%[%+comp%] ! comparison
+%[%-comp%]
+
+%[%+sup%] ! 
+%[%-sup%] ! 
+
+%[%+dInd%] ! Indefinite determiner
+%[%-dInd%]
+
+%[%+dDef%] ! Definite determiner
+%[%-dDef%]
+
+%[%+tvx%] ! Making verb transitive
+%[%-tvx%]
+
+%[%+pl%] ! plurality
+%[%-pl%] 
+
+%[%+m%] ! male gender
+%[%-m%]
+
+%[%+f%] ! female gender
+%[%-f%]
+
+%[%+pasv%] ! verb passification
+%[%-pasv%]
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                       M O R P H O T A C T I C S                         !!!
@@ -19,13 +126,95 @@ Multichar_Symbols
 
 LEXICON Root
 
+Prefix ;
+
+LEXICON Prefix
+
+%[%-adjx%]:チ VerbRoot ;
+%[%-tvx%]:エ VerbRoot ;
+%[%-sup%]:イヨッタ AdjectiveRoot ;
+%[%-comp%]:ナア AdjectiveRoot ;
+%[%-dInd%]:シネ NounRoot ;
+%[%-dDef%]:ネイ NounRoot ;
+%[%-pl%]:ウ NounRoot ;
+%[%-m%]:ピンネ NounRoot ;
+%[%-f%]:マㇳネ NounRoot ;
+%[%-pasv%]:ア VerbRoot ;
 NounRoot ;
+AdjectiveRoot ;
+VerbRoot ;
+
+LEXICON Diminutive
+
+%<dim%>:%>ポ # ;
+
+LEXICON NounInfl-utara
+!%<n%>%<pl%>:%>ウタ%{RV%} # ;
+%<n%>%<pl%>:%>ウタラ # ;
+NounInfl-Common ;
+
+LEXICON NounInfl-U
+%<n%>%<pl%>:%>%{U%} # ;
+NounInfl-Common ;
+
+LEXICON NounInfl-preU
+
+%<n%>%<pl%>%[%+pl%]: # ;
+NounInfl-Common ;
+
+LEXICON NounInfl-Nu
+%<n%>%<pl%>:%>ヌ # ;
+NounInfl-Common ;
+
+LEXICON NounInfl-Irreg
+%<n%>%<pl%>:  # ;
+NounInfl-Common ;
+
+LEXICON NounInfl-Common
+
+%<n%>: Diminutive ;
+%<nx%>:%>ㇷ゚ # ;
+%<pn%>%<px1sg%>%<mf%>:%>コロ Diminutive ;
+%<n%>%<vz%>:%>%{K%}%{R%}  # ;
+%<n%>%<det%>%<ind%>%[%+dInd%]:  # ;
+%<n%>%<det%>%<def%>%[%+dDef%]:  # ;
+%<n%>%<m%>%[%+m%]:  # ;
+%<n%>%<f%>%[%+f%]:  # ;
+%<n%>:  # ;
+
+LEXICON RegAdjectiveInfl
+
+%<adj%>%<adv%>:%>タラ # ;
+%<adj%>%<pl%>:%>パ # ;
+%<adj%>:%> AbstractNoun ;
+%<adj%>%<comp%>%[%+comp%]:  # ;
+%<adj%>%<sup%>%[%+sup%]:  # ;
+%<adj%>%<nx%>%<abs%>:%>%{a%}%{mm%}%{pe%}%{I%} # ;
+%<adj%>%<nx%>:%>ㇷ゚ # ; 
+%<adj%>:  # ;
+
+LEXICON AbstractNoun
+%<n%>%<abs%>:%{abs%} Diminutive ;
+
+LEXICON IrregAdjectiveInfl
+
+%<adv%>:%>ノ # ;
+
+LEXICON RegVerbInfl
+
+%<vblex%>:%> Diminutive ;
+%<vblex%>%<tv%>%<adjx%>%[%+adjx%]:  # ;
+%<vblex%>%<nx%>%<abs%>:%>%{a%}%{mm%}%{pe%}%{I%} # ;
+%<vblex%>%<pasv%>%[%+pasv%]: NounInfl-Common ;
+%<vblex%>%<pasv%>%[%+pasv%]: # ;
+%<vblex%>%<iv%>%<tvx%>%[%+tvx%]:  # ;
 
 
-LEXICON RegNounInfl
 
-%<n%>%<sg%>: # ;
-%<n%>%<pl%>:%>s # ;
+LEXICON CompoundAdj
+
+%<adj%>:%>%{ADJc%} RegAdjectiveInfl ;
+%<adj%>:%>%{ADJc%} # ;
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -34,7 +223,103 @@ LEXICON RegNounInfl
 
 LEXICON NounRoot
 
-house:house RegNounInfl ; ! A noun
+house:house NounInfl-Common ; ! A noun
+エ:エ NounInfl-Common ; ! a noun
+チ:チ NounInfl-Common ; !
+エチ:エチ NounInfl-Common ; !
+ク:ク NounInfl-Common ; !
+イセ:イセ NounInfl-Common ; !
+ポンペ:ポンペ NounInfl-Common ; !
+チカㇷ゚:チカㇷ゚ NounInfl-Common ; !
+オッカィ:オッカィ NounInfl-Common ; !
+チイカナィ:チイカナィ NounInfl-Common ; !
+チッナィ:チッナィ NounInfl-Common ; !
+ト゚カラ:ト゚カラ NounInfl-Common ; !
+イキリ:イキリ NounInfl-Common ; ! a seam 
+アット゚ㇱ:アット゚ㇱ NounInfl-Common ; ! cloth 
+シセイ:シセイ NounInfl-Common ; ! a house
+ハウ:ハウ NounInfl-Common ; ! the voice
+ホニ:ホニ NounInfl-Common ; ! the stomach
+カヤ:カヤ NounInfl-Common ; ! a sail
+アイアイ:アイアイ NounInfl-utara ; !
+アイヌ:アイヌ NounInfl-utara ; !
+アシキペㇳ:アシキペㇳ NounInfl-U ; !
+アㇳ:ア%{Tt%} NounInfl-U ; !
+アㇺ:ア%{Mm%} NounInfl-U ; !
+イクㇱペ:イクㇱペ NounInfl-preU ; !
+イタㇰ:イタ%{Kk%} NounInfl-U ; !
+イリワㇰ:イリワㇰ NounInfl-preU ; !
+ウㇺマ:ウㇺマ NounInfl-utara ; !
+クㇳ:ク%{t%}%{Tt%} NounInfl-U ; !
+ケマ:ケマ NounInfl-preU ; !
+チェㇷ゚:チェㇷ゚ NounInfl-Nu ; !
+ニシ:ニシ NounInfl-U ; !
+ニマキ:ニマキ NounInfl-preU ; !
+フラ:フラ NounInfl-Nu ; !
+ペ:ペ%{pe%} NounInfl-Irreg ; !
+ペㇳ:ペㇳ NounInfl-Irreg ; !
+チコイキㇷ゚:チコイキㇷ゚ NounInfl-Common ; !
+チセイ:チセイ NounInfl-Common ; !
+シウェンテㇷ゚:シウェンテㇷ゚ NounInfl-Common ; !
+クル:クル NounInfl-Common ; !
+チェㇷ゚:チェㇷ゚ NounInfl-Nu ; !
+クッペ:クッペ NounInfl-preU ; !
+セタ:セタ NounInfl-Common ; !
+
+
+
+
+
+LEXICON AdjectiveRoot
+
+モイレ:モイレ RegAdjectiveInfl ; ! slow
+ラチ:ラチ RegAdjectiveInfl ; ! gentle
+ソン:ソン IrregAdjectiveInfl ; ! true
+ピリカ:ピリカ RegAdjectiveInfl ; 
+ウェン:ウェン  RegAdjectiveInfl ; 
+ポン:ポン  RegAdjectiveInfl ; 
+ハロコロ:ハロコロ RegAdjectiveInfl ; 
+ケラ:ケラ CompoundAdj ;
+ハロ:ハロ CompoundAdj ;
+ラム:ラム CompoundAdj ;
+ヌチャㇰ:ヌチャㇰ CompoundAdj ;
+アㇱカン:アㇱカン CompoundAdj ;
+パロ:パロ CompoundAdj ;
+ケㇺ:ケㇺ CompoundAdj ;
+キ:キ CompoundAdj ;
+ピリカ:ピリカ RegAdjectiveInfl ; 
+ポン:ポン RegAdjectiveInfl ;
+ヌペキ:ヌペキ RegAdjectiveInfl ; ! bright
+パセ:パセ RegAdjectiveInfl ; ! heavy
+ポロ:ポロ RegAdjectiveInfl ; ! large
+
+
+
+
+
+LEXICON VerbRoot
+
+アマ:アマ RegVerbInfl ; !
+クパ:クパ RegVerbInfl ; !
+ペレパ:ペレパ RegVerbInfl ; !
+テレケ:テレケ RegVerbInfl ; !
+イェ:イェ RegVerbInfl ; !
+イセ:イセ RegVerbInfl ; !
+ミㇰ:ミㇰ RegVerbInfl ; ! run away
+ミナ:ミナ RegVerbInfl ; ! bark
+キラ:キラ RegVerbInfl ; ! laugh
+イタㇰ:イタㇰ RegVerbInfl ; ! speak
+エ:エ RegVerbInfl ; ! to be eaten
+イェ:イェ RegVerbInfl ; ! to be spoken
+ヌ:ヌ RegVerbInfl ; ! to be spoken
+ヌイェ:ヌイェ RegVerbInfl ; ! to be spoken
+ライケ:ライケ RegVerbInfl ; ! to be spoken
+
+
+
+
+
+
 
 
 

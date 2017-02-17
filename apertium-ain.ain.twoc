@@ -1,0 +1,83 @@
+Alphabet
+
+  %[%-adjx%]:0
+  %[%+adjx%]:0
+  %[%-comp%]:0
+  %[%+comp%]:0
+  %[%-sup%]:0
+  %[%+sup%]:0
+  %[%-tvx%]:0
+  %[%+tvx%]:0
+  %[%-dInd%]:0
+  %[%+dInd%]:0
+  %[%-dDef%]:0
+  %[%+dDef%]:0
+  %[%-m%]:0
+  %[%+m%]:0
+  %[%-f%]:0
+  %[%+f%]:0
+  %[%-pl%]:0
+  %[%+pl%]:0
+  %[%-pasv%]:0
+  %[%+pasv%]:0
+
+;
+
+Rules
+
+"Remove paths without matching suffix feature - adjectivalization"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-adjx%] )
+         Fy in ( %[%+adjx%] )
+   matched ;
+
+"Remove paths without matching suffix feature - adjectival comparison"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-comp%] %[%-sup%] )
+         Fy in ( %[%+comp%] %[%+sup%] )
+   matched ;
+
+"Remove paths without matching suffix feature - articles"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-dInd%] %[%-dDef%] )
+         Fy in ( %[%+dInd%] %[%+dDef%] )
+   matched ;
+
+"Remove paths without matching suffix feature - gender"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-m%] %[%-f%] )
+         Fy in ( %[%+m%] %[%+f%] )
+   matched ;
+
+"Remove paths without matching suffix feature - u plural"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-pl%] )
+         Fy in ( %[%+pl%] )
+   matched ;
+
+"Remove paths without matching suffix feature - verb passivity"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-pasv%] )
+         Fy in ( %[%+pasv%] )
+   matched ;
+
+"Remove paths without matching suffix feature - making verbs transitive"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-tvx%] )
+         Fy in ( %[%+tvx%] )
+   matched ;
+

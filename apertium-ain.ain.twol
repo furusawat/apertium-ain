@@ -1,7 +1,75 @@
 Alphabet
- A B Ç D E Ä F G H I J Ž K L M N Ň O Ö P R S Ş T U Ü W Y Ý Z
- a b ç d e ä f g h i j ž k l m n ň o ö p r s ş t u ü w y ý z
- %{A%}:a %>:0  ;
+ ア イ ウ エ オ 
+ カ キ ク ケ コ ㇰ 
+ 
+ シャ シ シュ シェ ショ ㇱ
+ サ ス セ ソ ㇲ
+ タ チ ト゚ テ ト ㇳ
+ チャ チ チュ チェ チョ 
+ ナ ニ ヌ ネ ノ ン 
+ ハ ヒ フ ヘ ホ
+ ㇵ ㇶ ㇷ ㇸ ㇹ
+ パ ピ プ ペ ポ ㇷ゚
+ マ ミ ム メ モ ㇺ
+ ヤ    ユ イェ ヨ
+ ラ リ ル レ ロ
+ ㇻ ㇼ ㇽ ㇾ ㇿ
+ ワ ウィ  ウェ ウォ 
+ 
+%{A%}:a %>:0  
+%{I%}:イ %{I%}:ヒ %{I%}:0
+
+%{ko%}:コ %{ko%}:0
+%{ro%}:ロ %{ro%}:0
+%{sa%}:サ %{sa%}:0
+%{te%}:テ %{te%}:0
+%{kk%}:ㇰ %{kk%}:0
+%{ne%}:ネ %{ne%}:0
+%{nn%}:ン %{nn%}:0
+%{u%}:ウ  %{u%}:0
+%{ss%}:ㇱ %{ss%}:0
+%{o%}:オ  %{o%}:0
+%{a%}:ア  %{a%}:0
+%{ne%}:ネ %{ne%}:0
+%{i%}:イ  %{i%}:0
+
+
+
+%{RV%}:ラ %{RV%}:レ %{RV%}:リ
+%{U%}:ウ %{U%}:ム %{U%}:ト゚ %{U%}:ク %{U%}:ュ %{U%}:0
+
+%{pe%}:ペ %{pe%}:0
+
+%{K%}:カ %{K%}:コ
+%{R%}:ラ %{R%}:ロ
+
+%{P%}:ㇷ゚  %{P%}:ペ
+%{mm%}:ㇺ %{mm%}:0
+
+%{t%}:ッ %{t%}:0
+
+%{Mm%}:ム %{Mm%}:ㇺ %{Mm%}:0
+%{Tt%}:ト゚ %{Tt%}:ㇳ %{Tt%}:0
+%{Kk%}:ク %{Kk%}:ㇰ %{Kk%}:0
+
+
+
+
+
+! %[%+adjx%]:0
+! %{%-adjx%]:0 
+! %[%+comp%]:0
+! %{%-comp%]:0 
+! %[%+sup%]:0
+! %{%-sup%]:0 
+! %[%+dInd%]:0
+! %[%-dInd%]:0
+! %[%+dDef%]:0
+! %[%-dDef%]:0
+! %[%+tvx%]:0
+! %[%-tvx%]:0
+
+;
 
 Sets
 
@@ -12,6 +80,12 @@ Rules
 
 "Remove suffix vowel with vowel-ending stem"
 i:0 <=> Vow %{VSUF%}:0 _ [ m | n ] ;
+
+
+
+
+
+
 
 ! Resources:
 ! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol

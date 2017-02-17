@@ -5,139 +5,139 @@ Config:
     Morph: ../ain.automorf.hfst
 Tests:
   Adjectivalization:
-    ama<adj>: chiama
-    kuba<adj>: chikuba
-    pereba<adj>: chipereba
-    tereke<adj>: chitereke
-    ye<adj>: chiye
+    アマ<vblex><tv><adjx>: チアマ
+    イェ<vblex><tv><adjx>: チイェ
+    クパ<vblex><tv><adjx>: チクパ
+    テレケ<vblex><tv><adjx>: チテレケ
+    ペレパ<vblex><tv><adjx>: チペレパ
   Adjective:
-    ashkan<adj>: ashkanne
-    haro<adj>: haro koro
-    hek<adj>: hekai
-    kem<adj>: kem-ush
-    kera<adj>: kera an
-    ki<adj>: ki-o
-    nuchak<adj>: nuchaktek
-    paro<adj>: paro-un
-    ra<adj>: ram
-    ramu<adj>: ramu-sak
-    reta<adj>: retara
-    shise<adj>: shisak
+    アㇱカン<adj>: アㇱカンネ
+    キ<adj>: キオ
+    ケラ<adj>: ケラアン
+    ケㇺ<adj>: ケㇺウㇱ
+    シセ<adj>: シサㇰ
+    ヌチャㇰ<adj>: ヌチャㇰテㇰ
+    ハロ<adj>: ハロコロ
+    パロ<adj>: パロウン
+    ヘㇰ<adj>: ヘカイ
+    ラ<adj>: ラㇺ
+    ラム<adj>: ラムサㇰ
+    レタ<adj>: レタラ
   Adjective Comparison:
-    pirika<adj><comp>: naa pirika
-    pirika<adj><sup>: iyotta pirika
-    pon<adj><comp>: naa pon
-    pon<adj><sup>: iyotta pon
+    ピリカ<adj><comp>: ナアピリカ
+    ピリカ<adj><sup>: イヨッタピリカ
+    ポン<adj><comp>: ナアポン
+    ポン<adj><sup>: イヨッタポン
   Adjective Pluralization:
-    harokoro<adj>: harokoropa
-    pirika<adj><pl>: pirikapa
-    pon<adj>: ponpa
-    wen<adj>: wenpa
+    ウェン<adj><pl>: ウェンパ
+    ハロコロ<adj><pl>: ハロコロパ
+    ピリカ<adj><pl>: ピリカパ
+    ポン<adj><pl>: ポンパ
   Adverb:
-    ashiri<adv>: ashin'no
-    moire<adv>: moire-tara
-    ratchi<adv>: ratchi-tara
-    son<adv>: sonno
+    アシリ<adv>: アシンノ
+    ソン<adv>: ソンノ
+    モイレ<adv>: モイレタラ
+    ラチ<adv>: ラチタラ
   Article:
-    ainu<det>: shine ainu
-    ainu<sg>: shine ainu
-    chep<det><def>: nei chep
-    chikoikip<det>: shine chikoikip
-    chisei<det>: shine chisei
-    guru<det><def>: nei guru
-    shiwentep<sg>: shine shiwentep
+    アイヌ<n><det><ind>: シネアイヌ
+    アイヌ<n><sg>: シネアイヌ
+    クル<n><det><def>: ネイクル
+    シウェンテㇷ゚<n><sg>: シネシウェンテㇷ゚
+    チェㇷ゚<n><det><def>: ネイチェㇷ゚
+    チコイキㇷ゚<n><det><ind>: シネチコイキㇷ゚
+    チセイ<n><det><ind>: シネチセイ
   Diminuitive:
-    chi-ika-nai<n><dim>: chi-ika-nai-po
-    chikap<n><dim>: chikap-po
-    chishnai<n><dim>: chishnai-po
-    ise<vblex><dim>: isepo
-    okkai<n><dim>: okkai-po
-    ponbe<n><dim>: ponbepo
-    tukara<n><dim>: tukarapo
+    イセ<vblex><dim>: イセポ
+    オッカィ<n><dim>: オッカィポ
+    チイカナィ<n><dim>: チイカナィポ
+    チカㇷ゚<n><dim>: チカㇷ゚ポ
+    チㇱナィ<n><dim>: チㇱナィポ
+    ト゚カラ<n><dim>: ト゚カラポ
+    ポンペ<n><dim>: ポンペポ
   Intensifier:
-    se<vblex><int>: ise
+    セ<vblex><int>: イセ
   Letter changes: {}
   Nominalizing:
-    ae<n>: aep
-    aye<n>: ayep
-    itak<n><abs>: itak-ambe
-    nupeki<n><abs>: nupeki-ambe
-    pase<n>: pasep
-    poro<n>: porop
+    イェ<vblex><pasv><nx>: アイェㇷ゚
+    イタㇰ<vblex><nx><abs>: イタㇰアㇺペ
+    エ<vblex><pasv><nx>: アエㇷ゚
+    ヌペキ<adj><nx><abs>: ヌペキアㇺペ
+    パセ<adj><nx>: パセㇷ゚
+    ポロ<adj><nx>: ポロㇷ゚
   Noun:
-    ainu<n>: ainu
-    ainu<n><pl>: ainu-utara
-    ainu<n><sg>: shine-ainu
+    アイヌ<n>: アイヌ
+    アイヌ<n><pl>: アイヌウタラ
+    アイヌ<n><sg>: シネアイヌ
   Noun Gender:
-    chikap<n><f>: matne chikap
-    chikap<n><m>: pinne chikap
-    kamui<n><m>: okkai-kamui
-    seta<n><f>: matne seta
-    seta<n><m>: pinne seta
+    カムィ<n><m>: オッカイカムィ
+    セタ<n><f>: マㇳネセタ
+    セタ<n><m>: ピンネセタ
+    チカㇷ゚<n><f>: マㇳネチカㇷ゚
+    チカㇷ゚<n><m>: ピンネチカㇷ゚
   Noun affinity:
-    aak<n><endear>: aak-tonoge
-    aak<n><honor>: aak-nishpake
-    ak<n><endear>: ak-po
-    amichi<n><endear>: amichi-tonoge
-    anish<n><endear>: anish-tonoge
-    apoho<n><endear>: apoho-tonoge
-    atono<n><honor>: atono-nishpake
-    ayupo<n><endear>: ayupo-tonoge
-    ayupo<n><honor>: ayupo-nishpake
-    turesh<n><endear>: turesh-po
+    アアㇰ<n><endear>: アアㇰトノケ
+    アアㇰ<n><honor>: アアㇰニㇱパケ
+    アトノ<n><honor>: アトノニㇱパケ
+    アニㇱ<n><endear>: アニㇱトノケ
+    アポホ<n><endear>: アポホトノケ
+    アミチ<n><endear>: アミチトノケ
+    アユポ<n><endear>: アユポトノケ
+    アユポ<n><honor>: アユポニㇱパケ
+    アㇰ<n><endear>: アㇰポ
+    ト゚レㇱ<n><endear>: ト゚レㇱポ
   Noun number:
-    aiai<n><pl>: aiai-utara
-    ainu<n><pl>: ainu-utara
-    am<n><pl>: amu
-    ashikipet<n><pl>: ashikipettu
-    at<n><pl>: atu
-    chep<n><pl>: chep-nu
-    hura<n><pl>: huranu
-    ikushpe<n><pl>: ukushpe
-    iriwak<n><pl>: uiriwak
-    itak<n><pl>: itaku
-    kema<n><pl>: ukema
-    kut<n><pl>: kuttu
-    nimaki<n><pl>: unimaki
-    nishi<n><pl>: nishu
-    pe<n><pl>: pepe
-    pet<n><pl>: petcha
-    umma<n><pl>: umma-utara
+    アイアイ<n><pl>: アイアイウタラ
+    アイヌ<n><pl>: アイヌウタラ
+    アシキペㇳ<n><pl>: アシキペㇳト゚
+    アㇳ<n><pl>: アト゚
+    アㇺ<n><pl>: アム
+    イクㇱペ<n><pl>: ウクㇱペ
+    イタㇰ<n><pl>: イタク
+    イリワㇰ<n><pl>: ウイリワㇰ
+    ウㇺマ<n><pl>: ウㇺマウタラ
+    クㇳ<n><pl>: クット゚
+    ケマ<n><pl>: ウケマ
+    チェㇷ゚<n><pl>: チェㇷ゚ヌ
+    ニシ<n><pl>: ニシュ
+    ニマキ<n><pl>: ウニマキ
+    フラ<n><pl>: フラヌ
+    ペ<n><pl>: ペペ
+    ペㇳ<n><pl>: ペㇳチャ
   Parts of Speech: {}
   Pronoun:
-    Anokai<pn><p1><sg><mf>: Anokai
-    Chokai<pn><p1><sg><mf>: Chokai
-    anokai<pn><p2><sg><mf>: anokai
-    aokai<pn><p2><sg><mf>: aokai
-    apkash<pn><p2><mf>: e apkash
-    chi<pn><px1pl><mf>: chi koro
-    e<pn><px2sg><mf>: e koro
-    eani<pn><p2><sg><mf>: eani
-    echi<pn><px2pl><mf>: echi koro
-    ekashi<pn><px1pl>: akoro ekashi
-    kani<pn><p1><sg><mf>: kani
-    ku<pn><px1sg><mf>: ku koro
-    kuani<pn><p1><sg><mf>: kuani
-    michi<pn><px1pl>: akoro michi
-    nishpa<pn><px1pl>: akon nishpa
-    pe<pn><px1pl>: akorope
-    raige<pn><p2><mf>: e raige
-    yani<pn><p2><sg><mf>: yani
+    アオカィ<pn><p2><sg><mf>: アオカィ
+    アノカィ<pn><p1><sg><mf>: アノカィ
+    アノカィ<pn><p2><sg><mf>: アノカィ
+    アㇷ゚カㇱ<pn><p2><mf>: エアㇷ゚カㇱ
+    エ<pn><px2sg><mf>: エコロ
+    エアニ<pn><p2><sg><mf>: エアニ
+    エカシ<pn><px1pl>: アコロ エカシ
+    エチ<pn><px2pl><mf>: エチコロ
+    カニ<pn><p1><sg><mf>: カニ
+    ク<pn><px1sg><mf>: クコロ
+    クアニ<pn><p1><sg><mf>: クアニ
+    チ<pn><px1pl><mf>: チコロ
+    チョカィ<pn><p1><sg><mf>: チョカィ
+    ニㇱパ<pn><px1pl>: アコン ニㇱパ
+    ペ<pn><px1pl>: アコロペ
+    ミチ<pn><px1pl>: アコロ ミチ
+    ヤニ<pn><p2><sg><mf>: ヤニ
+    ライケ<pn><p2><mf>: エライケ
   To be completed and not considered for part of Ainu grammar assignment: {}
   Verb:
-    ku kik<vblex><vaux><pres>: ku kik shiri ne
+    クキㇰ<vblex><vaux><pres>: クキㇰシリネ
   Verb Passification:
-    nu<vblex><pasv>: a-nu
-    nuye<vblex><pasv>: a-nuye
-    raige<vblex><pasv>: a-raige
+    ヌ<vblex><pasv>: アヌ
+    ヌイェ<vblex><pasv>: アヌイェ
+    ライケ<vblex><pasv>: アライケ
   Verb Transitivity:
-    kira<vblex><tv>: ekira
-    mik<vblex><tv>: emik
-    mina<vblex><tv>: emina
+    キラ<vblex><iv><tvx>: エキラ
+    ミナ<vblex><iv><tvx>: エミナ
+    ミㇰ<vblex><iv><tvx>: エミㇰ
   Verbalization:
-    attush<vblex>: attush-kara
-    chisei<vblex>: chisei-kara
-    hau<vblex>: hau-koro
-    honi<vblex>: honi-koro
-    ikiri<vblex>: ikiri-kara
-    kaya<vblex>: kaya-koro
+    アット゚ㇱ<n><vz>: アット゚ㇱカラ
+    イキリ<n><vz>: イキリカラ
+    カヤ<n><vz>: カヤコロ
+    シセイ<n><vz>: チセイカラ
+    ハウ<n><vz>: ハウコロ
+    ホニ<n><vz>: ホニコロ
