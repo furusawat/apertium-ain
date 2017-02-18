@@ -122,6 +122,16 @@ Multichar_Symbols
 %[%+pasv%] ! verb passification
 %[%-pasv%]
 
+%[%+sg%] ! singular
+%[%-sg%]
+
+%[%+int%] ! intensifier
+%[%-int%]
+
+%[%+mg%] ! male (god)
+%[%-mg%]
+
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                       M O R P H O T A C T I C S                         !!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -143,6 +153,9 @@ LEXICON Prefix
 %[%-m%]:ピンネ NounRoot ;
 %[%-f%]:マㇳネ NounRoot ;
 %[%-pasv%]:ア VerbRoot ;
+%[%-sg%]:シネ NounRoot ;
+%[%-int%]:イ VerbRoot ;
+%[%-mg%]:オッカイ NounRoot ;
 NounRoot ;
 AdjectiveRoot ;
 VerbRoot ;
@@ -181,8 +194,12 @@ LEXICON NounInfl-Common
 %<n%>%<vz%>:%>%{K%}%{R%}  # ;
 %<n%>%<det%>%<ind%>%[%+dInd%]:  # ;
 %<n%>%<det%>%<def%>%[%+dDef%]:  # ;
+%<n%>%<sg%>%[%+sg%]:  # ;
 %<n%>%<m%>%[%+m%]:  # ;
+%<n%>%<m%>%[%+mg%]:  # ;
 %<n%>%<f%>%[%+f%]:  # ;
+%<n%>%<end%>:%>トノケ # ;
+%<n%>%<hon%>:%>ニㇱパケ # ;
 %<n%>:  # ;
 
 LEXICON RegAdjectiveInfl
@@ -207,10 +224,12 @@ LEXICON RegVerbInfl
 
 %<vblex%>:%> Diminutive ;
 %<vblex%>%<tv%>%<adjx%>%[%+adjx%]:  # ;
+%<vblex%>%<int%>%[%+int%]:  # ;
 %<vblex%>%<nx%>%<abs%>:%>%{a%}%{mm%}%{pe%}%{I%} # ;
 %<vblex%>%<pasv%>%[%+pasv%]: NounInfl-Common ;
 %<vblex%>%<pasv%>%[%+pasv%]: # ;
 %<vblex%>%<iv%>%<tvx%>%[%+tvx%]:  # ;
+%<vblex%>%<vaux%>%<vpres%>:シリネ # ;
 
 LEXICON Copula
 
@@ -219,7 +238,7 @@ RegVerbInfl ;
 
 LEXICON CompoundAdj
 
-%<adj%>:%>%{ADJc%} RegAdjectiveInfl ;
+%<adj%>:%>%{te%} RegAdjectiveInfl ;
 %<adj%>:%>%{ADJc%} # ;
 
 LEXICON ConjunctionInfl
@@ -243,7 +262,7 @@ house:house NounInfl-Common ; ! A noun
 チカㇷ゚:チカㇷ゚ NounInfl-Common ; !
 オッカィ:オッカィ NounInfl-Common ; !
 チイカナィ:チイカナィ NounInfl-Common ; !
-チッナィ:チッナィ NounInfl-Common ; !
+チㇱナィ:チㇱナィ NounInfl-Common ; !
 ト゚カラ:ト゚カラ NounInfl-Common ; !
 イキリ:イキリ NounInfl-Common ; ! a seam 
 アット゚ㇱ:アット゚ㇱ NounInfl-Common ; ! cloth 
@@ -256,7 +275,7 @@ house:house NounInfl-Common ; ! A noun
 アシキペㇳ:アシキペㇳ NounInfl-U ; !
 アㇳ:ア%{Tt%} NounInfl-U ; !
 アㇺ:ア%{Mm%} NounInfl-U ; !
-イクㇱペ:イクㇱペ NounInfl-preU ; !
+イクㇱペ:%{i%}クㇱペ NounInfl-preU ; !
 イタㇰ:イタ%{Kk%} NounInfl-U ; !
 イリワㇰ:イリワㇰ NounInfl-preU ; !
 ウㇺマ:ウㇺマ NounInfl-utara ; !
@@ -275,6 +294,14 @@ house:house NounInfl-Common ; ! A noun
 チェㇷ゚:チェㇷ゚ NounInfl-Nu ; !
 クッペ:クッペ NounInfl-preU ; !
 セタ:セタ NounInfl-Common ; !
+アアㇰ:アアㇰ NounInfl-Common ; 
+アトノ:アトノ NounInfl-Common ; 
+アニㇱ:アニㇱ NounInfl-Common ; 
+アポホ:アポホ NounInfl-Common ; 
+アミチ:アミチ NounInfl-Common ; 
+アユポ:アユポ NounInfl-Common ; 
+アㇰ:アㇰ NounInfl-Common ; 
+ト゚レㇱ:ト゚レㇱ NounInfl-Common ; 
 
 
 
@@ -321,9 +348,11 @@ LEXICON VerbRoot
 イタㇰ:イタㇰ RegVerbInfl ; ! speak
 エ:エ RegVerbInfl ; ! to be eaten
 イェ:イェ RegVerbInfl ; ! to be spoken
-ヌ:ヌ RegVerbInfl ; ! to be spoken
-ヌイェ:ヌイェ RegVerbInfl ; ! to be spoken
-ライケ:ライケ RegVerbInfl ; ! to be spoken
+ヌ:ヌ RegVerbInfl ; ! 
+ヌイェ:ヌイェ RegVerbInfl ; ! 
+ライケ:ライケ RegVerbInfl ; ! 
+セ:セ RegVerbInfl ; !
+クキㇰ:クキㇰ RegVerbInfl ; !
 ネ:ネ Copula ; ! copula
 
 LEXICON Conjunction

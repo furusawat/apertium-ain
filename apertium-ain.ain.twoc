@@ -20,6 +20,10 @@ Alphabet
   %[%+pl%]:0
   %[%-pasv%]:0
   %[%+pasv%]:0
+  %[%-sg%]:0
+  %[%+sg%]:0
+  %[%-int%]:0
+  %[%+int%]:0
 
 ;
 
@@ -53,8 +57,8 @@ Fx:0 /<= _ ;
 Fx:0 /<= _ ;
    except
        _ :* Fy:0 ;
-   where Fx in ( %[%-m%] %[%-f%] )
-         Fy in ( %[%+m%] %[%+f%] )
+   where Fx in ( %[%-m%] %[%-f%] %[%-mg%] )
+         Fy in ( %[%+m%] %[%+f%] %[%+mg%] )
    matched ;
 
 "Remove paths without matching suffix feature - u plural"
@@ -81,3 +85,18 @@ Fx:0 /<= _ ;
          Fy in ( %[%+tvx%] )
    matched ;
 
+"Remove paths without matching suffix feature - noun singularity"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-sg%] )
+         Fy in ( %[%+sg%] )
+   matched ;
+
+"Remove paths without matching suffix feature - intensity"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-int%] )
+         Fy in ( %[%+int%] )
+   matched ;
