@@ -17,7 +17,8 @@ Alphabet
  ワ ウィ  ウェ ウォ 
  
 %{A%}:a %>:0  
-%{I%}:イ %{I%}:ヒ %{I%}:0
+
+%{I%}:ヒ ! %{I%}:0 %{I%}:イ
 
 %{ko%}:コ %{ko%}:0
 %{ro%}:ロ %{ro%}:0
@@ -33,7 +34,6 @@ Alphabet
 %{ne%}:ネ %{ne%}:0
 %{i%}:イ  %{i%}:0
 
-%{IU%}:イ %{IU%}:ウ
 
 
 %{RV%}:ラ %{RV%}:レ %{RV%}:リ
@@ -41,7 +41,8 @@ Alphabet
 
 %{pe%}:ペ %{pe%}:0
 
-%{K%}:カ %{K%}:コ
+%{K%}:コ ! %{K%}:カ
+
 %{R%}:ラ %{R%}:ロ
 
 %{P%}:ㇷ゚  %{P%}:ペ
@@ -81,6 +82,15 @@ Rules
 
 "Remove suffix vowel with vowel-ending stem"
 i:0 <=> Vow %{VSUF%}:0 _ [ m | n ] ;
+
+"Have {I} be null only if any of {a}{mm}{pe} there"
+%{I%}:0 <=> %{a%}: _ ;
+            %{mm%}: _ ;
+            %{pe%}: _ ;
+
+
+"have {K} be ka only before ra"
+%{K%}:カ <=> _ :ラ ;
 
 
 

@@ -234,7 +234,7 @@ LEXICON RegVerbInfl
 LEXICON Copula
 
 %<vblex%>%<vbser%>:  # ;
-RegVerbInfl ;
+! RegVerbInfl ;
 
 LEXICON CompoundAdj
 

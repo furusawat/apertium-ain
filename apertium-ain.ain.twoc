@@ -37,6 +37,15 @@ Fx:0 /<= _ ;
          Fy in ( %[%+adjx%] )
    matched ;
 
+
+"Remove paths without matching prefix feature - adjectivalization"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-adjx%] )
+         Fx in ( %[%+adjx%] )
+matched ; 
+
 "Remove paths without matching suffix feature - adjectival comparison"
 Fx:0 /<= _ ;
    except
@@ -44,6 +53,15 @@ Fx:0 /<= _ ;
    where Fx in ( %[%-comp%] %[%-sup%] )
          Fy in ( %[%+comp%] %[%+sup%] )
    matched ;
+
+"Remove paths without matching prefix feature - adjectival comparison"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-comp%] %[%-sup%] )
+         Fx in ( %[%+comp%] %[%+sup%] )
+matched ; 
+
 
 "Remove paths without matching suffix feature - articles"
 Fx:0 /<= _ ;
@@ -53,6 +71,15 @@ Fx:0 /<= _ ;
          Fy in ( %[%+dInd%] %[%+dDef%] )
    matched ;
 
+"Remove paths without matching prefix feature - articles"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-dInd%] %[%-dDef%] )
+         Fx in ( %[%+dInd%] %[%+dDef%] )
+matched ; 
+
+
 "Remove paths without matching suffix feature - gender"
 Fx:0 /<= _ ;
    except
@@ -60,6 +87,15 @@ Fx:0 /<= _ ;
    where Fx in ( %[%-m%] %[%-f%] %[%-mg%] )
          Fy in ( %[%+m%] %[%+f%] %[%+mg%] )
    matched ;
+
+"Remove paths without matching prefix feature - gender"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-m%] %[%-f%] %[%-mg%] )
+         Fx in ( %[%+m%] %[%+f%] %[%+mg%] )
+matched ; 
+
 
 "Remove paths without matching suffix feature - u plural"
 Fx:0 /<= _ ;
@@ -69,6 +105,15 @@ Fx:0 /<= _ ;
          Fy in ( %[%+pl%] )
    matched ;
 
+"Remove paths without matching prefix feature - u plural"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-pl%] )
+         Fx in ( %[%+pl%] )
+matched ; 
+
+
 "Remove paths without matching suffix feature - verb passivity"
 Fx:0 /<= _ ;
    except
@@ -76,6 +121,15 @@ Fx:0 /<= _ ;
    where Fx in ( %[%-pasv%] )
          Fy in ( %[%+pasv%] )
    matched ;
+
+"Remove paths without matching prefix feature - verb passivity"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-pasv%] )
+         Fx in ( %[%+pasv%] )
+matched ; 
+
 
 "Remove paths without matching suffix feature - making verbs transitive"
 Fx:0 /<= _ ;
@@ -85,6 +139,15 @@ Fx:0 /<= _ ;
          Fy in ( %[%+tvx%] )
    matched ;
 
+"Remove paths without matching prefix feature - making verbs transitive"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-tvx%] )
+         Fx in ( %[%+tvx%] )
+matched ; 
+
+
 "Remove paths without matching suffix feature - noun singularity"
 Fx:0 /<= _ ;
    except
@@ -93,6 +156,15 @@ Fx:0 /<= _ ;
          Fy in ( %[%+sg%] )
    matched ;
 
+"Remove paths without matching prefix feature - noun singularity"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-sg%] )
+         Fx in ( %[%+sg%] )
+matched ; 
+
+
 "Remove paths without matching suffix feature - intensity"
 Fx:0 /<= _ ;
    except
@@ -100,3 +172,13 @@ Fx:0 /<= _ ;
    where Fx in ( %[%-int%] )
          Fy in ( %[%+int%] )
    matched ;
+
+"Remove paths without matching prefix feature - intensity"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-int%] )
+         Fx in ( %[%+int%] )
+matched ; 
+
+
