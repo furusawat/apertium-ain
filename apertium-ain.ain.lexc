@@ -73,6 +73,15 @@ Multichar_Symbols
 % 	! Space
 
 
+%<sent%>      ! Sentence marker
+%<guio%>      ! Hyphen
+%<cm%>        ! Comma
+%<apos%>      ! Apostrophe
+%<rquot%>     ! Quote marker (right hand side) 
+%<lquot%>     ! Quote marker (left hand side) 
+%<rpar%>      ! Parenthetical marker (right hand side) 
+%<lpar%>      ! Parenthetical marker (left hand side) 
+
 ! Archiphonemes
 %{I%} ! can be イ or ヒ or null
 
