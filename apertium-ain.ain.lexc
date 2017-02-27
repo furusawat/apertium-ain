@@ -15,6 +15,7 @@ Multichar_Symbols
 %<abs%> ! Abstract qualities
 %<m%> ! Noun male gender
 %<f%> ! Noun female gender
+%<mg%> ! Noun male god gender
 %<mf%> ! Noun male or female gender
 %<endear%> ! Noun affinity tag ("=my dear x")
 %<honor%> ! Noun honorable tag ("=my honored x")
@@ -23,15 +24,24 @@ Multichar_Symbols
 %<px1pl%> ! First person plural possessive
 %<px2pl%> ! Second person plural possessive
 %<nx%> ! Nominalization
+%<rn%> ! relational noun
+%<bn%> ! bound noun
  
+! Determiner tags
+%<ndet%> ! numeral determiner
+%<ndom%> ! nominal demonstrative
+%<adom%> ! anaphoric demonstrative
+
+
 ! Verb tags
-%<pasv%> ! Passive Voice
+%<pasv1%> ! Passive Voice chi
+%<pasv2%> ! Passive Voice a
 %<tv%> ! Transitive Verb
 %<iv%> ! Intransitive Verb
 %<vaux%> ! Auxiliary Verb
 %<vx%> ! Verbalization
 %<tvx%> ! Make verb transitive
-%<vbser%> ! copula
+%<cop%> ! copula
 
 ! Tense tags
 %<pres%> ! Present Tense
@@ -60,22 +70,13 @@ Multichar_Symbols
 %>      ! Morpheme boundary
 %<dim%> ! Diminutive Particle
 %<int%> ! Intensifying Particle  
+% 	! Space
 
+
+! Archiphonemes
 %{I%} ! can be イ or ヒ or null
 
-%{ko%} ! Adjectival suffixes or nulls
-%{ro%}
-%{sa%}
-%{te%}
-%{kk%}
-%{ne%}
-%{nn%}
-%{u%}
-%{ss%}
-%{o%}
-%{a%}
-%{ne%}
-%{i%}
+%{i%} ! can be i or null
 
 %{Mm%}  ! mu mm or null
 %{Tt%}  ! tu tt or null
@@ -84,14 +85,11 @@ Multichar_Symbols
 
 
 %{pe%} ! pe or null
-%{P%} ! pp or pe
-%{K%} ! ka or ko
-%{R%} ! ra or ro
-%{mm%} ! mm or null
+%{K%} ! ka, ki, ku, ke, or ko
 
-%{RV%} ! ra, re, ri
 %{U%}  ! all sorts of stuff
 
+! Features
 %[%+adjx%] ! + adjectivalization
 %[%-adjx%] ! + adjectivalization
 
@@ -119,8 +117,11 @@ Multichar_Symbols
 %[%+f%] ! female gender
 %[%-f%]
 
-%[%+pasv%] ! verb passification
-%[%-pasv%]
+%[%+pasv1%] ! verb passification
+%[%-pasv1%]
+
+%[%+pasv2%] ! verb passification
+%[%-pasv2%]
 
 %[%+sg%] ! singular
 %[%-sg%]
@@ -131,6 +132,26 @@ Multichar_Symbols
 %[%+mg%] ! male (god)
 %[%-mg%]
 
+%[%+appl%] ! applicative
+%[%-appl%]
+
+%[%+apass%] ! generalized object
+%[%-apass%]
+
+%[%+refl%] ! reflexive
+%[%-refl%]
+
+%[%+rec%] ! reciprocal
+%[%-rec%]
+
+%[%+acaus%] ! acausative
+%[%-acaus%]
+
+%[%+pos%] ! possessive common noun
+%[%-pos%]
+
+%[%+pp1sg%] ! possessive relational noun
+%[%-pp1sg%]
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                       M O R P H O T A C T I C S                         !!!
@@ -140,33 +161,92 @@ LEXICON Root
 
 Conjunction ;
 Prefix ;
+Determiner ;
 
 LEXICON Prefix
 
-%[%-adjx%]:チ VerbRoot ;
+%[%-pasv1%]:チ VerbRoot ;
 %[%-tvx%]:エ VerbRoot ;
-%[%-sup%]:イヨッタ AdjectiveRoot ;
-%[%-comp%]:ナア AdjectiveRoot ;
-%[%-dInd%]:シネ NounRoot ;
-%[%-dDef%]:ネイ NounRoot ;
-%[%-pl%]:ウ NounRoot ;
-%[%-m%]:ピンネ NounRoot ;
-%[%-f%]:マㇳネ NounRoot ;
-%[%-pasv%]:ア VerbRoot ;
-%[%-sg%]:シネ NounRoot ;
+%[%-sup%]:イヨッタ%  VerbRoot ;
+%[%-comp%]:ナア%  VerbRoot ;
+%[%-pasv2%]:ア VerbRoot ;
 %[%-int%]:イ VerbRoot ;
-%[%-mg%]:オッカイ NounRoot ;
-NounRoot ;
+%[%-1ps%]:%{K%} VerbPrefix-ClassI ;
+NounPrefix ;
 AdjectiveRoot ;
 VerbRoot ;
+VerbPrefix-ClassI ;
+
+LEXICON NounPrefix
+
+%[%-dInd%]:シネ%  NounRoot ;
+%[%-dDef%]:ネイ%  NounRoot ;
+%[%-pl%]:ウ%> NounRoot ;
+%[%-m%]:ピンネ%  NounRoot ;
+%[%-f%]:マㇳネ%  NounRoot ;
+%[%-mg%]:オッカイ%  NounRoot ;
+%[%-sg%]:シネ%  NounRoot ;
+%[%-pos%]:ク NounRoot ;
+%[%-pp1sg%]:エン NounRoot ;
+NounRoot ;
+
+LEXICON VerbPrefix-ClassI 
+
+! applicative
+%[%-appl%]:エ VerbPrefix-ClassII ;
+%[%-appl%]:コ VerbPrefix-ClassII ;
+%[%-appl%]:オ VerbPrefix-ClassII ;
+
+
+VerbPrefix-ClassII ;
+
+LEXICON VerbPrefix-ClassII 
+
+%[%-apass%]:イ VerbPrefix-ClassIII ;
+%[%-refl%]:ヤィ VerbPrefix-ClassIII ;
+%[%-rec%]:ウ VerbPrefix-ClassIII ;
+%[%-acaus%]:シ VerbPrefix-ClassIII ;
+
+
+VerbPrefix-ClassIII ;
+
+LEXICON VerbPrefix-ClassIII 
+
+%[%-appl%]:エ VerbPrefix-ClassII ;
+%[%-appl%]:コ VerbPrefix-ClassII ;
+%[%-appl%]:オ VerbPrefix-ClassII ;
+
+VerbRoot ;
+
+LEXICON RegVerbInfl
+
+%<vblex%>:%> Diminutive ;
+%<vblex%>%<tv%>%<pasv1%>%[%+pasv1%]:  # ;
+%<vblex%>%<tv%>%<pasv2%>%[%+pasv2%]:  # ;
+%<vblex%>%<int%>%[%+int%]:  # ;
+%<vblex%>%<nx%>%<abs%>:%>% イ # ;
+%<vblex%>%<nx%>%<abs%>:%>% ヒ # ;
+%<vblex%>%<pasv1%>%[%+pasv1%]: NounInfl-Common ;
+%<vblex%>%<pasv1%>%[%+pasv1%]: # ;
+%<vblex%>%<pasv2%>%[%+pasv2%]: NounInfl-Common ;
+%<vblex%>%<pasv2%>%[%+pasv2%]: # ;
+%<vblex%>%<iv%>%<tvx%>%[%+tvx%]:  # ;
+%<vblex%>%<vaux%>%<vpres%>:シリネ # ;
+%<vblex%>%<pl%>:パ # ;
+%<vblex%>%<comp%>%[%+comp%]:  # ;
+%<vblex%>%<sup%>%[%+sup%]:  # ;
+%<vblex%>:  VerbSuffix-ClassVI ;
+
+LEXICON VerbSuffix-ClassVI 
+
+%<caus%>:%>レ # ;
 
 LEXICON Diminutive
 
 %<dim%>:%>ポ # ;
 
 LEXICON NounInfl-utara
-!%<n%>%<pl%>:%>ウタ%{RV%} # ;
-%<n%>%<pl%>:%>ウタラ # ;
+%<n%>%<pl%>:%>% ウタラ # ;
 NounInfl-Common ;
 
 LEXICON NounInfl-U
@@ -189,18 +269,27 @@ NounInfl-Common ;
 LEXICON NounInfl-Common
 
 %<n%>: Diminutive ;
-%<nx%>:%>ㇷ゚ # ;
+%<nx%>:%>% ㇷ゚ # ;
 %<pn%>%<px1sg%>%<mf%>:%>コロ Diminutive ;
-%<n%>%<vz%>:%>%{K%}%{R%}  # ;
+%<n%>%<vz%>:%>コロ  # ;
+%<n%>%<vz%>:%>カラ  # ;
 %<n%>%<det%>%<ind%>%[%+dInd%]:  # ;
 %<n%>%<det%>%<def%>%[%+dDef%]:  # ;
 %<n%>%<sg%>%[%+sg%]:  # ;
 %<n%>%<m%>%[%+m%]:  # ;
-%<n%>%<m%>%[%+mg%]:  # ;
+%<n%>%<mg%>%[%+mg%]:  # ;
 %<n%>%<f%>%[%+f%]:  # ;
-%<n%>%<end%>:%>トノケ # ;
-%<n%>%<hon%>:%>ニㇱパケ # ;
+%<n%>%<end1%>:%>% トノケ # ;
+%<n%>%<end2%>:%>% ポ # ;
+%<n%>%<hon%>:%>% ニㇱパケ # ;
 %<n%>:  # ;
+%<n%>%<cn%>%<pos%>%[%+pos%]:イヒ # ;
+
+
+LEXICON NounInfl-Relational
+
+%<n%>%<rn%>%<pos%>%<p1%>%<sg%>%[%+pp1sg%]:  # ;
+%<n%>%<rn%>%<pos%>%<p3%>%<sg%>:ア # ;
 
 LEXICON RegAdjectiveInfl
 
@@ -209,37 +298,27 @@ LEXICON RegAdjectiveInfl
 %<adj%>:%> AbstractNoun ;
 %<adj%>%<comp%>%[%+comp%]:  # ;
 %<adj%>%<sup%>%[%+sup%]:  # ;
-%<adj%>%<nx%>%<abs%>:%>%{a%}%{mm%}%{pe%}%{I%} # ;
-%<adj%>%<nx%>:%>ㇷ゚ # ; 
+%<vblex%>%<iv%>%<nx%>%<abs%>:%>% イ # ;
+%<vblex%>%<iv%>%<nx%>%<abs%>:%>% ヒ # ;
+%<vblex%>%<iv%>%<nx%>:%>% ㇷ゚ # ; 
 %<adj%>:  # ;
 
 LEXICON AbstractNoun
-%<n%>%<abs%>:%{abs%} Diminutive ;
+%<n%>%<abs%>:ポ Diminutive ;
 
 LEXICON IrregAdjectiveInfl
 
 %<adv%>:%>ノ # ;
 
-LEXICON RegVerbInfl
-
-%<vblex%>:%> Diminutive ;
-%<vblex%>%<tv%>%<adjx%>%[%+adjx%]:  # ;
-%<vblex%>%<int%>%[%+int%]:  # ;
-%<vblex%>%<nx%>%<abs%>:%>%{a%}%{mm%}%{pe%}%{I%} # ;
-%<vblex%>%<pasv%>%[%+pasv%]: NounInfl-Common ;
-%<vblex%>%<pasv%>%[%+pasv%]: # ;
-%<vblex%>%<iv%>%<tvx%>%[%+tvx%]:  # ;
-%<vblex%>%<vaux%>%<vpres%>:シリネ # ;
 
 LEXICON Copula
 
-%<vblex%>%<vbser%>:  # ;
+%<vblex%>%<cop%>:  # ;
 ! RegVerbInfl ;
 
 LEXICON CompoundAdj
 
-%<adj%>:%>%{te%} RegAdjectiveInfl ;
-%<adj%>:%>%{ADJc%} # ;
+%<adj%>:%>テ RegAdjectiveInfl ;
 
 LEXICON ConjunctionInfl
 
@@ -279,7 +358,7 @@ house:house NounInfl-Common ; ! A noun
 イタㇰ:イタ%{Kk%} NounInfl-U ; !
 イリワㇰ:イリワㇰ NounInfl-preU ; !
 ウㇺマ:ウㇺマ NounInfl-utara ; !
-クㇳ:ク%{t%}%{Tt%} NounInfl-U ; !
+クㇳ:ク%{t%} NounInfl-U ; !
 ケマ:ケマ NounInfl-preU ; !
 チェㇷ゚:チェㇷ゚ NounInfl-Nu ; !
 ニシ:ニシ NounInfl-U ; !
@@ -302,8 +381,9 @@ house:house NounInfl-Common ; ! A noun
 アユポ:アユポ NounInfl-Common ; 
 アㇰ:アㇰ NounInfl-Common ; 
 ト゚レㇱ:ト゚レㇱ NounInfl-Common ; 
-
-
+シㇰ:シㇰ NounInfl-Common ;
+カムィ:カムィ NounInfl-Common ;
+サㇺ:サㇺ NounInfl-Relational ;
 
 
 
@@ -315,7 +395,6 @@ LEXICON AdjectiveRoot
 ピリカ:ピリカ RegAdjectiveInfl ; 
 ウェン:ウェン  RegAdjectiveInfl ; 
 ポン:ポン  RegAdjectiveInfl ; 
-ハロコロ:ハロコロ RegAdjectiveInfl ; 
 ケラ:ケラ CompoundAdj ;
 ハロ:ハロ CompoundAdj ;
 ラム:ラム CompoundAdj ;
@@ -325,7 +404,6 @@ LEXICON AdjectiveRoot
 ケㇺ:ケㇺ CompoundAdj ;
 キ:キ CompoundAdj ;
 ピリカ:ピリカ RegAdjectiveInfl ; 
-ポン:ポン RegAdjectiveInfl ;
 ヌペキ:ヌペキ RegAdjectiveInfl ; ! bright
 パセ:パセ RegAdjectiveInfl ; ! heavy
 ポロ:ポロ RegAdjectiveInfl ; ! large
@@ -353,14 +431,23 @@ LEXICON VerbRoot
 ライケ:ライケ RegVerbInfl ; ! 
 セ:セ RegVerbInfl ; !
 クキㇰ:クキㇰ RegVerbInfl ; !
+ルㇲカ:ルㇲカ RegVerbInfl ;
 ネ:ネ Copula ; ! copula
+ピㇼカ:ピㇼカ RegVerbInfl ; 
+ウェン:ウェン  RegVerbInfl ; 
+ハロコロ:ハロコロ RegVerbInfl ; 
+ポン:ポン RegVerbInfl ;
+
+
 
 LEXICON Conjunction
 
 コ:コ ConjunctionInfl ;
 
 
+LEXICON Determiner
 
+ト゚ㇷ゚:ト゚ㇷ゚%<bn%>%<ndet%> # ;
 
 
 

@@ -4,48 +4,28 @@ Config:
     Gen: ../ain.autogen.hfst
     Morph: ../ain.automorf.hfst
 Tests:
-  Adjectivalization:
-    アマ<vblex><tv><adjx>: チアマ
-    イェ<vblex><tv><adjx>: チイェ
-    クパ<vblex><tv><adjx>: チクパ
-    テレケ<vblex><tv><adjx>: チテレケ
-    ペレパ<vblex><tv><adjx>: チペレパ
-  Adjective:
-    アㇱカン<adj>: アㇱカンネ
-    キ<adj>: キオ
-    ケラ<adj>: ケラアン
-    ケㇺ<adj>: ケㇺウㇱ
-    シセ<adj>: シサㇰ
-    ヌチャㇰ<adj>: ヌチャㇰテㇰ
-    ハロ<adj>: ハロコロ
-    パロ<adj>: パロウン
-    ヘㇰ<adj>: ヘカイ
-    ラ<adj>: ラㇺ
-    ラム<adj>: ラムサㇰ
-    レタ<adj>: レタラ
-  Adjective Comparison:
-    ピリカ<adj><comp>: ナアピリカ
-    ピリカ<adj><sup>: イヨッタピリカ
-    ポン<adj><comp>: ナアポン
-    ポン<adj><sup>: イヨッタポン
-  Adjective Pluralization:
-    ウェン<adj><pl>: ウェンパ
-    ハロコロ<adj><pl>: ハロコロパ
-    ピリカ<adj><pl>: ピリカパ
-    ポン<adj><pl>: ポンパ
   Adverb:
     アシリ<adv>: アシンノ
     ソン<adv>: ソンノ
     モイレ<adv>: モイレタラ
     ラチ<adv>: ラチタラ
   Article:
-    アイヌ<n><det><ind>: シネアイヌ
-    アイヌ<n><sg>: シネアイヌ
-    クル<n><det><def>: ネイクル
-    シウェンテㇷ゚<n><sg>: シネシウェンテㇷ゚
-    チェㇷ゚<n><det><def>: ネイチェㇷ゚
-    チコイキㇷ゚<n><det><ind>: シネチコイキㇷ゚
-    チセイ<n><det><ind>: シネチセイ
+    アイヌ<n><det><ind>: シネ アイヌ
+    アイヌ<n><sg>: シネ アイヌ
+    クル<n><det><def>: ネイ クル
+    シウェンテㇷ゚<n><sg>: シネ シウェンテㇷ゚
+    チェㇷ゚<n><det><def>: ネイ チェㇷ゚
+    チコイキㇷ゚<n><det><ind>: シネ チコイキㇷ゚
+    チセイ<n><det><ind>: シネ チセイ
+  Comparison:
+    ピㇼカ<vblex><comp>: ナア ピㇼカ
+    ピㇼカ<vblex><sup>: イヨッタ ピㇼカ
+    ポン<vblex><comp>: ナア ポン
+    ポン<vblex><sup>: イヨッタ ポン
+  Determiner:
+    チセ<n><ndet>: ト゚ チセ
+    チセ<n><ndom>: タン チセ
+    ト゚ㇷ゚<bn><ndet>: ト゚ㇷ゚
   Diminuitive:
     イセ<vblex><dim>: イセポ
     オッカィ<n><dim>: オッカィポ
@@ -58,43 +38,46 @@ Tests:
     セ<vblex><int>: イセ
   Letter changes: {}
   Nominalizing:
-    イェ<vblex><pasv><nx>: アイェㇷ゚
-    イタㇰ<vblex><nx><abs>: イタㇰアㇺペ
-    エ<vblex><pasv><nx>: アエㇷ゚
-    ヌペキ<adj><nx><abs>: ヌペキアㇺペ
-    パセ<adj><nx>: パセㇷ゚
-    ポロ<adj><nx>: ポロㇷ゚
+    イェ<vblex><pasv1><nx>: アイェ ㇷ゚
+    イタㇰ<vblex><nx><abs>: イタㇰ ヒ
+    エ<vblex><pasv1><nx>: アエ ㇷ゚
+    ヌペキ<vblex><iv><nx><abs>: ヌペキ ヒ
+    パセ<vblex><iv><nx>: パセ ㇷ゚
+    ポロ<vblex><iv><nx>: ポロ ㇷ゚
   Noun:
     アイヌ<n>: アイヌ
-    アイヌ<n><pl>: アイヌウタラ
-    アイヌ<n><sg>: シネアイヌ
+    アイヌ<n><pl>: アイヌ ウタラ
+    アイヌ<n><sg>: シネ アイヌ
+    サㇺ<n><rn><pos><p1><sg>: エンサㇺ
+    サㇺ<n><rn><pos><p3><sg>: メノコ サㇺア
+    シㇰ<n><cn><pos>: クシㇰイヒ
   Noun Gender:
-    カムィ<n><m>: オッカイカムィ
-    セタ<n><f>: マㇳネセタ
-    セタ<n><m>: ピンネセタ
-    チカㇷ゚<n><f>: マㇳネチカㇷ゚
-    チカㇷ゚<n><m>: ピンネチカㇷ゚
+    カムィ<n><mg>: オッカイ カムィ
+    セタ<n><f>: マㇳネ セタ
+    セタ<n><m>: ピンネ セタ
+    チカㇷ゚<n><f>: マㇳネ チカㇷ゚
+    チカㇷ゚<n><m>: ピンネ チカㇷ゚
   Noun affinity:
-    アアㇰ<n><end>: アアㇰトノケ
-    アアㇰ<n><hon>: アアㇰニㇱパケ
-    アトノ<n><hon>: アトノニㇱパケ
-    アニㇱ<n><end>: アニㇱトノケ
-    アポホ<n><end>: アポホトノケ
-    アミチ<n><end>: アミチトノケ
-    アユポ<n><end>: アユポトノケ
-    アユポ<n><hon>: アユポニㇱパケ
-    アㇰ<n><end>: アㇰポ
-    ト゚レㇱ<n><end>: ト゚レㇱポ
+    アアㇰ<n><end1>: アアㇰ トノケ
+    アアㇰ<n><hon>: アアㇰ ニㇱパケ
+    アトノ<n><hon>: アトノ ニㇱパケ
+    アニㇱ<n><end1>: アニㇱ トノケ
+    アポホ<n><end1>: アポホ トノケ
+    アミチ<n><end1>: アミチ トノケ
+    アユポ<n><end1>: アユポ トノケ
+    アユポ<n><hon>: アユポ ニㇱパケ
+    アㇰ<n><end2>: アㇰ ポ
+    ト゚レㇱ<n><end2>: ト゚レㇱ ポ
   Noun number:
-    アイアイ<n><pl>: アイアイウタラ
-    アイヌ<n><pl>: アイヌウタラ
+    アイアイ<n><pl>: アイアイ ウタラ
+    アイヌ<n><pl>: アイヌ ウタラ
     アシキペㇳ<n><pl>: アシキペㇳト゚
     アㇳ<n><pl>: アト゚
     アㇺ<n><pl>: アム
     イクㇱペ<n><pl>: ウクㇱペ
     イタㇰ<n><pl>: イタク
     イリワㇰ<n><pl>: ウイリワㇰ
-    ウㇺマ<n><pl>: ウㇺマウタラ
+    ウㇺマ<n><pl>: ウㇺマ ウタラ
     クㇳ<n><pl>: クット゚
     ケマ<n><pl>: ウケマ
     チェㇷ゚<n><pl>: チェㇷ゚ヌ
@@ -104,32 +87,27 @@ Tests:
     ペ<n><pl>: ペペ
     ペㇳ<n><pl>: ペㇳチャ
   Parts of Speech: {}
-  Pronoun:
-    アオカィ<pn><p2><sg><mf>: アオカィ
-    アノカィ<pn><p1><sg><mf>: アノカィ
-    アノカィ<pn><p2><sg><mf>: アノカィ
-    アㇷ゚カㇱ<pn><p2><mf>: エアㇷ゚カㇱ
-    エ<pn><px2sg><mf>: エコロ
-    エアニ<pn><p2><sg><mf>: エアニ
-    エカシ<pn><px1pl>: アコロ エカシ
-    エチ<pn><px2pl><mf>: エチコロ
-    カニ<pn><p1><sg><mf>: カニ
-    ク<pn><px1sg><mf>: クコロ
-    クアニ<pn><p1><sg><mf>: クアニ
-    チ<pn><px1pl><mf>: チコロ
-    チョカィ<pn><p1><sg><mf>: チョカィ
-    ニㇱパ<pn><px1pl>: アコン ニㇱパ
-    ペ<pn><px1pl>: アコロペ
-    ミチ<pn><px1pl>: アコロ ミチ
-    ヤニ<pn><p2><sg><mf>: ヤニ
-    ライケ<pn><p2><mf>: エライケ
+  Passivization:
+    アマ<vblex><tv><pasv1>: チアマ
+    イェ<vblex><tv><pasv1>: チイェ
+    クパ<vblex><tv><pasv1>: チクパ
+    テレケ<vblex><tv><pasv1>: チテレケ
+    ペレパ<vblex><tv><pasv1>: チペレパ
+  Pronoun: {}
   To be completed and not considered for part of Ainu grammar assignment: {}
   Verb:
     クキㇰ<vblex><vaux><pres>: クキㇰシリネ
+    シㇼピㇼカ<vblex><av>: シㇼピㇼカ
+    ネ<vblex><cop>: ネ
   Verb Passification:
-    ヌ<vblex><pasv>: アヌ
-    ヌイェ<vblex><pasv>: アヌイェ
-    ライケ<vblex><pasv>: アライケ
+    ヌ<vblex><pasv2>: アヌ
+    ヌイェ<vblex><pasv2>: アヌイェ
+    ライケ<vblex><pasv2>: アライケ
+  Verb Pluralization:
+    ウェン<vblex><pl>: ウェンパ
+    ハロコロ<vblex><pl>: ハロコロパ
+    ピㇼカ<vblex><pl>: ピㇼカパ
+    ポン<vblex><pl>: ポンパ
   Verb Transitivity:
     キラ<vblex><iv><tvx>: エキラ
     ミナ<vblex><iv><tvx>: エミナ

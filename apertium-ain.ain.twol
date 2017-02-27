@@ -15,88 +15,60 @@ Alphabet
  ラ リ ル レ ロ
  ㇻ ㇼ ㇽ ㇾ ㇿ
  ワ ウィ  ウェ ウォ 
+ % 
  
-%{A%}:a %>:0  
 
 %{I%}:ヒ ! %{I%}:0 %{I%}:イ
 
-%{ko%}:コ %{ko%}:0
-%{ro%}:ロ %{ro%}:0
-%{sa%}:サ %{sa%}:0
-%{te%}:テ %{te%}:0
-%{kk%}:ㇰ %{kk%}:0
-%{ne%}:ネ %{ne%}:0
-%{nn%}:ン %{nn%}:0
-%{u%}:ウ  %{u%}:0
-%{ss%}:ㇱ %{ss%}:0
-%{o%}:オ  %{o%}:0
-%{a%}:ア  %{a%}:0
-%{ne%}:ネ %{ne%}:0
-%{i%}:イ  %{i%}:0
+%{i%}:イ  ! %{i%}:0
+
+%{U%}:ウ ! %{U%}:ム %{U%}:ト゚ %{U%}:ク %{U%}:ュ %{U%}:0
+
+%{pe%}:0 ! %{pe}:ペ
 
 
-
-%{RV%}:ラ %{RV%}:レ %{RV%}:リ
-%{U%}:ウ %{U%}:ム %{U%}:ト゚ %{U%}:ク %{U%}:ュ %{U%}:0
-
-%{pe%}:ペ %{pe%}:0
-
-%{K%}:コ ! %{K%}:カ
-
-%{R%}:ラ %{R%}:ロ
-
-%{P%}:ㇷ゚  %{P%}:ペ
-%{mm%}:ㇺ %{mm%}:0
-
-%{t%}:ッ %{t%}:0
-
-%{Mm%}:ム %{Mm%}:ㇺ %{Mm%}:0
-%{Tt%}:ト゚ %{Tt%}:ㇳ %{Tt%}:0
-%{Kk%}:ク %{Kk%}:ㇰ %{Kk%}:0
+%{K%}:コ ! %{K%}:カ %{K%}:ク %{K%}:キ %{K%}:ケ
 
 
+%{t%}:0 ! %{t%}:ッ 
 
+%{Tt%}:ㇳ ! %{Tt%}:0 %{Tt%}:ト゚ 
+%{Kk%}:ㇰ ! %{Kk%}:0 %{Kk%}:ク 
+%{Mm%}:ㇺ ! %{Kk%}:0 %{Kk%}:ム 
 
-
-! %[%+adjx%]:0
-! %{%-adjx%]:0 
-! %[%+comp%]:0
-! %{%-comp%]:0 
-! %[%+sup%]:0
-! %{%-sup%]:0 
-! %[%+dInd%]:0
-! %[%-dInd%]:0
-! %[%+dDef%]:0
-! %[%-dDef%]:0
-! %[%+tvx%]:0
-! %[%-tvx%]:0
-
+%>:0 
 ;
 
-Sets
-
-Vowel = A E Ä I O Ö U Ü Y Ý 
-        a e ä i o ö u ü y ý ;
 
 Rules 
-
-"Remove suffix vowel with vowel-ending stem"
-i:0 <=> Vow %{VSUF%}:0 _ [ m | n ] ;
-
-"Have {I} be null only if any of {a}{mm}{pe} there"
-%{I%}:0 <=> %{a%}: _ ;
-            %{mm%}: _ ;
-            %{pe%}: _ ;
 
 
 "have {K} be ka only before ra"
 %{K%}:カ <=> _ :ラ ;
 
+"have {U} be small yu only after shi"
+%{U%}:ュ <=> :シ %>: _ ;
 
+"have {U} be ム only after {Mm}"
+%{U%}:ム <=> %{Mm%}: %>: _ ;
 
+"have {Mm} be null before {U} is mu"
+%{Mm%}:0 <=> _ %>: %{U%}:ム ;
 
+"have {U} be ト゚ only after {Tt}"
+%{U%}:ト゚ <=> %{Tt%}: %>: _ ;
 
+"have {Tt} be null before {U} is tu"
+%{Tt%}:0 <=> _ %>: %{U%}:ト゚ ;
 
+"have {U} be ku only after {Kk}"
+%{U%}:ク <=> %{Kk%}: %>: _ ;
+
+"have {Kk} be null before {U} is ku}"
+%{Kk%}:0 <=> _ %>: %{U%}:ク ;
+
+"have {i} be null after {U} is U"
+%{i%}:0 <=> %{U%}:ウ %>: _ ;
 
 ! Resources:
 ! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol

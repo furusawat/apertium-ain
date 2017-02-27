@@ -18,13 +18,26 @@ Alphabet
   %[%+f%]:0
   %[%-pl%]:0
   %[%+pl%]:0
-  %[%-pasv%]:0
-  %[%+pasv%]:0
+  %[%-pasv1%]:0
+  %[%+pasv1%]:0 
+  %[%-pasv2%]:0
+  %[%+pasv2%]:0
   %[%-sg%]:0
   %[%+sg%]:0
   %[%-int%]:0
   %[%+int%]:0
-
+  %[%-appl%]:0
+  %[%+appl%]:0
+  %[%-acaus%]:0
+  %[%+acaus%]:0
+  %[%-refl%]:0
+  %[%+refl%]:0
+  %[%-rec%]:0
+  %[%+rec%]:0
+  %[%-apass%]:0
+  %[%+apass%]:0
+  %[%-pos%]:0
+  %[%+pos%]:0
 ;
 
 Rules
@@ -118,8 +131,8 @@ matched ;
 Fx:0 /<= _ ;
    except
        _ :* Fy:0 ;
-   where Fx in ( %[%-pasv%] )
-         Fy in ( %[%+pasv%] )
+   where Fx in ( %[%-pasv1%] %[%-pasv2%] )
+         Fy in ( %[%+pasv1%] %[%+pasv2%] )
    matched ;
 
 "Remove paths without matching prefix feature - verb passivity"
@@ -181,4 +194,115 @@ Fx:0 /<= _ ;
          Fx in ( %[%+int%] )
 matched ; 
 
+"Remove paths without matching suffix feature - applicatives"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-appl%] )
+         Fy in ( %[%+appl%] )
+   matched ;
+
+"Remove paths without matching prefix feature - applicatives"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-appl%] )
+         Fx in ( %[%+appl%] )
+matched ; 
+
+"Remove paths without matching suffix feature - generalized object"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-apass%] )
+         Fy in ( %[%+apass%] )
+   matched ;
+
+"Remove paths without matching prefix feature - generalized object"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-apass%] )
+         Fx in ( %[%+apass%] )
+matched ; 
+
+"Remove paths without matching suffix feature - reflexive"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-refl%] )
+         Fy in ( %[%+refl%] )
+   matched ;
+
+"Remove paths without matching prefix feature - reflexive"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-refl%] )
+         Fx in ( %[%+refl%] )
+matched ; 
+
+"Remove paths without matching suffix feature - reciprocal"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-rec%] )
+         Fy in ( %[%+rec%] )
+   matched ;
+
+"Remove paths without matching prefix feature - reciprocal"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-rec%] )
+         Fx in ( %[%+rec%] )
+matched ; 
+
+"Remove paths without matching suffix feature - acausative"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-acaus%] )
+         Fy in ( %[%+acaus%] )
+   matched ;
+
+"Remove paths without matching prefix feature - acausative"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-acaus%] )
+         Fx in ( %[%+acaus%] )
+matched ; 
+
+"Remove paths without matching suffix feature - posessive common noun"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-pos%] )
+         Fy in ( %[%+pos%] )
+   matched ;
+
+"Remove paths without matching prefix feature - possessive common noun"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-pos%] )
+         Fx in ( %[%+pos%] )
+matched ; 
+
+"Remove paths without matching suffix feature - posessive relational noun"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-pp1sg%] )
+         Fy in ( %[%+pp1sg%] )
+   matched ;
+
+"Remove paths without matching prefix feature - possessive relational noun"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-pp1sg%] )
+         Fx in ( %[%+pp1sg%] )
+matched ; 
 
