@@ -1,5 +1,6 @@
 Alphabet
  ア イ ウ エ オ 
+          ェ
  カ キ ク ケ コ ㇰ 
  
  シャ シ シュ シェ ショ ㇱ ッ
@@ -29,6 +30,7 @@ Alphabet
 
 %{K%}:コ ! %{K%}:カ %{K%}:ク %{K%}:キ %{K%}:ケ
 
+%{w%}:0 ! %{w%}:ウ
 
 %{t%}:0 ! %{t%}:ッ 
 
@@ -42,9 +44,15 @@ Alphabet
 
 Rules 
 
+"have {w} be ウ when before e or E"
+%{w%}:ウ <=> _ :ェ ;
+	     _ :エ ; 
 
 "have {K} be ka only before ra"
 %{K%}:カ <=> _ :ラ ;
+
+"have {K} be ku before a"
+%{K%}:ク <=> _ %>: :ア ;
 
 "have {U} be small yu only after shi"
 %{U%}:ュ <=> :シ %>: _ ;

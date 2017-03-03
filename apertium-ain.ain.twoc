@@ -38,6 +38,8 @@ Alphabet
   %[%+apass%]:0
   %[%-pos%]:0
   %[%+pos%]:0
+  %[%-1ps%]:0
+  %[%+1ps%]:0
 ;
 
 Rules
@@ -139,8 +141,8 @@ Fx:0 /<= _ ;
 Fx:0 /<= _ ;
    except
        Fy:0 :* _ ;
-   where Fy in ( %[%-pasv%] )
-         Fx in ( %[%+pasv%] )
+   where Fy in ( %[%-pasv1%] %[%-pasv2%] )
+         Fx in ( %[%+pasv1%] %[%+pasv2%] )
 matched ; 
 
 
@@ -304,5 +306,21 @@ Fx:0 /<= _ ;
        Fy:0 :* _ ;
    where Fy in ( %[%-pp1sg%] )
          Fx in ( %[%+pp1sg%] )
+matched ; 
+
+"Remove paths without matching suffix feature - first person singular"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-1ps%] )
+         Fy in ( %[%+1ps%] )
+   matched ;
+
+"Remove paths without matching prefix feature - first person singular"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-1ps%] )
+         Fx in ( %[%+1ps%] )
 matched ; 
 

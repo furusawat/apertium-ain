@@ -10,6 +10,9 @@ Multichar_Symbols
 %<pn%> ! Pronoun
 %<det%> ! Determiner
 %<cnjsub%> ! subordinating conjunction
+%<cnjcoo%> ! co-ordinating conjunction
+%<prt%> ! Particle
+%<pp%> ! post position
 
 ! Noun tags
 %<abs%> ! Abstract qualities
@@ -46,8 +49,12 @@ Multichar_Symbols
 ! Tense tags
 %<pres%> ! Present Tense
 
+! Aspect tags
+%<perf%> ! Perfective Aspect
+
 ! Mood tags
 %<pri%> ! Indicative Mood
+%<infr%> ! Inferential Mood
 
 ! Person tags
 %<p1%> ! First Person
@@ -70,9 +77,11 @@ Multichar_Symbols
 %>      ! Morpheme boundary
 %<dim%> ! Diminutive Particle
 %<int%> ! Intensifying Particle  
+%<ev%>  ! Evidentiality
+%<exc%> ! Exclamation
 % 	! Space
 
-
+! Punctuation
 %<sent%>      ! Sentence marker
 %<guio%>      ! Hyphen
 %<cm%>        ! Comma
@@ -92,7 +101,7 @@ Multichar_Symbols
 %{Kk%} ! ku kk or null
 %{t%}  ! small tsu or null
 
-
+%{w%} ! ウ or null (for epenthesis)
 %{pe%} ! pe or null
 %{K%} ! ka, ki, ku, ke, or ko
 
@@ -162,6 +171,9 @@ Multichar_Symbols
 %[%+pp1sg%] ! possessive relational noun
 %[%-pp1sg%]
 
+%[%+1ps%] ! possessive relational noun
+%[%-1ps%]
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                       M O R P H O T A C T I C S                         !!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -171,6 +183,11 @@ LEXICON Root
 Conjunction ;
 Prefix ;
 Determiner ;
+Auxiliary ;
+PostPosition ;
+Particle ;
+Nominalizer ;
+Exclamation ;
 
 LEXICON Prefix
 
@@ -180,7 +197,7 @@ LEXICON Prefix
 %[%-comp%]:ナア%  VerbRoot ;
 %[%-pasv2%]:ア VerbRoot ;
 %[%-int%]:イ VerbRoot ;
-%[%-1ps%]:%{K%} VerbPrefix-ClassI ;
+%[%-1ps%]:%{K%}%> VerbPrefix-ClassI ;
 NounPrefix ;
 AdjectiveRoot ;
 VerbRoot ;
@@ -230,6 +247,7 @@ VerbRoot ;
 LEXICON RegVerbInfl
 
 %<vblex%>:%> Diminutive ;
+%<vblex%>:  # ;
 %<vblex%>%<tv%>%<pasv1%>%[%+pasv1%]:  # ;
 %<vblex%>%<tv%>%<pasv2%>%[%+pasv2%]:  # ;
 %<vblex%>%<int%>%[%+int%]:  # ;
@@ -244,6 +262,7 @@ LEXICON RegVerbInfl
 %<vblex%>%<pl%>:パ # ;
 %<vblex%>%<comp%>%[%+comp%]:  # ;
 %<vblex%>%<sup%>%[%+sup%]:  # ;
+%<vblex%>%<p1%>%<s%>%[%+1ps%]:  # ;
 %<vblex%>:  VerbSuffix-ClassVI ;
 
 LEXICON VerbSuffix-ClassVI 
@@ -291,6 +310,7 @@ LEXICON NounInfl-Common
 %<n%>%<end1%>:%>% トノケ # ;
 %<n%>%<end2%>:%>% ポ # ;
 %<n%>%<hon%>:%>% ニㇱパケ # ;
+%<n%>%<poss%>:%>%{w%}ェ # ;
 %<n%>:  # ;
 %<n%>%<cn%>%<pos%>%[%+pos%]:イヒ # ;
 
@@ -328,10 +348,6 @@ LEXICON Copula
 LEXICON CompoundAdj
 
 %<adj%>:%>テ RegAdjectiveInfl ;
-
-LEXICON ConjunctionInfl
-
-%<cnjsub%>:  # ;
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -392,8 +408,10 @@ house:house NounInfl-Common ; ! A noun
 ト゚レㇱ:ト゚レㇱ NounInfl-Common ; 
 シㇰ:シㇰ NounInfl-Common ;
 カムィ:カムィ NounInfl-Common ;
+パ:パ NounInfl-Common ;
 サㇺ:サㇺ NounInfl-Relational ;
-
+ル:ル NounInfl-Common ;
+ニㇱパ:ニㇱパ NounInfl-Common ;
 
 
 LEXICON AdjectiveRoot
@@ -446,20 +464,39 @@ LEXICON VerbRoot
 ウェン:ウェン  RegVerbInfl ; 
 ハロコロ:ハロコロ RegVerbInfl ; 
 ポン:ポン RegVerbInfl ;
+アン:アン RegVerbInfl ; ! exist
 
+LEXICON PostPosition
 
+タ%<pp%>:タ # ;
+パㇰノ%<pp%>:パㇰノ # ;
+
+LEXICON Auxiliary
+
+ア%<perf%>%<sg%>:ア # ; 
 
 LEXICON Conjunction
 
-コ:コ ConjunctionInfl ;
-
+コ%<cnjsub%>:コ # ;
+ワ%<cnjcoo%>:ワ # ;
 
 LEXICON Determiner
 
-ト゚ㇷ゚:ト゚ㇷ゚%<bn%>%<ndet%> # ;
+ト゚ㇷ゚%<bn%>%<ndet%>:ト゚ㇷ゚ # ;
 
+LEXICON Nominalizer
 
+ヒ%<nz%>:ヒ # ;
+イ%<nz%>:イ # ;
+ルウェ%<nz%>%<ev%>%<infr%>:ルウェ # ;
 
+LEXICON Particle 
+
+カ%<prt%>%<adv%>:カ # ;
+
+LEXICON Exclamation
+
+アニ%<exc%>:アニ # ;
 
 ! Resources:
 ! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Lexicon
