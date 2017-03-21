@@ -1,4 +1,4 @@
-CORPUS=../corpus/ain.corpus.basic.txt
+CORPUS=../corpus/ain.corpus2.basic.txt
 MORPH=../ain.automorf.bin
 RLX=../../ain.rlx.bin
 TOKENS=`cat ${CORPUS} | lt-proc ${MORPH} | sed 's/$\W*\^/$\n^/g' | wc -l`

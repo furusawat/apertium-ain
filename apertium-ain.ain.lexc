@@ -13,6 +13,7 @@ Multichar_Symbols
 %<cnjcoo%> ! co-ordinating conjunction
 %<prt%> ! Particle
 %<pp%> ! post position
+%<prop%> ! proper noun 
 
 ! Noun tags
 %<abs%> ! Abstract qualities
@@ -29,7 +30,7 @@ Multichar_Symbols
 %<nx%> ! Nominalization
 %<rn%> ! relational noun
 %<bn%> ! bound noun
- 
+
 ! Determiner tags
 %<ndet%> ! numeral determiner
 %<ndom%> ! nominal demonstrative
@@ -60,6 +61,9 @@ Multichar_Symbols
 %<p1%> ! First Person
 %<p2%> ! Second Person
 
+! Clitic tags
+%<cli%> ! Clitic
+%<top%> ! Topic marker
 
 ! Adjective tags
 %<comp%> ! Comparative
@@ -171,8 +175,11 @@ Multichar_Symbols
 %[%+pp1sg%] ! possessive relational noun
 %[%-pp1sg%]
 
-%[%+1ps%] ! possessive relational noun
+%[%+1ps%] ! 1st person possessive 
 %[%-1ps%]
+
+%[%+2p%]  ! 2nd person
+%[%-2p%]
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                       M O R P H O T A C T I C S                         !!!
@@ -188,16 +195,22 @@ PostPosition ;
 Particle ;
 Nominalizer ;
 Exclamation ;
+Punctuation ;
+Pronoun ;
+ProperNoun ;
+Clitic ;
+Adverb ;
 
 LEXICON Prefix
 
-%[%-pasv1%]:チ VerbRoot ;
-%[%-tvx%]:エ VerbRoot ;
-%[%-sup%]:イヨッタ%  VerbRoot ;
-%[%-comp%]:ナア%  VerbRoot ;
-%[%-pasv2%]:ア VerbRoot ;
-%[%-int%]:イ VerbRoot ;
-%[%-1ps%]:%{K%}%> VerbPrefix-ClassI ;
+%[%-pasv1%]:チ%> VerbRoot ;
+%[%-tvx%]:エ%> VerbRoot ;
+%[%-sup%]:イヨッタ% %> VerbRoot ;
+%[%-comp%]:ナア% %> VerbRoot ;
+%[%-pasv2%]:ア%> VerbRoot ;
+%[%-int%]:イ%> VerbRoot ;
+%[%-1ps%]:ク%> VerbPrefix-ClassI ;
+%[%-2p%]%[%-pos%]:エ%> VerbPrefix-ClassI ;
 NounPrefix ;
 AdjectiveRoot ;
 VerbRoot ;
@@ -262,7 +275,8 @@ LEXICON RegVerbInfl
 %<vblex%>%<pl%>:パ # ;
 %<vblex%>%<comp%>%[%+comp%]:  # ;
 %<vblex%>%<sup%>%[%+sup%]:  # ;
-%<vblex%>%<p1%>%<s%>%[%+1ps%]:  # ;
+%<vblex%>%<p1%>%<sg%>%[%+1ps%]:  # ;
+%<vblex%>%<p2%>%<pos%>%[%+2p%]%[%+pos%]:  # ;
 %<vblex%>:  VerbSuffix-ClassVI ;
 
 LEXICON VerbSuffix-ClassVI 
@@ -343,7 +357,6 @@ LEXICON IrregAdjectiveInfl
 LEXICON Copula
 
 %<vblex%>%<cop%>:  # ;
-! RegVerbInfl ;
 
 LEXICON CompoundAdj
 
@@ -412,7 +425,17 @@ house:house NounInfl-Common ; ! A noun
 サㇺ:サㇺ NounInfl-Relational ;
 ル:ル NounInfl-Common ;
 ニㇱパ:ニㇱパ NounInfl-Common ;
+ポネ:ポネ NounInfl-Common ; ! bone
+シタ:シタ NounInfl-Common ; ! dog
+ウパㇱ:ウパㇱ NounInfl-Common ; ! snow
 
+LEXICON Clitic
+
+アナㇰ%<cli%>%<top%>:アナㇰ # ;
+
+LEXICON Pronoun
+
+アオカィ%<n%>%<pn%>:アオカィ # ;
 
 LEXICON AdjectiveRoot
 
@@ -451,7 +474,7 @@ LEXICON VerbRoot
 ミナ:ミナ RegVerbInfl ; ! bark
 キラ:キラ RegVerbInfl ; ! laugh
 イタㇰ:イタㇰ RegVerbInfl ; ! speak
-エ:エ RegVerbInfl ; ! to be eaten
+エ:エ RegVerbInfl ; ! to be eaten (/to eat?)
 イェ:イェ RegVerbInfl ; ! to be spoken
 ヌ:ヌ RegVerbInfl ; ! 
 ヌイェ:ヌイェ RegVerbInfl ; ! 
@@ -465,11 +488,20 @@ LEXICON VerbRoot
 ハロコロ:ハロコロ RegVerbInfl ; 
 ポン:ポン RegVerbInfl ;
 アン:アン RegVerbInfl ; ! exist
+ハウェアン:ハウェアン RegVerbInfl ; ! say
+シノㇳ:シノㇳ RegVerbInfl ; ! play (have fun)
+ル:ル RegVerbInfl ; ! melt
+エセ:エセ RegVerbInfl ; ! answer
+
+LEXICON Adverb
+
+エネ%<adv%>:エネ # ; ! thus/so/in such a way
 
 LEXICON PostPosition
 
 タ%<pp%>:タ # ;
 パㇰノ%<pp%>:パㇰノ # ;
+アニ%<pp%>:アニ # ;
 
 LEXICON Auxiliary
 
@@ -478,7 +510,9 @@ LEXICON Auxiliary
 LEXICON Conjunction
 
 コ%<cnjsub%>:コ # ;
-ワ%<cnjcoo%>:ワ # ;
+クス%<cnjsub%>:クス # ;
+ワ%<cnjcoo%>:ワ # ; ! and
+オロワ%<cnjcoo%>:オロワ # ;
 
 LEXICON Determiner
 
@@ -497,6 +531,38 @@ LEXICON Particle
 LEXICON Exclamation
 
 アニ%<exc%>:アニ # ;
+
+LEXICON ProperNoun
+
+アㇱカンネ% ラマㇳ%<n%>%<prop%>:アㇱカンネ% ラマㇳ # ;
+ヨロタン%<n%>%<prop%>:ヨロタン # ; ! jordan
+イェス%<n%>%<prop%>:イェス # ; ! jesus
+
+
+LEXICON Punctuation
+
+.%<sent%>:. # ;
+..%<sent%>:.. # ;
+...%<sent%>:... # ;
+%;%<sent%>:%; # ;
+%:%<sent%>:%: # ;
+%!%<sent%>:%! # ;
+%-%<guio%>:%- # ;
+%—%<guio%>:%— # ;
+,%<cm%>:, # ;
+%?%<sent%>:%? # ;
+%'%<apos%>:%' # ;
+%"%<sent%>:%" # ;
+%«%<lquot%>:%« # ;
+%»%<rquot%>:%» # ;
+%”%<rquot%>:%” # ;
+%“%<lquot%>:%“ # ;
+%(%<lpar%>:%( # ;
+%]%<rpar%>:%] # ;
+%[%<lpar%>:%[ # ;
+%)%<rpar%>:%) # ;
+\%<sent%>:\ # ;
+/%<sent%>:/ # ;
 
 ! Resources:
 ! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Lexicon

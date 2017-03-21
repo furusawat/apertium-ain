@@ -12,6 +12,9 @@ SECTION
 # i.e. A noun cannot precede a sentence-final exclamation.
 REMOVE (n) IF (1 (exc)) ;
 
+# 
+#
+
 # Resources:
 # http://visl.sdu.dk/cg3.html
 # http://groups.google.com/group/constraint-grammar
