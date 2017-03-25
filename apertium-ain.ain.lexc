@@ -4,7 +4,7 @@ Multichar_Symbols
 
 ! Part of speech categories
 %<n%>   ! Noun
-%<vblex%> ! Verb
+%<v%> ! Verb
 %<adv%> ! Adverb
 %<adj%> ! Adjective
 %<pn%> ! Pronoun
@@ -13,7 +13,7 @@ Multichar_Symbols
 %<cnjcoo%> ! co-ordinating conjunction
 %<prt%> ! Particle
 %<pp%> ! post position
-%<prop%> ! proper noun 
+%<np%> ! proper noun 
 
 ! Noun tags
 %<abs%> ! Abstract qualities
@@ -27,7 +27,7 @@ Multichar_Symbols
 %<px2sg%> ! Second person singular possessive
 %<px1pl%> ! First person plural possessive
 %<px2pl%> ! Second person plural possessive
-%<nx%> ! Nominalization
+%<nmlz%> ! Nominalization
 %<rn%> ! relational noun
 %<bn%> ! bound noun
 
@@ -235,8 +235,6 @@ LEXICON VerbPrefix-ClassI
 %[%-appl%]:エ VerbPrefix-ClassII ;
 %[%-appl%]:コ VerbPrefix-ClassII ;
 %[%-appl%]:オ VerbPrefix-ClassII ;
-
-
 VerbPrefix-ClassII ;
 
 LEXICON VerbPrefix-ClassII 
@@ -245,8 +243,6 @@ LEXICON VerbPrefix-ClassII
 %[%-refl%]:ヤィ VerbPrefix-ClassIII ;
 %[%-rec%]:ウ VerbPrefix-ClassIII ;
 %[%-acaus%]:シ VerbPrefix-ClassIII ;
-
-
 VerbPrefix-ClassIII ;
 
 LEXICON VerbPrefix-ClassIII 
@@ -254,30 +250,38 @@ LEXICON VerbPrefix-ClassIII
 %[%-appl%]:エ VerbPrefix-ClassII ;
 %[%-appl%]:コ VerbPrefix-ClassII ;
 %[%-appl%]:オ VerbPrefix-ClassII ;
-
 VerbRoot ;
+
+LEXICON Verb-TV
+
+%<v%>%<tv%>:  # ;
+%<v%>%<tv%>:  RegVerbInfl ;
+%<v%>%<tv%>%<pasv1%>%[%+pasv1%]:  # ;
+%<v%>%<tv%>%<pasv2%>%[%+pasv2%]:  # ;
+
+LEXICON Verb-IV
+
+%<v%>%<iv%>:  # ; 
+%<v%>%<iv%>:  RegVerbInfl ; 
+%<v%>%<iv%>%<tvx%>%[%+tvx%]:  # ;
 
 LEXICON RegVerbInfl
 
-%<vblex%>:%> Diminutive ;
-%<vblex%>:  # ;
-%<vblex%>%<tv%>%<pasv1%>%[%+pasv1%]:  # ;
-%<vblex%>%<tv%>%<pasv2%>%[%+pasv2%]:  # ;
-%<vblex%>%<int%>%[%+int%]:  # ;
-%<vblex%>%<nx%>%<abs%>:%>% イ # ;
-%<vblex%>%<nx%>%<abs%>:%>% ヒ # ;
-%<vblex%>%<pasv1%>%[%+pasv1%]: NounInfl-Common ;
-%<vblex%>%<pasv1%>%[%+pasv1%]: # ;
-%<vblex%>%<pasv2%>%[%+pasv2%]: NounInfl-Common ;
-%<vblex%>%<pasv2%>%[%+pasv2%]: # ;
-%<vblex%>%<iv%>%<tvx%>%[%+tvx%]:  # ;
-%<vblex%>%<vaux%>%<vpres%>:シリネ # ;
-%<vblex%>%<pl%>:パ # ;
-%<vblex%>%<comp%>%[%+comp%]:  # ;
-%<vblex%>%<sup%>%[%+sup%]:  # ;
-%<vblex%>%<p1%>%<sg%>%[%+1ps%]:  # ;
-%<vblex%>%<p2%>%<pos%>%[%+2p%]%[%+pos%]:  # ;
-%<vblex%>:  VerbSuffix-ClassVI ;
+%<v%>:%> Diminutive ;
+%<int%>%[%+int%]:  # ;
+%<nmlz%>%<abs%>:%>% イ # ;
+%<nmlz%>%<abs%>:%>% ヒ # ;
+%<pasv1%>%[%+pasv1%]: NounInfl-Common ;
+%<pasv1%>%[%+pasv1%]: # ;
+%<pasv2%>%[%+pasv2%]: NounInfl-Common ;
+%<pasv2%>%[%+pasv2%]: # ;
+%<vaux%>%<vpres%>:シリネ # ;
+%<pl%>:パ # ;
+%<comp%>%[%+comp%]:  # ;
+%<sup%>%[%+sup%]:  # ;
+%<p1%>%<sg%>%[%+1ps%]:  # ;
+%<p2%>%<pos%>%[%+2p%]%[%+pos%]:  # ;
+VerbSuffix-ClassVI ;
 
 LEXICON VerbSuffix-ClassVI 
 
@@ -311,7 +315,7 @@ NounInfl-Common ;
 LEXICON NounInfl-Common
 
 %<n%>: Diminutive ;
-%<nx%>:%>% ㇷ゚ # ;
+%<nmlz%>:%>% ㇷ゚ # ;
 %<pn%>%<px1sg%>%<mf%>:%>コロ Diminutive ;
 %<n%>%<vz%>:%>コロ  # ;
 %<n%>%<vz%>:%>カラ  # ;
@@ -334,33 +338,33 @@ LEXICON NounInfl-Relational
 %<n%>%<rn%>%<pos%>%<p1%>%<sg%>%[%+pp1sg%]:  # ;
 %<n%>%<rn%>%<pos%>%<p3%>%<sg%>:ア # ;
 
-LEXICON RegAdjectiveInfl
+!LEXICON Verb-IV
+!
+!%<adj%>%<adv%>:%>タラ # ;
+!%<adj%>%<pl%>:%>パ # ;
+!%<adj%>:%> AbstractNoun ;
+!%<adj%>%<comp%>%[%+comp%]:  # ;
+!%<adj%>%<sup%>%[%+sup%]:  # ;
+!%<v%>%<iv%>%<nmlz%>%<abs%>:%>% イ # ;
+!%<v%>%<iv%>%<nmlz%>%<abs%>:%>% ヒ # ;
+!%<v%>%<iv%>%<nmlz%>:%>% ㇷ゚ # ; 
+!%<adj%>:  # ;
 
-%<adj%>%<adv%>:%>タラ # ;
-%<adj%>%<pl%>:%>パ # ;
-%<adj%>:%> AbstractNoun ;
-%<adj%>%<comp%>%[%+comp%]:  # ;
-%<adj%>%<sup%>%[%+sup%]:  # ;
-%<vblex%>%<iv%>%<nx%>%<abs%>:%>% イ # ;
-%<vblex%>%<iv%>%<nx%>%<abs%>:%>% ヒ # ;
-%<vblex%>%<iv%>%<nx%>:%>% ㇷ゚ # ; 
-%<adj%>:  # ;
+!LEXICON AbstractNoun
+!%<n%>%<abs%>:ポ Diminutive ;
 
-LEXICON AbstractNoun
-%<n%>%<abs%>:ポ Diminutive ;
-
-LEXICON IrregAdjectiveInfl
-
-%<adv%>:%>ノ # ;
+!LEXICON Verb-IV
+!
+!%<adv%>:%>ノ # ;
 
 
 LEXICON Copula
 
-%<vblex%>%<cop%>:  # ;
+%<v%>%<cop%>:  # ;
 
-LEXICON CompoundAdj
-
-%<adj%>:%>テ RegAdjectiveInfl ;
+!LEXICON Verb-IV
+!
+!%<adj%>:%>テ Verb-IV ;
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -384,11 +388,12 @@ house:house NounInfl-Common ; ! A noun
 イキリ:イキリ NounInfl-Common ; ! a seam 
 アット゚ㇱ:アット゚ㇱ NounInfl-Common ; ! cloth 
 シセイ:シセイ NounInfl-Common ; ! a house
+チセ:チセ NounInfl-Common ; ! house
 ハウ:ハウ NounInfl-Common ; ! the voice
 ホニ:ホニ NounInfl-Common ; ! the stomach
 カヤ:カヤ NounInfl-Common ; ! a sail
 アイアイ:アイアイ NounInfl-utara ; !
-アイヌ:アイヌ NounInfl-utara ; !
+アイヌ:アイヌ NounInfl-utara ; ! human/the Ainu
 アシキペㇳ:アシキペㇳ NounInfl-U ; !
 アㇳ:ア%{Tt%} NounInfl-U ; !
 アㇺ:ア%{Mm%} NounInfl-U ; !
@@ -428,6 +433,24 @@ house:house NounInfl-Common ; ! A noun
 ポネ:ポネ NounInfl-Common ; ! bone
 シタ:シタ NounInfl-Common ; ! dog
 ウパㇱ:ウパㇱ NounInfl-Common ; ! snow
+イㇽ:イㇽ NounInfl-Common ; ! family/kin
+フチ:フチ NounInfl-Common ; ! grandmother/old woman
+フㇺイ:フㇺイ NounInfl-Common ; ! sound (possessive)
+アペ:アペ NounInfl-Common ; ! fire
+ワッカ:ワッカ NounInfl-Common ; ! water
+ケㇺ:ケㇺ NounInfl-Common ; ! blood
+チュㇷ゚:チュㇷ゚ NounInfl-Common ; ! sun/moon/month
+アト゚ィ:アト゚ィ NounInfl-Common ; ! sea/ocean
+アマㇺ:アマㇺ NounInfl-Common ; ! meal (lit. rice/cereals)
+アㇷ゚ト:アㇷ゚ト NounInfl-Common ; ! rain
+マチヤ:マチヤ NounInfl-Common ; ! town
+ヌㇷ゚:ヌㇷ゚ NounInfl-Common ; ! field
+オㇱケ:オㇱケ NounInfl-Common ; ! inside (noun locative)
+ヌプリ:ヌプリ NounInfl-Common ; ! mountain
+モンラィケ:モンラィケ NounInfl-Common ; ! work
+ケラ:ケラ NounInfl-Common ; ! taste
+パロ:パロ NounInfl-Common ; ! mouth (possessive)
+
 
 LEXICON Clitic
 
@@ -439,28 +462,22 @@ LEXICON Pronoun
 
 LEXICON AdjectiveRoot
 
-モイレ:モイレ RegAdjectiveInfl ; ! slow
-ラチ:ラチ RegAdjectiveInfl ; ! gentle
-ソン:ソン IrregAdjectiveInfl ; ! true
-ピリカ:ピリカ RegAdjectiveInfl ; 
-ウェン:ウェン  RegAdjectiveInfl ; 
-ポン:ポン  RegAdjectiveInfl ; 
-ケラ:ケラ CompoundAdj ;
-ハロ:ハロ CompoundAdj ;
-ラム:ラム CompoundAdj ;
-ヌチャㇰ:ヌチャㇰ CompoundAdj ;
-アㇱカン:アㇱカン CompoundAdj ;
-パロ:パロ CompoundAdj ;
-ケㇺ:ケㇺ CompoundAdj ;
-キ:キ CompoundAdj ;
-ピリカ:ピリカ RegAdjectiveInfl ; 
-ヌペキ:ヌペキ RegAdjectiveInfl ; ! bright
-パセ:パセ RegAdjectiveInfl ; ! heavy
-ポロ:ポロ RegAdjectiveInfl ; ! large
-
-
-
-
+モィレ:モィレ Verb-IV ; ! be late
+ラチ:ラチ Verb-IV ; ! be gentle (old)
+ハゥケ:ハゥケ Verb-IV ; ! be calm/cheap
+ソン:ソン Verb-IV ; ! be true (old) 
+ピㇼカ:ピㇼカ Verb-IV ; !be good 
+ウェン:ウェン  Verb-IV ; !be bad/poor
+ポン:ポン  Verb-IV ; !be small
+ハロ:ハロ Verb-IV ;
+ラム:ラム Verb-IV ;
+ヌチャㇰ:ヌチャㇰ Verb-IV ;
+アㇱカン:アㇱカン Verb-IV ;
+ケㇺ:ケㇺ Verb-TV ; ! lick
+ヌペキ:ヌペキ Verb-IV ; ! bright
+パセ:パセ Verb-IV ; ! heavy
+ポロ:ポロ Verb-IV ; ! large
+キ:キ Verb-IV ; ! do (auxiliary)
 
 LEXICON VerbRoot
 
@@ -473,8 +490,8 @@ LEXICON VerbRoot
 ミㇰ:ミㇰ RegVerbInfl ; ! run away
 ミナ:ミナ RegVerbInfl ; ! bark
 キラ:キラ RegVerbInfl ; ! laugh
-イタㇰ:イタㇰ RegVerbInfl ; ! speak
-エ:エ RegVerbInfl ; ! to be eaten (/to eat?)
+イタㇰ:イタㇰ Verb-IV ; ! speak
+エ:エ Verb-IV ; ! to be eaten (/to eat?)
 イェ:イェ RegVerbInfl ; ! to be spoken
 ヌ:ヌ RegVerbInfl ; ! 
 ヌイェ:ヌイェ RegVerbInfl ; ! 
@@ -487,15 +504,30 @@ LEXICON VerbRoot
 ウェン:ウェン  RegVerbInfl ; 
 ハロコロ:ハロコロ RegVerbInfl ; 
 ポン:ポン RegVerbInfl ;
-アン:アン RegVerbInfl ; ! exist
+アン:アン RegVerbInfl ; ! exist/live
 ハウェアン:ハウェアン RegVerbInfl ; ! say
-シノㇳ:シノㇳ RegVerbInfl ; ! play (have fun)
-ル:ル RegVerbInfl ; ! melt
+シノㇳ:シノㇳ Verb-IV ; ! play (have fun)
+ル:ル Verb-IV ; ! melt
 エセ:エセ RegVerbInfl ; ! answer
+キ:キ Verb-TV ; ! do (tv)
+アㇽパ:アㇽパ Verb-IV ; ! go (iv)
+エㇰ:エㇰ Verb-IV ; ! come (iv)
+ラィ:ラィ Verb-IV ; ! die (iv)
+ペゥレ:ペゥレ Verb-IV ; ! be young
+ヌカㇽ:ヌカㇽ Verb-TV ; ! see
+モンラィケ:モンラィケ Verb-IV ; ! do work 
+イッカ:イッカ Verb-IV ; ! steal
+チㇱ:チㇱ Verb-IV ; ! cry
+モコㇽ:モコㇽ Verb-IV ; ! sleep
+
+
 
 LEXICON Adverb
 
 エネ%<adv%>:エネ # ; ! thus/so/in such a way
+ソモ%<adv%>:ソモ # ; ! negation
+イテキ%<adv%>:イテキ # ; ! negative command
+オロタ%<cnjcoo%>:オロタ # ;
 
 LEXICON PostPosition
 
@@ -514,15 +546,16 @@ LEXICON Conjunction
 ワ%<cnjcoo%>:ワ # ; ! and
 オロワ%<cnjcoo%>:オロワ # ;
 
+
 LEXICON Determiner
 
 ト゚ㇷ゚%<bn%>%<ndet%>:ト゚ㇷ゚ # ;
 
 LEXICON Nominalizer
 
-ヒ%<nz%>:ヒ # ;
-イ%<nz%>:イ # ;
-ルウェ%<nz%>%<ev%>%<infr%>:ルウェ # ;
+ヒ%<nmlz%>:ヒ # ;
+イ%<nmlz%>:イ # ;
+ルウェ%<nmlz%>%<ev%>%<infr%>:ルウェ # ;
 
 LEXICON Particle 
 
@@ -534,9 +567,9 @@ LEXICON Exclamation
 
 LEXICON ProperNoun
 
-アㇱカンネ% ラマㇳ%<n%>%<prop%>:アㇱカンネ% ラマㇳ # ;
-ヨロタン%<n%>%<prop%>:ヨロタン # ; ! jordan
-イェス%<n%>%<prop%>:イェス # ; ! jesus
+アㇱカンネ% ラマㇳ%<n%>%<np%>:アㇱカンネ% ラマㇳ # ;
+ヨロタン%<n%>%<np%>:ヨロタン # ; ! jordan
+イェス%<n%>%<np%>:イェス # ; ! jesus
 
 
 LEXICON Punctuation
