@@ -527,7 +527,7 @@ LEXICON Adverb
 エネ%<adv%>:エネ # ; ! thus/so/in such a way
 ソモ%<adv%>:ソモ # ; ! negation
 イテキ%<adv%>:イテキ # ; ! negative command
-オロタ%<cnjcoo%>:オロタ # ;
+オロタ%<adv%>:オロタ # ;
 
 LEXICON PostPosition
 
@@ -567,9 +567,9 @@ LEXICON Exclamation
 
 LEXICON ProperNoun
 
-アㇱカンネ% ラマㇳ%<n%>%<np%>:アㇱカンネ% ラマㇳ # ;
-ヨロタン%<n%>%<np%>:ヨロタン # ; ! jordan
-イェス%<n%>%<np%>:イェス # ; ! jesus
+アㇱカンネ% ラマㇳ%<np%>:アㇱカンネ% ラマㇳ # ;
+ヨロタン%<np%>:ヨロタン # ; ! jordan
+イェス%<np%>:イェス # ; ! jesus
 
 
 LEXICON Punctuation
