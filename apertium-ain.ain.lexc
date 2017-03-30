@@ -46,6 +46,8 @@ Multichar_Symbols
 %<vx%>                         ! Verbalization
 %<tvx%>                        ! Make verb transitive
 %<cop%>                        ! copula
+%<acaus%> 		       ! acausative
+%<caus%> 		       ! causative
 
 ! Tense tags
 %<pres%>                       ! Present Tense
@@ -274,12 +276,15 @@ LEXICON RegVerbInfl
 %<pasv1%>%[%+pasv1%]: # ;
 %<pasv2%>%[%+pasv2%]: NounInfl-Common ;
 %<pasv2%>%[%+pasv2%]: # ;
+%<acaus%>%[%+acaus%]: # ; 
 %<vaux%>%<vpres%>:シリネ # ;
 %<pl%>:パ # ;
 %<comp%>%[%+comp%]:  # ;
 %<sup%>%[%+sup%]:  # ;
 %<p1%>%<sg%>%[%+1ps%]:  # ;
 %<p2%>%<pos%>%[%+2p%]%[%+pos%]:  # ;
+%<caus%>:%>レ # ;
+
 VerbSuffix-ClassVI ;
 
 LEXICON VerbSuffix-ClassVI 
@@ -438,7 +443,6 @@ house:house NounInfl-Common ; ! A noun
 アペ:アペ NounInfl-Common ; ! fire
 ワッカ:ワッカ NounInfl-Common ; ! water
 ケㇺ:ケㇺ NounInfl-Common ; ! blood
-チュㇷ゚:チュㇷ゚ NounInfl-Common ; ! sun/moon/month
 アト゚ィ:アト゚ィ NounInfl-Common ; ! sea/ocean
 アマㇺ:アマㇺ NounInfl-Common ; ! meal (lit. rice/cereals)
 アㇷ゚ト:アㇷ゚ト NounInfl-Common ; ! rain
@@ -466,7 +470,8 @@ house:house NounInfl-Common ; ! A noun
 サポ:サポ NounInfl-Common ; ! older sister
 チㇷ゚:チㇷ゚ NounInfl-Common ; ! ship
 ト゚ィ:ト゚ィ NounInfl-Common ; ! stomach
-
+チュㇷ゚:チュㇷ゚ NounInfl-Common ; ! sun/moon/month
+ニペㇰ:ニペㇰ NounInfl-Common ; ! light (moon)
 
 
 LEXICON Clitic
@@ -530,7 +535,11 @@ LEXICON VerbRoot
 モコㇽ:モコㇽ Verb-IV ; ! sleep
 アㇱ:アㇱ Verb-IV ; ! stand
 アㇷ゚カㇱ:アㇷ゚カㇱ Verb-IV ; ! walk
-
+ヘト゚ク:ヘト゚ク Verb-IV ; ! come out/be born
+アフン:アフン Verb-IV ; ! enter (sg) TODO: figure out how to deal with this
+カリ:カリ Verb-IV ; ! spin
+ニン:ニン Verb-IV ; ! decrease
+チ:チ Verb-TV ; ! get burnt/dry/boiled
 
 LEXICON Adverb
 
@@ -544,10 +553,12 @@ LEXICON PostPosition
 タ%<pp%>:タ # ; ! at
 パㇰノ%<pp%>:パㇰノ # ; ! until
 アニ%<pp%>:アニ # ; ! final particle/
+ピㇱノ%<pp%>:ピㇱノ # ; ! every TODO: fix no-suffix 
 
 LEXICON Auxiliary
 
 ア%<perf%>%<sg%>:ア # ; 
+ナンコㇿ%<v%>%<vaux%>:ナンコㇿ # ; ! TODO: fix this logic
 
 LEXICON Conjunction
 
