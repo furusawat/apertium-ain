@@ -428,7 +428,8 @@ house:house NounInfl-Common ; ! A noun
 アユポ:アユポ NounInfl-Common ; 
 アㇰ:アㇰ NounInfl-Common ; 
 ト゚レㇱ:ト゚レㇱ NounInfl-Common ; 
-シㇰ:シㇰ NounInfl-Common ;
+シㇰ:シㇰ NounInfl-Common ; ! eye
+シキ:シキ NounInfl-Common ; ! eye TODO: Fix possessive noun (see above entry)
 カムィ:カムィ NounInfl-Common ;
 パ:パ NounInfl-Common ;
 サㇺ:サㇺ NounInfl-Relational ;
@@ -540,6 +541,7 @@ LEXICON VerbRoot
 カリ:カリ Verb-IV ; ! spin
 ニン:ニン Verb-IV ; ! decrease
 チ:チ Verb-TV ; ! get burnt/dry/boiled
+アㇽカ:アㇽカ Verb-IV ; ! hurt
 
 LEXICON Adverb
 

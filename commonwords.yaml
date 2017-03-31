@@ -1,0 +1,28 @@
+
+Config:
+  hfst:
+    App: hfst-lookup
+    Gen: ../ain.autogen.hfst
+    Morph: ../ain.automorf.hfst
+Tests:
+  Most Common Words:
+    ネ<vblex><vbser>: ネ
+    カ<unk>: カ
+    アン<unk>: アン
+    タ<unk>: タ
+    ワ<unk>: ワ
+    コ<cnjsub>: コ
+    イ<unk>: イ
+    ヒ<nx>: ヒ
+    ピ<unk>: ピ
+    ルウェ<unk>: ルウェ
+    パ<unk>: パ
+    ㇺ<unk>: ㇺ
+    ㇷ<unk>: ㇷ
+    ウタ<unk>: ウタ
+    セコ<unk>: セコ
+    ハウェアン<unk>: ハウェアン
+    キ<unk>: キ
+    クニ<unk>: クニ
+    ニ<unk>: ニ
+    ヤㇰ<unk>: ヤㇰ

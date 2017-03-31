@@ -53,6 +53,7 @@ Rules
 "have {K} be ka only before ra"
 %{K%}:カ <=> _ :ラ ;
 
+
 "have {U} be small yu only after shi"
 %{U%}:ュ <=> :シ %>: _ ;
 
