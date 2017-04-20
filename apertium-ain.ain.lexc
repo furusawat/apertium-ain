@@ -48,6 +48,7 @@ Multichar_Symbols
 %<cop%>                        ! copula
 %<acaus%> 		       ! acausative
 %<caus%> 		       ! causative
+%<apass%>		       ! apassive
 
 ! Tense tags
 %<pres%>                       ! Present Tense
@@ -294,9 +295,8 @@ LEXICON RegVerbInfl
 %<sup%>%[%+sup%]:  # ;
 %<p1%>%<sg%>%[%+1ps%]:  # ;
 %<p2%>%<pos%>%[%+2p%]%[%+pos%]:  # ;
-%<caus%>:%>レ # ;
-%<caus%>:%>テ # ;
 %[%+refl%]: # ;
+%<apass%>%[%+apass%]: # ;
 
 VerbSuffix-ClassVI ;
 
