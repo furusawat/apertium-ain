@@ -361,4 +361,52 @@ Fx:0 /<= _ ;
          Fx in ( %[%+2o%] )
 matched ; 
 
+"Remove paths without matching suffix feature - second person sg subj"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-2ssg%] )
+         Fy in ( %[%+2ssg%] )
+   matched ;
+
+"Remove paths without matching prefix feature - second person sg subj"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-2ssg%] )
+         Fx in ( %[%+2ssg%] )
+matched ; 
+
+"Remove paths without matching suffix feature - second person pl subj"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-2spl%] )
+         Fy in ( %[%+2spl%] )
+   matched ;
+
+"Remove paths without matching prefix feature - second person pl subj"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-2spl%] )
+         Fx in ( %[%+2spl%] )
+matched ; 
+
+"Remove paths without matching suffix feature - first person subj"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-1s%] )
+         Fy in ( %[%+1s%] )
+   matched ;
+
+"Remove paths without matching prefix feature - first person subj"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-1s%] )
+         Fx in ( %[%+1s%] )
+matched ; 
+
 
