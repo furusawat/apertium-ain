@@ -42,6 +42,9 @@ Alphabet
   %[%+1ps%]:0
   %[%-2p%]:0
   %[%+2p%]:0
+  %[%-2o%]:0
+  %[%+2o%]:0
+  
 ;
 
 Rules
@@ -341,4 +344,21 @@ Fx:0 /<= _ ;
    where Fy in ( %[%-2p%] )
          Fx in ( %[%+2p%] )
 matched ; 
+
+"Remove paths without matching suffix feature - second person obj"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-2o%] )
+         Fy in ( %[%+2o%] )
+   matched ;
+
+"Remove paths without matching prefix feature - second person obj"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-2o%] )
+         Fx in ( %[%+2o%] )
+matched ; 
+
 

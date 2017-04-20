@@ -183,6 +183,12 @@ Multichar_Symbols
 %[%+2p%]                       ! 2nd person
 %[%-2p%]
 
+%[%+2o%]                       ! 2nd person object
+%[%-2o%]
+
+
+
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                       M O R P H O T A C T I C S                         !!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -216,6 +222,7 @@ LEXICON Prefix
 NounPrefix ;
 VerbRoot ;
 VerbPrefix-ClassI ;
+VerbPersonalPrefix ;
 
 LEXICON NounPrefix
 
@@ -230,6 +237,10 @@ LEXICON NounPrefix
 %[%-pp1sg%]:エン NounRoot ;
 NounRoot ;
 
+LEXICON VerbPersonalPrefix
+
+%[%-2o%]:エ%> VerbPrefix-ClassI ;
+
 LEXICON VerbPrefix-ClassI 
 
 ! applicative
@@ -241,7 +252,7 @@ VerbPrefix-ClassII ;
 LEXICON VerbPrefix-ClassII 
 
 %[%-apass%]:イ VerbPrefix-ClassIII ;
-%[%-refl%]:ヤィ VerbPrefix-ClassIII ;
+%[%-refl%]:ヤイ VerbPrefix-ClassIII ;
 %[%-rec%]:ウ VerbPrefix-ClassIII ;
 %[%-acaus%]:シ VerbPrefix-ClassIII ;
 VerbPrefix-ClassIII ;
@@ -284,6 +295,8 @@ LEXICON RegVerbInfl
 %<p1%>%<sg%>%[%+1ps%]:  # ;
 %<p2%>%<pos%>%[%+2p%]%[%+pos%]:  # ;
 %<caus%>:%>レ # ;
+%<caus%>:%>テ # ;
+%[%+refl%]: # ;
 
 VerbSuffix-ClassVI ;
 
@@ -473,7 +486,121 @@ house:house NounInfl-Common ; ! A noun
 ト゚ィ:ト゚ィ NounInfl-Common ; ! stomach
 チュㇷ゚:チュㇷ゚ NounInfl-Common ; ! sun/moon/month
 ニペㇰ:ニペㇰ NounInfl-Common ; ! light (moon)
-
+!ムン:ムン NounInfl-Common ; ! grass NEW
+ラㇳチャコ:ラㇳチャコ NounInfl-Common ; ! light
+アィアィ:アィアィ NounInfl-Common ; ! baby
+タペト:タペト NounInfl-Common ; ! businessman
+ノㇳキリ:ノㇳキリ NounInfl-Common ; ! chin
+トゥカㇽ:トゥカㇽ NounInfl-Common ; ! seal
+ポト゚ㇽケス:ポト゚ㇽケス NounInfl-Common ; ! bruise
+ケマ:ケマ NounInfl-Common ; ! leg
+チキㇼ:チキㇼ NounInfl-Common ; ! animal's leg
+ルウェ:ルウェ NounInfl-Common ; ! trace/footprint
+トコㇺポネ:トコㇺポネ NounInfl-Common ; ! ankle
+ウルペㇳ:ウルペㇳ NounInfl-Common ; ! toe
+アントゥキ:アントゥキ NounInfl-Common ; ! red bean
+ポッペ:ポッペ NounInfl-Common ; ! sweat
+サパ:サパ NounInfl-Common ; ! head
+プィ:プィ NounInfl-Common ; ! hole
+ユピ:ユピ NounInfl-Common ; ! older brother
+サポ:サポ NounInfl-Common ; ! older sister
+シラゥ:シラゥ NounInfl-Common ; ! horsefly
+スㇺ:スㇺ NounInfl-Common ; ! oil
+フィペ:フィペ NounInfl-Common ; ! grease/fat
+アマㇺ:アマㇺ NounInfl-Common ; ! rice
+イチェン:イチェン NounInfl-Common ; ! money
+ヤ:ヤ NounInfl-Common ; ! net
+クト゚:クト゚ NounInfl-Common ; ! fish trap
+アㇷ゚ト:アㇷ゚ト NounInfl-Common ; ! rain
+ト:ト NounInfl-Common ; ! day
+ルヤㇺペ:ルヤㇺペ NounInfl-Common ; ! storm
+ニㇲクㇽ:ニㇲクㇽ NounInfl-Common ; ! cloud
+カゥカゥ:カゥカゥ NounInfl-Common ; ! hail
+イト゚ンナㇷ゚:イト゚ンナㇷ゚ NounInfl-Common ; ! ant
+カㇺピ:カㇺピ NounInfl-Common ; ! paper
+ポㇷ゚:ポㇷ゚ NounInfl-Common ; ! blister
+ウㇺマ:ウㇺマ NounInfl-Common ; ! horse
+ムンチロ:ムンチロ NounInfl-Common ; ! millet
+アィペ:アィペ NounInfl-Common ; ! abalone
+オッカイポ:オッカイポ NounInfl-Common ; ! boy
+メノコ:メノコ NounInfl-Common ; ! woman
+ニテㇲ:ニテㇲ NounInfl-Common ; ! raft
+カィテ:カィテ NounInfl-Common ; ! anchor
+ト゚ㇲ:ト゚ㇲ NounInfl-Common ; ! net/rope
+マウェ:マウェ NounInfl-Common ; ! breath
+ト゚ミ:ト゚ミ NounInfl-Common ; ! war
+トパット゚ミ:トパット゚ミ NounInfl-Common ; ! burglary
+ヘㇺパㇰ:ヘㇺパㇰ NounInfl-Common ; ! how many
+スィ:スィ NounInfl-Common ; ! times
+メㇺ:メㇺ NounInfl-Common ; ! pond
+スマ:スマ NounInfl-Common ; ! stone
+ルィ:ルィ NounInfl-Common ; ! grinding stone
+スシルㇷ゚:スシルㇷ゚ NounInfl-Common ; ! pumice stone
+エポタラ:エポタラ NounInfl-Common ; ! doctor
+ナィ:ナィ NounInfl-Common ; ! stream
+トペニ:トペニ NounInfl-Common ; ! maple tree
+チュルㇷ゚:チュルㇷ゚ NounInfl-Common ; ! january
+エマゥリ:エマゥリ NounInfl-Common ; ! strawberry
+ヘㇺパラ:ヘㇺパラ NounInfl-Common ; ! when
+トケィ:トケィ NounInfl-Common ; ! clock
+アシㇰネ:アシㇰネ NounInfl-Common ; ! five
+シㇺプィ:シㇺプィ NounInfl-Common ; ! well
+オマキルㇲ:オマキルㇲ NounInfl-Common ; ! locust
+イメル:イメル NounInfl-Common ; ! lightning
+エㇽメタㇺプ:エㇽメタㇺプ NounInfl-Common ; ! wart
+アユㇲニ:アユㇲニ NounInfl-Common ; ! korean raspberry
+エモ:エモ NounInfl-Common ; ! potato
+アパウㇲタ:アパウㇲタ NounInfl-Common ; ! doctor
+タンヌ:タンヌ NounInfl-Common ; ! dolphin
+イヨㇷ゚:イヨㇷ゚ NounInfl-Common ; ! container
+ワッカ:ワッカ NounInfl-Common ; ! water
+ポンチェㇷ゚:ポンチェㇷ゚ NounInfl-Common ; ! sardine
+パサ:パサ NounInfl-Common ; ! carriage
+カ:カ NounInfl-Common ; ! top
+テㇲカㇽ:テㇲカㇽ NounInfl-Common ; ! errand
+ペコ:ペコ NounInfl-Common ; ! cow
+ニス:ニス NounInfl-Common ; ! mortar
+ピリ:ピリ  NounInfl-Common ; ! vortex
+シノㇳチャ:シノㇳチャ NounInfl-Common ; ! song
+イㇼ:イㇼ NounInfl-Common ; ! kin
+チェㇷ゚:チェㇷ゚  NounInfl-Common ; ! fish
+ラㇺ:ラㇺ NounInfl-Common ; ! scales
+ミㇺ:ミㇺ NounInfl-Common ; ! fish meat
+ノカ:ノカ NounInfl-Common ; ! picture
+イモㇰ:イモㇰ NounInfl-Common ; ! bait
+ニテㇰ:ニテㇰ NounInfl-Common ; ! branch
+ノコ:ノコ NounInfl-Common ; ! saw
+ヌマト゚シ:ヌマト゚シ NounInfl-Common ; ! collar
+アㇳコチ:アㇳコチ NounInfl-Common ; ! fishtail
+ユㇰ:ユㇰ NounInfl-Common ; ! deer
+アピㇼ:アピㇼ NounInfl-Common ; ! deer tail
+カㇻク:カㇽク NounInfl-Common ; ! nephew
+ヤ:ヤ NounInfl-Common ; ! land/shore
+ホㇿケゥ:ホㇿケゥ NounInfl-Common ; ! wolf
+アワンキ:アワンキ NounInfl-Common ; ! fan
+シㇼ:シㇼ NounInfl-Common ; ! appearance
+セㇾマカセㇽマカ NounInfl-Common ; ! behind
+トピㇱキ:トピㇱキ NounInfl-Common ; ! malaria
+ウオサ:ウオサ NounInfl-Common ; ! weaving instrument
+アチャ:アチャ NounInfl-Common ; ! uncle
+パロ:パロ NounInfl-Common ; ! mouth
+オハゥ:オハゥ NounInfl-Common ; ! soup
+アキヒ:アキヒ NounInfl-Common ; ! younger brother
+ウナㇻペ:ウナㇽペ NounInfl-Common ; ! aunt
+クㇳ:クㇳ NounInfl-Common ; ! sash
+ケㇲ:ケㇲ NounInfl-Common ; ! end
+ホク:ホク NounInfl-Common ; ! husband
+ト゚リ:ト゚リ NounInfl-Common ; ! pole
+セィ:セィ NounInfl-Common ; ! shell
+ネ:ネ NounInfl-Common ; ! what
+マッカチ:マッカチ NounInfl-Common ; ! girl
+ネン:ネン NounInfl-Common ; ! who
+ネㇷ゚:ネㇷ゚ NounInfl-Common ; ! what
+ムイェ:ムイェ NounInfl-Common ; ! sheaf
+パㇻカ:パㇻカ NounInfl-Common ; ! shelf
+オッケオッケ:オッケオッケ NounInfl-Common ; ! stick
+ウォㇿ:ウォㇿ NounInfl-Common ; ! water (old)
+ニ:ニ NounInfl-Common ; ! firewood
 
 LEXICON Clitic
 
@@ -542,13 +669,106 @@ LEXICON VerbRoot
 ニン:ニン Verb-IV ; ! decrease
 チ:チ Verb-TV ; ! get burnt/dry/boiled
 アㇽカ:アㇽカ Verb-IV ; ! hurt
+オハ:オハ Verb-IV ; ! be open/vacant NEW
+フレ:フレ Verb-IV ; ! be red/pink NEW
+イヨマㇷ゚:イヨマㇷ゚ Verb-IV ; ! meet
+ウヌカㇽ:ウヌカㇽ Verb-IV ; ! be red 
+ラㇺテ:ラㇺテ Verb-TV ; ! dim
+マゥソㇰ:マゥソㇰ Verb-IV ; ! yawn
+オハレ:オハレ Verb-TV ; ! open/empty
+ヤンケ:ヤンケ Verb-TV ; ! raise/lift
+オハㇰ:オハㇰ Verb-IV ; ! be shallow
+ケㇺ:ケㇺ Verb-IV ; ! lick
+シネウェ:シネウェ Verb-IV ; ! visit
+シㇼポㇷ゚ケ:シㇼポㇷ゚ケ Verb-IV ; ! be warm
+アシㇼ:アシㇼ Verb-IV ; ! be new
+シㇼセセㇰ:シㇼセセㇰ Verb-IV ; ! be hot
+イロンネ:イロンネ Verb-IV ; ! be thick
+ウウェカㇻパ:ウウェカㇻパ Verb-IV ; ! gather
+オマレ:オマレ Verb-TV ; ! dig
+ハルコㇿ:ハルコㇿ Verb-IV ; ! be fatty
+ハルサㇰ:ハルサㇰ Verb-IV ; ! be thin
+イカ:イカ Verb-IV ; ! overflow
+オペン:オペン Verb-IV ; ! be sweet
+イカㇲマ:イカㇲマ Verb-IV ; ! excessive
+ホㇰ:ホㇰ Verb-TV ; ! buy
+テㇲカオ:テㇲカオ Verb-TV ; ! knit
+ヤヤパプ:ヤヤパプ Verb-IV ; ! apologize
+ヤㇲケ:ヤㇲケ Verb-IV ; ! wash hands
+エウォンネ:エウォンネ Verb-IV ; ! wash face
+フライェ:フライェ Verb-TV ; ! wash
+サㇳ:サㇳ Verb-IV ; ! be dry
+エパゥレ:エパゥレ Verb-IV ; ! fight
+イサㇺ:イサㇺ Verb-IV ; ! not exist
+オカ:オカ Verb-IV ; ! exist (pl)
+ウㇲ:ウㇲ Verb-TV ; ! attach to
+エラㇺポキウェン:エラㇺポキウェン Verb-TV ; ! have pity
+ルラ:ルラ Verb-TV ; ! carry
+ヘセ:ヘセ Verb-IV ; ! breathe
+キロㇿコㇿ:キロㇿコㇿ Verb-IV ; ! be forceful/vigorous
+トゥミコㇿ:トゥミコㇿ Verb-IV ; ! fight
+プㇽプㇽセ:プㇽプㇽセ Verb-IV ; ! gush forth
+モナサㇷ゚:モナサㇷ゚ Verb-IV ; ! be busy
+チゥ:チゥ Verb-TV ; ! sting
+ヌカㇽ:ヌカㇽ Verb-TV ; ! see
+オケウェ:オケウェ Verb-TV ; ! chase
+イノンノタㇰ:イノンノタㇰ Verb-IV ; ! pray
+エィワンケ:エィワンケ Verb-TV ; ! use
+トゥカン:トゥカン Verb-TV ; ! attack (with guns/bows)
+アㇰ:アㇰ Verb-IV ; ! shoot
+シヌイェ:シヌイェ Verb-IV ; ! get a tattoo
+オマレ:オマレ Verb-IV ; ! fill
+ペカンケ:ペカンケ Verb-IV ; ! float
+テㇲカㇻ:テㇲカㇻ Verb-IV ; ! send a message
+アフㇷ゚カㇻ:アフㇷ゚カㇻ Verb-TV ; ! receive
+スンケ:スンケ Verb-IV ; ! lie
+キㇰ:キㇰ Verb-TV ; ! hit
+ヘトゥク:ヘトゥク Verb-IV ; ! be born
+ヌワㇷ゚:ヌワㇷ゚ Verb-IV ; ! give birth
+チュプ:チュプ Verb-TV ; ! reverse
+ヤィコプンテㇰ:ヤィコプンテㇰ Verb-IV ; ! be happy
+チ:チ Verb-IV ; ! be ripe
+トゥラシ:トゥラシ Verb-IV ; ! go upstream
+ヨㇺクㇽ:ヨㇺクㇽ Verb-IV ; ! vomit
+ニㇳネ:ニㇳネ Verb-IV ; ! be fierce
+ケセアンパ:ケセアンパ Verb-TV ; ! chase
+オㇲコニ:オㇲコニ Verb-TV ; ! catch up to
+オンネ:オンネ Verb-IV ; ! grow older
+ウォセ:ウォセ Verb-IV ; ! howl
+ポロ:ポロ Verb-IV ; ! be big
+アマ:アマ Verb-TV ; ! put
+アヌ:アヌ Verb-TV ; ! put/place (sg)
+トゥラㇺコㇿ:トゥラㇺコㇿ Verb-IV ; ! be cowardly
+ウㇳチケ:ウㇳチケ Verb-IV ; ! be shy
+アンテ:アンテ Verb-TV ; ! send
+モソソ:モソソ Verb-TV ; ! wake someone up
+イルㇲカ:イルㇲカ Verb-IV ; ! get mad
+イパカㇲヌ:イパカㇲヌ Verb-IV ; ! teach
+リテン:リテン Verb-IV ; ! be soft/gentle
+ルィ:ルィ Verb-IV ; ! be violent
+イラㇺクㇽセレ:イラㇺクㇽセレ Verb-IV ; ! be frightful
+ハチㇼ:ハチㇼ Verb-IV ; ! fall down
+トゥㇽセ:トゥㇽセ Verb-IV ; ! drop
+タㇷ゚カㇻ:タㇷ゚カㇻ Verb-IV ; ! dance
+マ:マ Verb-IV ; ! swim
+カィ:カィ Verb-IV ; ! be broken
+マィアィケ:マィアィケ Verb-IV ; ! be itchy
+エラミㇱカリ:エラミㇱカリ Verb-TV ; ! not know
+エシカルン:エシカルン Verb-TV ; ! recall
+パカㇱヌ:パカㇱヌ Verb-TV ; ! teach to
+カㇻ:カㇻ Verb-TV ; ! make
+シㇰ:シㇰ Verb-IV ; ! be full
+オカイ:オカイ Verb-IV ; ! exist (pl)
+ラㇷ゚:ラㇷ゚ Verb-IV ; !
+アリ:アリ Verb-TV ; ! place  (pl)
 
 LEXICON Adverb
 
 エネ%<adv%>:エネ # ; ! thus/so/in such a way
 ソモ%<adv%>:ソモ # ; ! negation
 イテキ%<adv%>:イテキ # ; ! negative command
-オロタ%<adv%>:オロタ # ; ! in which
+オㇿタ%<adv%>:オㇿタ # ; ! in which
+オラノ%<adv%>:オラノ # ; ! then 
 
 LEXICON PostPosition
 
@@ -568,7 +788,9 @@ LEXICON Conjunction
 クス%<cnjsub%>:クス # ;
 ワ%<cnjcoo%>:ワ # ; ! and
 オロワ%<cnjcoo%>:オロワ # ;
-
+ノ%<cnjcoo%>:ノ # ; ! and (old)
+ヒネ%<cnjcoo%>:ヒネ # ; ! and (old)
+コㇿカ%<cnjcoo%>:コㇿカ # ; ! but
 
 LEXICON Determiner
 
