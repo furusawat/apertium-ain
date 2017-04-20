@@ -48,6 +48,7 @@ Multichar_Symbols
 %<cop%>                        ! copula
 %<acaus%> 		       ! acausative
 %<caus%> 		       ! causative
+%<refl%> 		       ! reflexive
 
 ! Tense tags
 %<pres%>                       ! Present Tense
@@ -62,6 +63,7 @@ Multichar_Symbols
 ! Person tags
 %<p1%>                         ! First Person
 %<p2%>                         ! Second Person
+%<2pS%>				! Second person subject
 
 ! Clitic tags
 %<cli%>                        ! Clitic
@@ -186,6 +188,15 @@ Multichar_Symbols
 %[%+2o%]                       ! 2nd person object
 %[%-2o%]
 
+%[%+2spl%]                       ! 2nd person sg subject
+%[%-2spl%]
+
+%[%+2ssg%]                       ! 2nd person pl subject
+%[%-2ssg%]
+
+%[%+1s%]                       ! 1st person subject
+%[%-1s%]
+
 
 
 
@@ -240,6 +251,10 @@ NounRoot ;
 LEXICON VerbPersonalPrefix
 
 %[%-2o%]:エ%> VerbPrefix-ClassI ;
+%[%-2spl%]:エチ%> VerbPrefix-ClassI ;
+%[%-2ssg%]:エ%> VerbPrefix-ClassI ;
+%[%-1s%]:ア%> VerbPrefix-ClassI ;
+%[%-1s%]:イ%> VerbPrefix-ClassI ;
 
 LEXICON VerbPrefix-ClassI 
 
@@ -275,6 +290,7 @@ LEXICON Verb-IV
 
 %<v%>%<iv%>:  # ; 
 %<v%>%<iv%>:  RegVerbInfl ; 
+%<v%>%<iv%>%<advz%>:%>ノ # ;
 %<v%>%<iv%>%<tvx%>%[%+tvx%]:  # ;
 
 LEXICON RegVerbInfl
@@ -296,13 +312,17 @@ LEXICON RegVerbInfl
 %<p2%>%<pos%>%[%+2p%]%[%+pos%]:  # ;
 %<caus%>:%>レ # ;
 %<caus%>:%>テ # ;
-%[%+refl%]: # ;
+%<refl%>%[%+refl%]: # ;
+%<sg%>%<2pS%>%[%+2spl%]: # ;
+%<pl%>%<2pS%>%[%+2ssg%]: # ;
+%<1pS%>%[%+1s%]: # ;
 
 VerbSuffix-ClassVI ;
 
 LEXICON VerbSuffix-ClassVI 
 
 %<caus%>:%>レ # ;
+%<caus%>:%>テ # ;
 
 LEXICON Diminutive
 
