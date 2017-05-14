@@ -44,6 +44,8 @@ Alphabet
   %[%+2p%]:0
   %[%-2o%]:0
   %[%+2o%]:0
+  %[%-idef%]:0
+  %[%+idef%]:0
   
 ;
 
@@ -407,6 +409,22 @@ Fx:0 /<= _ ;
        Fy:0 :* _ ;
    where Fy in ( %[%-1s%] )
          Fx in ( %[%+1s%] )
+matched ; 
+
+"Remove paths without matching suffix feature - fourth person trans subj"
+Fx:0 /<= _ ;
+   except
+       _ :* Fy:0 ;
+   where Fx in ( %[%-idef%] )
+         Fy in ( %[%+idef%] )
+   matched ;
+
+"Remove paths without matching prefix feature - fourth person trans subj"
+Fx:0 /<= _ ;
+   except
+       Fy:0 :* _ ;
+   where Fy in ( %[%-idef%] )
+         Fx in ( %[%+idef%] )
 matched ; 
 
 

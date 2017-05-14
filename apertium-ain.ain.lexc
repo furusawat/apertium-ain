@@ -51,6 +51,7 @@ Multichar_Symbols
 %<apass%>		       ! apassive
 %<refl%> 		       ! reflexive
 
+
 ! Tense tags
 %<pres%>                       ! Present Tense
 
@@ -60,18 +61,23 @@ Multichar_Symbols
 ! Mood tags
 %<pri%>                        ! Indicative Mood
 %<infr%>                       ! Inferential Mood
+%<comp%>		       ! Comparative Mood (should)
+%<chrt%>		       ! Cohortitative Mood
 
 ! Person tags
 %<p1%>                         ! First Person
 %<p2%>                         ! Second Person
+%<p3%>			       ! Third Person
+%<p4%.                         ! Fourth Person
 %<2pS%>				! Second person subject
 
 ! Clitic tags
 %<cli%>                        ! Clitic
 %<top%>                        ! Topic marker
+%<quot%>		       ! Quotation Clitic
 
 ! Adjective tags
-%<comp%>                       ! Comparative
+%<cmp%>                       ! Comparative
 %<sup%>                        ! Superlative
 %<adjx%>                       ! Adjectivization
 
@@ -81,6 +87,7 @@ Multichar_Symbols
 ! Number morphology
 %<pl%>                         ! Plural
 %<sg%>                         ! Singular
+%<num%>			       ! Number
 
 ! Other symbols
 %>                             ! Morpheme boundary
@@ -186,20 +193,23 @@ Multichar_Symbols
 %[%+2p%]                       ! 2nd person
 %[%-2p%]
 
-%[%+2o%]                       ! 2nd person object
-%[%-2o%]
+%[%+2osg%]                       ! 2nd person sg object
+%[%-2osg%]
 
-%[%+2spl%]                       ! 2nd person sg subject
+%[%+2opl%]                       ! 2nd person pl object
+%[%-2opl%]
+
+%[%+2spl%]                       ! 2nd person pl subject
 %[%-2spl%]
 
-%[%+2ssg%]                       ! 2nd person pl subject
+%[%+2ssg%]                       ! 2nd person sg subject
 %[%-2ssg%]
 
 %[%+1s%]                       ! 1st person subject
 %[%-1s%]
 
-
-
+%[%+idef%]		       ! indefinite (4th person) transitive subject
+%[%-idef%]		       
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                       M O R P H O T A C T I C S                         !!!
@@ -220,6 +230,7 @@ Pronoun ;
 ProperNoun ;
 Clitic ;
 Adverb ;
+Number ;
 
 LEXICON Prefix
 
@@ -234,7 +245,7 @@ LEXICON Prefix
 NounPrefix ;
 VerbRoot ;
 VerbPrefix-ClassI ;
-VerbPersonalPrefix ;
+VerbSubjectPrefix ;
 
 LEXICON NounPrefix
 
@@ -249,13 +260,19 @@ LEXICON NounPrefix
 %[%-pp1sg%]:エン NounRoot ;
 NounRoot ;
 
-LEXICON VerbPersonalPrefix
+LEXICON VerbSubjectPrefix
 
-%[%-2o%]:エ%> VerbPrefix-ClassI ;
-%[%-2spl%]:エチ%> VerbPrefix-ClassI ;
-%[%-2ssg%]:エ%> VerbPrefix-ClassI ;
-%[%-1s%]:ア%> VerbPrefix-ClassI ;
-%[%-1s%]:イ%> VerbPrefix-ClassI ;
+%[%-2spl%]:エチ%> VerbObjectPrefix ;
+%[%-2ssg%]:エ%> VerbObjectPrefix ;
+%[%-1s%]:ア%> VerbObjectPrefix ;
+%[%-1s%]:イ%> VerbObjectPrefix ;
+%[%-idef%]:ア%> VerbObjectPrefix ;
+
+LEXICON VerbObjectPrefix
+
+%[%-2osg%]:エ%> VerbPrefix-ClassI ;
+%[%-2opl%]:エチ%> VerbPrefix-ClassI ;
+%[%-1o%]:イ%> VerbPrefix-ClassI ;
 
 LEXICON VerbPrefix-ClassI 
 
@@ -282,48 +299,55 @@ VerbRoot ;
 
 LEXICON Verb-TV
 
-%<v%>%<tv%>:  # ;
 %<v%>%<tv%>:  RegVerbInfl ;
 %<v%>%<tv%>%<pasv1%>%[%+pasv1%]:  # ;
 %<v%>%<tv%>%<pasv2%>%[%+pasv2%]:  # ;
 
 LEXICON Verb-IV
 
-%<v%>%<iv%>:  # ; 
 %<v%>%<iv%>:  RegVerbInfl ; 
 %<v%>%<iv%>%<advz%>:%>ノ # ;
 %<v%>%<iv%>%<tvx%>%[%+tvx%]:  # ;
 
 LEXICON RegVerbInfl
 
+# ;
 %<v%>:%> Diminutive ;
-%<int%>%[%+int%]:  # ;
-%<nmlz%>%<abs%>:%>% イ # ;
-%<nmlz%>%<abs%>:%>% ヒ # ;
+%<int%>%[%+int%]:  VerbSuffix-ClassVI ;
+%<nmlz%>%<abs%>:%>% イ VerbSuffix-ClassVI ;
+%<nmlz%>%<abs%>:%>% ヒ VerbSuffix-ClassVI ;
 %<pasv1%>%[%+pasv1%]: NounInfl-Common ;
-%<pasv1%>%[%+pasv1%]: # ;
+%<pasv1%>%[%+pasv1%]: VerbSuffix-ClassVI ;
 %<pasv2%>%[%+pasv2%]: NounInfl-Common ;
-%<pasv2%>%[%+pasv2%]: # ;
-%<acaus%>%[%+acaus%]: # ; 
-%<vaux%>%<vpres%>:シリネ # ;
-%<pl%>:パ # ;
-%<comp%>%[%+comp%]:  # ;
-%<sup%>%[%+sup%]:  # ;
-%<p1%>%<sg%>%[%+1ps%]:  # ;
-%<p2%>%<pos%>%[%+2p%]%[%+pos%]:  # ;
-%[%+refl%]: # ;
-%<apass%>%[%+apass%]: # ;
-%<refl%>%[%+refl%]: # ;
-%<sg%>%<2pS%>%[%+2spl%]: # ;
-%<pl%>%<2pS%>%[%+2ssg%]: # ;
-%<1pS%>%[%+1s%]: # ;
+%<pasv2%>%[%+pasv2%]: VerbSuffix-ClassVI ;
+%<acaus%>%[%+acaus%]: VerbSuffix-ClassVI ; 
+%<vaux%>%<vpres%>:シリネ VerbSuffix-ClassVI ;
+%<pl%>:パ VerbSuffix-ClassVI ;
+%<comp%>%[%+comp%]:  VerbSuffix-ClassVI ;
+%<sup%>%[%+sup%]:  VerbSuffix-ClassVI ;
+%<p1%>%<sg%>%[%+1ps%]:  VerbSuffix-ClassVI ;
+%<p2%>%<pos%>%[%+2p%]%[%+pos%]:  VerbSuffix-ClassVI ;
+%<apass%>%[%+apass%]: VerbSuffix-ClassVI ;
+%<refl%>%[%+refl%]: VerbSuffix-ClassVI ;
+%<sg%>%<2pS%>%[%+2spl%]: VerbSuffix-ClassVI ;
+%<pl%>%<2pS%>%[%+2ssg%]: VerbSuffix-ClassVI ;
+%<1pS%>%[%+1s%]: VerbSuffix-ClassVI ;
+%<p4%>%[%+idef%]: VerbSuffix-ClassVI ;
+%<appl%>%[%+appl%]:  VerbSuffix-ClassVI ;
 
 VerbSuffix-ClassVI ;
 
 LEXICON VerbSuffix-ClassVI 
 
-%<caus%>:%>レ # ;
-%<caus%>:%>テ # ;
+# ;
+%<caus%>:%>レ VerbPersonalSuffix ;
+%<caus%>:%>テ VerbPersonalSuffix ;
+VerbPersonalSuffix ;
+
+LEXICON VerbPersonalSuffix
+
+# ;
+%<p4%>:アン # ;
 
 LEXICON Diminutive
 
@@ -399,6 +423,7 @@ LEXICON NounInfl-Relational
 LEXICON Copula
 
 %<v%>%<cop%>:  # ;
+%<v%>%<cop%>%<p4%>[%+idef%]:  # ;
 
 !LEXICON Verb-IV
 !
@@ -622,10 +647,27 @@ house:house NounInfl-Common ; ! A noun
 オッケオッケ:オッケオッケ NounInfl-Common ; ! stick
 ウォㇿ:ウォㇿ NounInfl-Common ; ! water (old)
 ニ:ニ NounInfl-Common ; ! firewood
+オㇿ:オㇿ NounInfl-Common ; ! noun locative
+ウタㇻ:ウタㇻ NounInfl-Common ; ! kin
+タスㇺ:タスㇺ NounInfl-Common ; ! sickness
+オルㇱペ:オルㇱペ NounInfl-Common ; ! story
+Eq%<n%>:Eq  # ; ! units
+kg%<n%>:kg  # ; ! units
+m2%<n%>:m2  # ; ! units
+q%<n%>:q  # ; ! units
+テ%<n%>%<nloc%>:テ  # ; ! here
+モシㇼ:モシㇼ NounInfl-Common ; ! land
+アパ:アパ NounInfl-Common ; ! door
+エスペラント:エスペラント NounInfl-Common ; ! Esperanto
+アイヌイタㇰ:アイヌイタㇰ NounInfl-Common ; ! Ainu Language
+アイヌウタㇻ:アイヌウタㇻ NounInfl-Common ; ! Ainu People
+アイヌタイム:アイヌタイム  NounInfl-Common ; ! Ainu Times
 
 LEXICON Clitic
 
 アナㇰ%<cli%>%<top%>:アナㇰ # ;
+アナㇰネ%<cli%>%<top%>:アナㇰネ # ;
+ヒケ%<cli%>%<nmlz%>:ヒケ  # ; ! with regards to X
 
 LEXICON Pronoun
 
@@ -782,6 +824,15 @@ LEXICON VerbRoot
 オカイ:オカイ Verb-IV ; ! exist (pl)
 ラㇷ゚:ラㇷ゚ Verb-IV ; !
 アリ:アリ Verb-TV ; ! place  (pl)
+アシㇼ:アシㇼ Verb-IV ; ! be new
+イワンケ:イワンケ Verb-IV ; ! be healthy
+ホプン:ホプン Verb-IV ; ! get up
+インネ:インネ Verb-IV ; ! be numerous
+ラン:ラン Verb-IV ; ! descend
+ラマン:ラマン Verb-IV ; ! clever
+コㇿ:コㇿ Verb-TV ; ! have
+ヤイヌ:ヤイヌ Verb-TV ; ! imagine
+ネヤ%<cop%>%<q%>:ネヤ # ; ! suggestive question
 
 LEXICON Adverb
 
@@ -790,6 +841,13 @@ LEXICON Adverb
 イテキ%<adv%>:イテキ # ; ! negative command
 オㇿタ%<adv%>:オㇿタ # ; ! in which
 オラノ%<adv%>:オラノ # ; ! then 
+ポロンノ%<adv%>:ポロンノ # ; ! very much
+ウサ%<adv%>:ウサ  # ; ! various
+アシンノ%<adv%>:アシンノ  # ; ! first time
+タネ%<adv%>:タネ  # ; ! now
+ネノ%<adv%>:ネノ  # ; ! same as
+アッカリ%<adv%>:アッカリ  # ; ! than (comparative) TODO: get prefixes to work here
+シノ%<adv%>:シノ  # ; ! truly 
 
 LEXICON PostPosition
 
@@ -797,11 +855,22 @@ LEXICON PostPosition
 パㇰノ%<pp%>:パㇰノ # ; ! until
 アニ%<pp%>:アニ # ; ! final particle/
 ピㇱノ%<pp%>:ピㇱノ # ; ! every TODO: fix no-suffix 
+ウン%<pp%>:ウン # ; ! to
+ワノ%<pp%>:ワノ # ; ! from
+ㇷ゚%<pp%>%<nmlz%>:ㇷ゚ # ; ! -thing
+オロ%<pp%>:オロ  # ; ! place-poss (TODO: reconsider POSS-suffixing)
+エウン%<pp%>:エウン  # ; ! there.at/to
+
 
 LEXICON Auxiliary
 
 ア%<perf%>%<sg%>:ア # ; 
 ナンコㇿ%<v%>%<vaux%>:ナンコㇿ # ; ! TODO: fix this logic
+クニ%<comp%>:クニ # ; ! comparative mood
+エアㇱカィ%<v%>%<vaux%>:エアㇱカィ # ; ! be able to X
+エアㇱカイ%<v%>%<vaux%>:エアㇱカイ # ; ! Dir/LR
+エアイカㇷ゚%<v%>%<vaux%>:エアイカㇷ゚  # ; ! be unable to X
+
 
 LEXICON Conjunction
 
@@ -812,6 +881,12 @@ LEXICON Conjunction
 ノ%<cnjcoo%>:ノ # ; ! and (old)
 ヒネ%<cnjcoo%>:ヒネ # ; ! and (old)
 コㇿカ%<cnjcoo%>:コㇿカ # ; ! but
+コㇿ%<cnjcoo%>:コㇿ # ; ! when/if
+セコㇿ%<quot%>:セコㇿ # ; ! quotation marker
+ヤㇰ%<cnjsub%>:ヤㇰ # ; ! if
+ヤクン%<cnjsub%>:ヤクン # ; ! if (plus conjunction)
+ヤッカ%<cnjcoo%>:ヤッカ  # ; ! if-even
+ノイネ%<cnjcoo%>:ノイネ  # ; ! look as if 
 
 LEXICON Determiner
 
@@ -826,6 +901,7 @@ LEXICON Nominalizer
 LEXICON Particle 
 
 カ%<prt%>%<adv%>:カ # ;
+ロ%<prt%>%<chrt%>:ロ # ;
 
 LEXICON Exclamation
 
@@ -837,6 +913,21 @@ LEXICON ProperNoun
 ヨロタン%<np%>:ヨロタン # ; ! jordan
 イェス%<np%>:イェス # ; ! jesus
 
+LEXICON Number
+
+0%<num%>:0  # ;
+1%<num%>:1  # ;
+2%<num%>:2  # ;
+3%<num%>:3  # ;
+4%<num%>:4  # ;
+5%<num%>:5  # ;
+6%<num%>:6  # ;
+7%<num%>:7  # ;
+8%<num%>:8  # ;
+9%<num%>:9  # ;
+10%<num%>:10  # ;
+11%<num%>:11  # ;
+12%<num%>:12  # ;
 
 LEXICON Punctuation
 
