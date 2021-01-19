@@ -292,9 +292,9 @@ VerbPrefix-ClassIII ;
 
 LEXICON VerbPrefix-ClassIII 
 
-%[%-appl%]:エ VerbPrefix-ClassII ;
-%[%-appl%]:コ VerbPrefix-ClassII ;
-%[%-appl%]:オ VerbPrefix-ClassII ;
+%[%-appl%]:エ VerbRoot ;
+%[%-appl%]:コ VerbRoot ;
+%[%-appl%]:オ VerbRoot ;
 VerbRoot ;
 
 LEXICON Verb-TV
@@ -436,7 +436,7 @@ LEXICON Copula
 
 LEXICON NounRoot
 
-house:house NounInfl-Common ; ! A noun
+! house:house NounInfl-Common ; ! A noun
 エ:エ NounInfl-Common ; ! a noun
 チ:チ NounInfl-Common ; !
 エチ:エチ NounInfl-Common ; !
@@ -915,7 +915,7 @@ LEXICON ProperNoun
 
 LEXICON Number
 
-0%<num%>:0  # ;
+%0%<num%>:%0  # ;
 1%<num%>:1  # ;
 2%<num%>:2  # ;
 3%<num%>:3  # ;
