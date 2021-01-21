@@ -1,965 +1,820 @@
-! Morphological Transducer for Ainu
+# Morphological Transducer for Ainu
 
-Multichar_Symbols
+# Part of speech categories
+# <n>                          # Noun
+# <v>                          # Verb
+# <adv>                        # Adverb
+# <adj>                        # Adjective
+# <pn>                         # Pronoun
+# <det>                        # Determiner
+# <cnjsub>                     # subordinating conjunction
+# <cnjcoo>                     # co-ordinating conjunction
+# <prt>                        # Particle
+# <pp>                         # post position
+# <np>                         # proper noun 
 
-! Part of speech categories
-%<n%>                          ! Noun
-%<v%>                          ! Verb
-%<adv%>                        ! Adverb
-%<adj%>                        ! Adjective
-%<pn%>                         ! Pronoun
-%<det%>                        ! Determiner
-%<cnjsub%>                     ! subordinating conjunction
-%<cnjcoo%>                     ! co-ordinating conjunction
-%<prt%>                        ! Particle
-%<pp%>                         ! post position
-%<np%>                         ! proper noun 
+# Noun tags
+# <abs>                        # Abstract qualities
+# <m>                          # Noun male gender
+# <f>                          # Noun female gender
+# <mg>                         # Noun male god gender
+# <mf>                         # Noun male or female gender
+# <end>                        # Noun affinity tag ("=my dear x")
+# <hon>                        # Noun honorable tag ("=my honored x")
+# <px1sg>                      # First person singular possessive
+# <px2sg>                      # Second person singular possessive
+# <px1pl>                      # First person plural possessive
+# <px2pl>                      # Second person plural possessive
+# <nmlz>                       # Nominalization
+# <rn>                         # relational noun
+# <bn>                         # bound noun
 
-! Noun tags
-%<abs%>                        ! Abstract qualities
-%<m%>                          ! Noun male gender
-%<f%>                          ! Noun female gender
-%<mg%>                         ! Noun male god gender
-%<mf%>                         ! Noun male or female gender
-%<end%>                        ! Noun affinity tag ("=my dear x")
-%<hon%>                        ! Noun honorable tag ("=my honored x")
-%<px1sg%>                      ! First person singular possessive
-%<px2sg%>                      ! Second person singular possessive
-%<px1pl%>                      ! First person plural possessive
-%<px2pl%>                      ! Second person plural possessive
-%<nmlz%>                       ! Nominalization
-%<rn%>                         ! relational noun
-%<bn%>                         ! bound noun
-
-! Determiner tags
-%<ndet%>                       ! numeral determiner
-%<ndom%>                       ! nominal demonstrative
-%<adom%>                       ! anaphoric demonstrative
+# Determiner tags
+# <ndet>                       # numeral determiner
+# <ndom>                       # nominal demonstrative
+# <adom>                       # anaphoric demonstrative
 
 
-! Verb tags
-%<pasv1%>                      ! Passive Voice chi
-%<pasv2%>                      ! Passive Voice a
-%<tv%>                         ! Transitive Verb
-%<iv%>                         ! Intransitive Verb
-%<vaux%>                       ! Auxiliary Verb
-%<vx%>                         ! Verbalization
-%<tvx%>                        ! Make verb transitive
-%<cop%>                        ! copula
-%<acaus%> 		       ! acausative
-%<caus%> 		       ! causative
-%<apass%>		       ! apassive
-%<refl%> 		       ! reflexive
+# Verb tags
+# <pasv1>                      # Passive Voice chi
+# <pasv2>                      # Passive Voice a
+# <tv>                         # Transitive Verb
+# <iv>                         # Intransitive Verb
+# <vaux>                       # Auxiliary Verb
+# <vx>                         # Verbalization
+# <tvx>                        # Make verb transitive
+# <cop>                        # copula
+# <acaus> 		       # acausative
+# <caus> 		       # causative
+# <apass>		       # apassive
+# <refl> 		       # reflexive
 
 
-! Tense tags
-%<pres%>                       ! Present Tense
+# Tense tags
+# <pres>                       # Present Tense
 
-! Aspect tags
-%<perf%>                       ! Perfective Aspect
+# Aspect tags
+# <perf>                       # Perfective Aspect
 
-! Mood tags
-%<pri%>                        ! Indicative Mood
-%<infr%>                       ! Inferential Mood
-%<comp%>		       ! Comparative Mood (should)
-%<chrt%>		       ! Cohortitative Mood
+# Mood tags
+# <pri>                        # Indicative Mood
+# <infr>                       # Inferential Mood
+# <comp>		       # Comparative Mood (should)
+# <chrt>		       # Cohortitative Mood
 
-! Person tags
-%<p1%>                         ! First Person
-%<p2%>                         ! Second Person
-%<p3%>			       ! Third Person
-%<p4%.                         ! Fourth Person
-%<2pS%>				! Second person subject
+# Person tags
+# <p1>                         # First Person
+# <p2>                         # Second Person
+# <p3>			       # Third Person
+# <p4.                         # Fourth Person
+# <2pS>				# Second person subject
 
-! Clitic tags
-%<cli%>                        ! Clitic
-%<top%>                        ! Topic marker
-%<quot%>		       ! Quotation Clitic
+# Clitic tags
+# <cli>                        # Clitic
+# <top>                        # Topic marker
+# <quot>		       # Quotation Clitic
 
-! Adjective tags
-%<cmp%>                       ! Comparative
-%<sup%>                        ! Superlative
-%<adjx%>                       ! Adjectivization
+# Adjective tags
+# <cmp>                       # Comparative
+# <sup>                        # Superlative
+# <adjx>                       # Adjectivization
 
-! Article tags
-%<def%>                        ! Definite Article
+# Article tags
+# <def>                        # Definite Article
 
-! Number morphology
-%<pl%>                         ! Plural
-%<sg%>                         ! Singular
-%<num%>			       ! Number
+# Number morphology
+# <pl>                         # Plural
+# <sg>                         # Singular
+# <num>			       # Number
 
-! Other symbols
-%>                             ! Morpheme boundary
-%<dim%>                        ! Diminutive Particle
-%<int%>                        ! Intensifying Particle  
-%<ev%>                         ! Evidentiality
-%<exc%>                        ! Exclamation
-% 	                       ! Space
+# Other symbols
+# >                             # Morpheme boundary
+# <dim>                        # Diminutive Particle
+# <int>                        # Intensifying Particle  
+# <ev>                         # Evidentiality
+# <exc>                        # Exclamation
+ 	                       # Space
 
-! Punctuation
-%<sent%>                       ! Sentence marker
-%<guio%>    		       ! Hyphen
-%<cm%>       		       ! Comma
-%<apos%>                       ! Apostrophe
-%<rquot%>                      ! Quote marker (right hand side) 
-%<lquot%>                      ! Quote marker (left hand side) 
-%<rpar%>                       ! Parenthetical marker (right hand side) 
-%<lpar%>                       ! Parenthetical marker (left hand side) 
+# Punctuation
+# <sent>                       # Sentence marker
+# <guio>    		       # Hyphen
+# <cm>       		       # Comma
+# <apos>                       # Apostrophe
+# <rquot>                      # Quote marker (right hand side) 
+# <lquot>                      # Quote marker (left hand side) 
+# <rpar>                       # Parenthetical marker (right hand side) 
+# <lpar>                       # Parenthetical marker (left hand side) 
 
-! Archiphonemes
-%{I%}                          ! can be イ or ヒ or null
+# Archiphonemes
+# {I}                          # can be イ or ヒ or null
 
-%{i%}                          ! can be i or null
+# {i}                          # can be i or null
 
-%{Mm%}                         ! mu mm or null
-%{Tt%}                         ! tu tt or null
-%{Kk%}                         ! ku kk or null
-%{t%}                          ! small tsu or null
+# {Mm}                         # mu mm or null
+# {Tt}                         # tu tt or null
+# {Kk}                         # ku kk or null
+# {t}                          # small tsu or null
 
-%{w%}                          ! ウ or null (for epenthesis)
-%{pe%}                         ! pe or null
-%{K%}                          ! ka, ki, ku, ke, or ko
+# {w}                          # ウ or null (for epenthesis)
+# {pe}                         # pe or null
+# {K}                          # ka, ki, ku, ke, or ko
 
-%{U%}                          ! all sorts of stuff
+# {U}                          # all sorts of stuff
 
-! Features
-%[%+adjx%]                     ! adjectivalization
-%[%-adjx%]                     
+###############################################################################
+###                       M O R P H O T A C T I C S                         ###
+###############################################################################
 
-%[%+comp%]                     ! comparison
-%[%-comp%]
+PATTERNS
 
-%[%+sup%]                      ! superlative
-%[%-sup%]  
+Conjunction
+Noun
+Verb
+Determiner
+Auxiliary
+PostPosition
+Particle
+Nominalizer
+Exclamation
+Punctuation
+Pronoun
+ProperNoun
+Clitic
+Adverb
+Number
 
-%[%+dInd%]                     ! Indefinite determiner
-%[%-dInd%]
+PATTERN Noun
+[:ク] NounRoot [<n><cn><pos>:イヒ]
+:NounInfl-Prefix NounRoot NounInfl-Prefix:
+NounRoot NounInfl-Suffix
+:NounPlural(1)[utara] NounRoot[utara] [<n><pl>:] :NounPlural(2)[utara]
+:NounPlural(1)[U]     NounRoot[U]     [<n><pl>:] :NounPlural(2)[U]
+:NounPlural(1)[preU]  NounRoot[preU]  [<n><pl>:] :NounPlural(2)[PreU]
+:NounPlural(1)[Nu]    NounRoot[Nu]    [<n><pl>:] :NounPlural(2)[Nu]
+:NounPlural(1)[Irreg] NounRoot[Irreg] [<n><pl>:] :NounPlural(2)[Irreg]
+NounRoot DiminutiveNounInfl Diminutive
+:NounInfl-Relational(1) RelationalNounRoot NounInfl-Relational(1): :NounInfl-Relational(2)
 
-%[%+dDef%]                     ! Definite determiner
-%[%-dDef%]
+LEXICON NounInfl-Prefix
 
-%[%+tvx%]                      ! Making verb transitive
-%[%-tvx%]
+<n><det><ind>:シネ\ 
+<n><det><def>:ネイ\ 
+<n><m>:ピンネ\ 
+<n><f>:マㇳネ\ 
+<n><mg>:オッカイ\ 
+<n><sg>:シネ\ 
 
-%[%+pl%]                       ! plurality
-%[%-pl%] 
+LEXICON NounInfl-Suffix
+<n><vz>:>コロ
+<n><vz>:>カラ
+<n><end1>:>\ トノケ
+<n><end2>:>\ ポ
+<n><hon>:>\ ニㇱパケ
+<n><poss>:>{w}ェ
+<n>:
 
-%[%+m%]                        ! male gender
-%[%-m%]
+LEXICON NounPlural(2)
+:ウ> :>\ ウタラ[utara]
+: :>{U}[U]
+:ウ> :[preU]
+: :>ヌ[Nu]
+: :[Irreg]
 
-%[%+f%]                        ! female gender
-%[%-f%]
 
-%[%+pasv1%]                    ! verb passification
-%[%-pasv1%]
+LEXICON NounInfl-Relational(2)
+<n><rn><pos><p1><sg>:エン :
+<n><rn><pos><p3><sg>: :ア
 
-%[%+pasv2%]                    ! verb passification
-%[%-pasv2%]
+LEXICON DiminutiveNounInfl
+<n>:
+<pn><px1sg><mf>:>コロ
 
-%[%+sg%]                       ! singular
-%[%-sg%]
+LEXICON Diminutive
+<dim>:>ポ
 
-%[%+int%]                      ! intensifier
-%[%-int%]
+LEXICON CopulaStem
+ネ:ネ
 
-%[%+mg%]                       ! male (god)
-%[%-mg%]
+PATTERN Copula
+CopulaStem [<v><cop>:]
+[:ア] CopulaStem [<v><cop><p4>:]
 
-%[%+appl%]                     ! applicative
-%[%-appl%]
+PATTERN Verb
+VerbStemPersonNumber > VerbSuffix-ClassVI > VerbPersonalSuffix
+:Passive VerbStem Passive: [<nmlz>:>\ ㇷ゚]
 
-%[%+apass%]                    ! generalized object
-%[%-apass%]
+:Passive VerbRoot[tv] [<v><tv>:] Passive:
+[:エ>] VerbRoot[iv] [<v><iv><tvx>:]
+VerbRoot[iv] [<v><iv><advz>:>ノ]
 
-%[%+refl%]                     ! reflexive
-%[%-refl%]
+VerbStem Diminutive
 
-%[%+rec%]                      ! reciprocal
-%[%-rec%]
+PATTERN VerbStem
+VerbRoot[tv] [<v><tv>:]
+VerbRoot[iv] [<v><iv>:]
 
-%[%+acaus%]                    ! acausative
-%[%-acaus%]
+PATTERN VerbStemIII
+VerbStem
+:VerbPrefix-ClassIII VerbStem VerbPrefix-ClassIII:
 
-%[%+pos%]                      ! possessive common noun
-%[%-pos%]
+PATTERN VerbStemII
+VerbStemIII
+:VerbPrefix-ClassII VerbStemIII VerbPrefix-ClassII:
 
-%[%+pp1sg%]                    ! possessive relational noun
-%[%-pp1sg%]
+PATTERN VerbStemI
+VerbStemII
+:VerbPrefix-ClassI VerbStemII VerbPrefix-ClassI:
 
-%[%+1ps%]                      ! 1st person possessive 
-%[%-1ps%]
+PATTERN VerbStemPersonNumber
+:VerbSubjectPrefix VerbObjectPrefix VerbStemI VerbSubjectPrefix:
+:VerbSubjectPrefixNoObj VerbStemI VerbSubjectPrefixNoObj:
 
-%[%+2p%]                       ! 2nd person
-%[%-2p%]
+LEXICON Passive
+<pasv1>:チ>
+<pasv2>:ア>
 
-%[%+2osg%]                       ! 2nd person sg object
-%[%-2osg%]
-
-%[%+2opl%]                       ! 2nd person pl object
-%[%-2opl%]
-
-%[%+2spl%]                       ! 2nd person pl subject
-%[%-2spl%]
-
-%[%+2ssg%]                       ! 2nd person sg subject
-%[%-2ssg%]
-
-%[%+1s%]                       ! 1st person subject
-%[%-1s%]
-
-%[%+idef%]		       ! indefinite (4th person) transitive subject
-%[%-idef%]		       
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!                       M O R P H O T A C T I C S                         !!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-LEXICON Root
-
-Conjunction ;
-Prefix ;
-Determiner ;
-Auxiliary ;
-PostPosition ;
-Particle ;
-Nominalizer ;
-Exclamation ;
-Punctuation ;
-Pronoun ;
-ProperNoun ;
-Clitic ;
-Adverb ;
-Number ;
-
-LEXICON Prefix
-
-%[%-pasv1%]:チ%> VerbRoot ;
-%[%-tvx%]:エ%> VerbRoot ;
-%[%-sup%]:イヨッタ% %> VerbRoot ;
-%[%-comp%]:ナア% %> VerbRoot ;
-%[%-pasv2%]:ア%> VerbRoot ;
-%[%-int%]:イ%> VerbRoot ;
-%[%-1ps%]:ク%> VerbPrefix-ClassI ;
-%[%-2p%]%[%-pos%]:エ%> VerbPrefix-ClassI ;
-NounPrefix ;
-VerbRoot ;
-VerbPrefix-ClassI ;
-VerbSubjectPrefix ;
-
-LEXICON NounPrefix
-
-%[%-dInd%]:シネ%  NounRoot ;
-%[%-dDef%]:ネイ%  NounRoot ;
-%[%-pl%]:ウ%> NounRoot ;
-%[%-m%]:ピンネ%  NounRoot ;
-%[%-f%]:マㇳネ%  NounRoot ;
-%[%-mg%]:オッカイ%  NounRoot ;
-%[%-sg%]:シネ%  NounRoot ;
-%[%-pos%]:ク NounRoot ;
-%[%-pp1sg%]:エン NounRoot ;
-NounRoot ;
+LEXICON VerbPrefix-NoPers
+<sup>:イヨッタ\ >
+<comp>:ナア\ >
+<int>:イ>
 
 LEXICON VerbSubjectPrefix
+<sg><2pS>:エチ>
+<pl><2pS>:エ>
+<1pS>
+<1pS>:イ>
+<p4>:ア>
 
-%[%-2spl%]:エチ%> VerbObjectPrefix ;
-%[%-2ssg%]:エ%> VerbObjectPrefix ;
-%[%-1s%]:ア%> VerbObjectPrefix ;
-%[%-1s%]:イ%> VerbObjectPrefix ;
-%[%-idef%]:ア%> VerbObjectPrefix ;
+LEXICON VerbSubjectPrefixNoObj
+<p1><sg>:ク>
+<p2><pos>:エ>
 
 LEXICON VerbObjectPrefix
 
-%[%-2osg%]:エ%> VerbPrefix-ClassI ;
-%[%-2opl%]:エチ%> VerbPrefix-ClassI ;
-%[%-1o%]:イ%> VerbPrefix-ClassI ;
-
-LEXICON VerbPrefix-ClassI 
-
-! applicative
-%[%-appl%]:エ VerbPrefix-ClassII ;
-%[%-appl%]:コ VerbPrefix-ClassII ;
-%[%-appl%]:オ VerbPrefix-ClassII ;
-VerbPrefix-ClassII ;
-
-LEXICON VerbPrefix-ClassII 
-
-%[%-apass%]:イ VerbPrefix-ClassIII ;
-%[%-refl%]:ヤイ VerbPrefix-ClassIII ;
-%[%-rec%]:ウ VerbPrefix-ClassIII ;
-%[%-acaus%]:シ VerbPrefix-ClassIII ;
-VerbPrefix-ClassIII ;
-
-LEXICON VerbPrefix-ClassIII 
-
-%[%-appl%]:エ VerbRoot ;
-%[%-appl%]:コ VerbRoot ;
-%[%-appl%]:オ VerbRoot ;
-VerbRoot ;
-
-LEXICON Verb-TV
-
-%<v%>%<tv%>:  RegVerbInfl ;
-%<v%>%<tv%>%<pasv1%>%[%+pasv1%]:  # ;
-%<v%>%<tv%>%<pasv2%>%[%+pasv2%]:  # ;
-
-LEXICON Verb-IV
-
-%<v%>%<iv%>:  RegVerbInfl ; 
-%<v%>%<iv%>%<advz%>:%>ノ # ;
-%<v%>%<iv%>%<tvx%>%[%+tvx%]:  # ;
+:エ>
+:エチ>
+:イ>
 
 LEXICON RegVerbInfl
+<nmlz><abs>:>\ イ
+<nmlz><abs>:>\ ヒ
+<vaux><vpres>:シリネ
+<pl>:パ
 
-# ;
-%<v%>:%> Diminutive ;
-%<int%>%[%+int%]:  VerbSuffix-ClassVI ;
-%<nmlz%>%<abs%>:%>% イ VerbSuffix-ClassVI ;
-%<nmlz%>%<abs%>:%>% ヒ VerbSuffix-ClassVI ;
-%<pasv1%>%[%+pasv1%]: NounInfl-Common ;
-%<pasv1%>%[%+pasv1%]: VerbSuffix-ClassVI ;
-%<pasv2%>%[%+pasv2%]: NounInfl-Common ;
-%<pasv2%>%[%+pasv2%]: VerbSuffix-ClassVI ;
-%<acaus%>%[%+acaus%]: VerbSuffix-ClassVI ; 
-%<vaux%>%<vpres%>:シリネ VerbSuffix-ClassVI ;
-%<pl%>:パ VerbSuffix-ClassVI ;
-%<comp%>%[%+comp%]:  VerbSuffix-ClassVI ;
-%<sup%>%[%+sup%]:  VerbSuffix-ClassVI ;
-%<p1%>%<sg%>%[%+1ps%]:  VerbSuffix-ClassVI ;
-%<p2%>%<pos%>%[%+2p%]%[%+pos%]:  VerbSuffix-ClassVI ;
-%<apass%>%[%+apass%]: VerbSuffix-ClassVI ;
-%<refl%>%[%+refl%]: VerbSuffix-ClassVI ;
-%<sg%>%<2pS%>%[%+2spl%]: VerbSuffix-ClassVI ;
-%<pl%>%<2pS%>%[%+2ssg%]: VerbSuffix-ClassVI ;
-%<1pS%>%[%+1s%]: VerbSuffix-ClassVI ;
-%<p4%>%[%+idef%]: VerbSuffix-ClassVI ;
-%<appl%>%[%+appl%]:  VerbSuffix-ClassVI ;
+LEXICON VerbPrefix-ClassI 
+# applicative
+<appl>:エ
+<appl>:コ
+<appl>:オ
 
-VerbSuffix-ClassVI ;
+LEXICON VerbPrefix-ClassII 
+<apass>:イ
+<refl>:ヤイ
+<acaus>:シ
+
+LEXICON VerbPrefix-ClassIII
+<appl>:エ
+<appl>:コ
+<appl>:オ
 
 LEXICON VerbSuffix-ClassVI 
-
-# ;
-%<caus%>:%>レ VerbPersonalSuffix ;
-%<caus%>:%>テ VerbPersonalSuffix ;
-VerbPersonalSuffix ;
+<caus>:>レ
+<caus>:>テ
 
 LEXICON VerbPersonalSuffix
-
-# ;
-%<p4%>:アン # ;
-
-LEXICON Diminutive
-
-%<dim%>:%>ポ # ;
-
-LEXICON NounInfl-utara
-%<n%>%<pl%>:%>% ウタラ # ;
-NounInfl-Common ;
-
-LEXICON NounInfl-U
-%<n%>%<pl%>:%>%{U%} # ;
-NounInfl-Common ;
-
-LEXICON NounInfl-preU
-
-%<n%>%<pl%>%[%+pl%]: # ;
-NounInfl-Common ;
-
-LEXICON NounInfl-Nu
-%<n%>%<pl%>:%>ヌ # ;
-NounInfl-Common ;
-
-LEXICON NounInfl-Irreg
-%<n%>%<pl%>:  # ;
-NounInfl-Common ;
-
-LEXICON NounInfl-Common
-
-%<n%>: Diminutive ;
-%<nmlz%>:%>% ㇷ゚ # ;
-%<pn%>%<px1sg%>%<mf%>:%>コロ Diminutive ;
-%<n%>%<vz%>:%>コロ  # ;
-%<n%>%<vz%>:%>カラ  # ;
-%<n%>%<det%>%<ind%>%[%+dInd%]:  # ;
-%<n%>%<det%>%<def%>%[%+dDef%]:  # ;
-%<n%>%<sg%>%[%+sg%]:  # ;
-%<n%>%<m%>%[%+m%]:  # ;
-%<n%>%<mg%>%[%+mg%]:  # ;
-%<n%>%<f%>%[%+f%]:  # ;
-%<n%>%<end1%>:%>% トノケ # ;
-%<n%>%<end2%>:%>% ポ # ;
-%<n%>%<hon%>:%>% ニㇱパケ # ;
-%<n%>%<poss%>:%>%{w%}ェ # ;
-%<n%>:  # ;
-%<n%>%<cn%>%<pos%>%[%+pos%]:イヒ # ;
+<p4>:アン
 
 
-LEXICON NounInfl-Relational
-
-%<n%>%<rn%>%<pos%>%<p1%>%<sg%>%[%+pp1sg%]:  # ;
-%<n%>%<rn%>%<pos%>%<p3%>%<sg%>:ア # ;
-
-!LEXICON Verb-IV
-!
-!%<adj%>%<adv%>:%>タラ # ;
-!%<adj%>%<pl%>:%>パ # ;
-!%<adj%>:%> AbstractNoun ;
-!%<adj%>%<comp%>%[%+comp%]:  # ;
-!%<adj%>%<sup%>%[%+sup%]:  # ;
-!%<v%>%<iv%>%<nmlz%>%<abs%>:%>% イ # ;
-!%<v%>%<iv%>%<nmlz%>%<abs%>:%>% ヒ # ;
-!%<v%>%<iv%>%<nmlz%>:%>% ㇷ゚ # ; 
-!%<adj%>:  # ;
-
-!LEXICON AbstractNoun
-!%<n%>%<abs%>:ポ Diminutive ;
-
-!LEXICON Verb-IV
-!
-!%<adv%>:%>ノ # ;
-
-
-LEXICON Copula
-
-%<v%>%<cop%>:  # ;
-%<v%>%<cop%>%<p4%>[%+idef%]:  # ;
-
-!LEXICON Verb-IV
-!
-!%<adj%>:%>テ Verb-IV ;
-
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!                          L E X I C O N                                  !!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+###############################################################################
+###                          L E X I C O N                                  ###
+###############################################################################
 
 LEXICON NounRoot
 
-! house:house NounInfl-Common ; ! A noun
-エ:エ NounInfl-Common ; ! a noun
-チ:チ NounInfl-Common ; !
-エチ:エチ NounInfl-Common ; !
-ク:ク NounInfl-Common ; !
-イセ:イセ NounInfl-Common ; !
-ポンペ:ポンペ NounInfl-Common ; !
-チカㇷ゚:チカㇷ゚ NounInfl-Common ; !
-オッカィ:オッカィ NounInfl-Common ; !
-チイカナィ:チイカナィ NounInfl-Common ; !
-チㇱナィ:チㇱナィ NounInfl-Common ; !
-ト゚カラ:ト゚カラ NounInfl-Common ; !
-イキリ:イキリ NounInfl-Common ; ! a seam 
-アット゚ㇱ:アット゚ㇱ NounInfl-Common ; ! cloth 
-シセイ:シセイ NounInfl-Common ; ! a house
-チセ:チセ NounInfl-Common ; ! house
-ハウ:ハウ NounInfl-Common ; ! the voice
-ホニ:ホニ NounInfl-Common ; ! the stomach
-カヤ:カヤ NounInfl-Common ; ! a sail
-アイアイ:アイアイ NounInfl-utara ; !
-アイヌ:アイヌ NounInfl-utara ; ! human/the Ainu
-アシキペㇳ:アシキペㇳ NounInfl-U ; !
-アㇳ:ア%{Tt%} NounInfl-U ; !
-アㇺ:ア%{Mm%} NounInfl-U ; !
-イクㇱペ:%{i%}クㇱペ NounInfl-preU ; !
-イタㇰ:イタ%{Kk%} NounInfl-U ; !
-イリワㇰ:イリワㇰ NounInfl-preU ; !
-ウㇺマ:ウㇺマ NounInfl-utara ; !
-クㇳ:ク%{t%} NounInfl-U ; !
-ケマ:ケマ NounInfl-preU ; !
-チェㇷ゚:チェㇷ゚ NounInfl-Nu ; !
-ニシ:ニシ NounInfl-U ; !
-ニマキ:ニマキ NounInfl-preU ; !
-フラ:フラ NounInfl-Nu ; !
-ペ:ペ%{pe%} NounInfl-Irreg ; !
-ペㇳ:ペㇳ NounInfl-Irreg ; !
-チコイキㇷ゚:チコイキㇷ゚ NounInfl-Common ; !
-チセイ:チセイ NounInfl-Common ; !
-シウェンテㇷ゚:シウェンテㇷ゚ NounInfl-Common ; !
-クル:クル NounInfl-Common ; !
-チェㇷ゚:チェㇷ゚ NounInfl-Nu ; !
-クッペ:クッペ NounInfl-preU ; !
-セタ:セタ NounInfl-Common ; !
-アアㇰ:アアㇰ NounInfl-Common ; 
-アトノ:アトノ NounInfl-Common ; 
-アニㇱ:アニㇱ NounInfl-Common ; 
-アポホ:アポホ NounInfl-Common ; 
-アミチ:アミチ NounInfl-Common ; 
-アユポ:アユポ NounInfl-Common ; 
-アㇰ:アㇰ NounInfl-Common ; 
-ト゚レㇱ:ト゚レㇱ NounInfl-Common ; 
-シㇰ:シㇰ NounInfl-Common ; ! eye
-シキ:シキ NounInfl-Common ; ! eye TODO: Fix possessive noun (see above entry)
-カムィ:カムィ NounInfl-Common ;
-パ:パ NounInfl-Common ;
-サㇺ:サㇺ NounInfl-Relational ;
-ル:ル NounInfl-Common ;
-ニㇱパ:ニㇱパ NounInfl-Common ;
-ポネ:ポネ NounInfl-Common ; ! bone
-シタ:シタ NounInfl-Common ; ! dog
-ウパㇱ:ウパㇱ NounInfl-Common ; ! snow
-イㇽ:イㇽ NounInfl-Common ; ! family/kin
-フチ:フチ NounInfl-Common ; ! grandmother/old woman
-フㇺイ:フㇺイ NounInfl-Common ; ! sound (possessive)
-アペ:アペ NounInfl-Common ; ! fire
-ワッカ:ワッカ NounInfl-Common ; ! water
-ケㇺ:ケㇺ NounInfl-Common ; ! blood
-アト゚ィ:アト゚ィ NounInfl-Common ; ! sea/ocean
-アマㇺ:アマㇺ NounInfl-Common ; ! meal (lit. rice/cereals)
-アㇷ゚ト:アㇷ゚ト NounInfl-Common ; ! rain
-マチヤ:マチヤ NounInfl-Common ; ! town
-ヌㇷ゚:ヌㇷ゚ NounInfl-Common ; ! field
-オㇱケ:オㇱケ NounInfl-Common ; ! inside (noun locative)
-ヌプリ:ヌプリ NounInfl-Common ; ! mountain
-モンラィケ:モンラィケ NounInfl-Common ; ! work
-ケラ:ケラ NounInfl-Common ; ! taste
-パロ:パロ NounInfl-Common ; ! mouth (possessive)
-イタピルㇷ゚:イタピルㇷ゚ NounInfl-Common ; ! cloth
-カヤ:カヤ NounInfl-Common ; ! sail
-チュㇰ:チュㇰ NounInfl-Common ; ! autumn
-クㇽ:クㇽ NounInfl-Common ; ! person
-ポト゚ㇽケㇱ:ポト゚ㇽケㇱ NounInfl-Common ; ! bruise
-オヤシㇺ:オヤシㇺ  NounInfl-Common ; ! day after tomorrow
-オヤシㇺシㇺケ:オヤシㇺシㇺケ  NounInfl-Common ; ! 2 days after tomorrow
-ケマ:ケマ NounInfl-Common ; ! leg
-サパ:サパ NounInfl-Common ; ! head
-シケ:シケ NounInfl-Common ; ! luggage
-プィ:プィ NounInfl-Common ; ! hole
-スㇺ:スㇺ NounInfl-Common ; ! oil
-イト゚ンナㇷ゚:イト゚ンナㇷ゚ NounInfl-Common ; ! ant
-カィテ:カィテ NounInfl-Common ; ! anchor
-サポ:サポ NounInfl-Common ; ! older sister
-チㇷ゚:チㇷ゚ NounInfl-Common ; ! ship
-ト゚ィ:ト゚ィ NounInfl-Common ; ! stomach
-チュㇷ゚:チュㇷ゚ NounInfl-Common ; ! sun/moon/month
-ニペㇰ:ニペㇰ NounInfl-Common ; ! light (moon)
-!ムン:ムン NounInfl-Common ; ! grass NEW
-ラㇳチャコ:ラㇳチャコ NounInfl-Common ; ! light
-アィアィ:アィアィ NounInfl-Common ; ! baby
-タペト:タペト NounInfl-Common ; ! businessman
-ノㇳキリ:ノㇳキリ NounInfl-Common ; ! chin
-トゥカㇽ:トゥカㇽ NounInfl-Common ; ! seal
-ポト゚ㇽケス:ポト゚ㇽケス NounInfl-Common ; ! bruise
-ケマ:ケマ NounInfl-Common ; ! leg
-チキㇼ:チキㇼ NounInfl-Common ; ! animal's leg
-ルウェ:ルウェ NounInfl-Common ; ! trace/footprint
-トコㇺポネ:トコㇺポネ NounInfl-Common ; ! ankle
-ウルペㇳ:ウルペㇳ NounInfl-Common ; ! toe
-アントゥキ:アントゥキ NounInfl-Common ; ! red bean
-ポッペ:ポッペ NounInfl-Common ; ! sweat
-サパ:サパ NounInfl-Common ; ! head
-プィ:プィ NounInfl-Common ; ! hole
-ユピ:ユピ NounInfl-Common ; ! older brother
-サポ:サポ NounInfl-Common ; ! older sister
-シラゥ:シラゥ NounInfl-Common ; ! horsefly
-スㇺ:スㇺ NounInfl-Common ; ! oil
-フィペ:フィペ NounInfl-Common ; ! grease/fat
-アマㇺ:アマㇺ NounInfl-Common ; ! rice
-イチェン:イチェン NounInfl-Common ; ! money
-ヤ:ヤ NounInfl-Common ; ! net
-クト゚:クト゚ NounInfl-Common ; ! fish trap
-アㇷ゚ト:アㇷ゚ト NounInfl-Common ; ! rain
-ト:ト NounInfl-Common ; ! day
-ルヤㇺペ:ルヤㇺペ NounInfl-Common ; ! storm
-ニㇲクㇽ:ニㇲクㇽ NounInfl-Common ; ! cloud
-カゥカゥ:カゥカゥ NounInfl-Common ; ! hail
-イト゚ンナㇷ゚:イト゚ンナㇷ゚ NounInfl-Common ; ! ant
-カㇺピ:カㇺピ NounInfl-Common ; ! paper
-ポㇷ゚:ポㇷ゚ NounInfl-Common ; ! blister
-ウㇺマ:ウㇺマ NounInfl-Common ; ! horse
-ムンチロ:ムンチロ NounInfl-Common ; ! millet
-アィペ:アィペ NounInfl-Common ; ! abalone
-オッカイポ:オッカイポ NounInfl-Common ; ! boy
-メノコ:メノコ NounInfl-Common ; ! woman
-ニテㇲ:ニテㇲ NounInfl-Common ; ! raft
-カィテ:カィテ NounInfl-Common ; ! anchor
-ト゚ㇲ:ト゚ㇲ NounInfl-Common ; ! net/rope
-マウェ:マウェ NounInfl-Common ; ! breath
-ト゚ミ:ト゚ミ NounInfl-Common ; ! war
-トパット゚ミ:トパット゚ミ NounInfl-Common ; ! burglary
-ヘㇺパㇰ:ヘㇺパㇰ NounInfl-Common ; ! how many
-スィ:スィ NounInfl-Common ; ! times
-メㇺ:メㇺ NounInfl-Common ; ! pond
-スマ:スマ NounInfl-Common ; ! stone
-ルィ:ルィ NounInfl-Common ; ! grinding stone
-スシルㇷ゚:スシルㇷ゚ NounInfl-Common ; ! pumice stone
-エポタラ:エポタラ NounInfl-Common ; ! doctor
-ナィ:ナィ NounInfl-Common ; ! stream
-トペニ:トペニ NounInfl-Common ; ! maple tree
-チュルㇷ゚:チュルㇷ゚ NounInfl-Common ; ! january
-エマゥリ:エマゥリ NounInfl-Common ; ! strawberry
-ヘㇺパラ:ヘㇺパラ NounInfl-Common ; ! when
-トケィ:トケィ NounInfl-Common ; ! clock
-アシㇰネ:アシㇰネ NounInfl-Common ; ! five
-シㇺプィ:シㇺプィ NounInfl-Common ; ! well
-オマキルㇲ:オマキルㇲ NounInfl-Common ; ! locust
-イメル:イメル NounInfl-Common ; ! lightning
-エㇽメタㇺプ:エㇽメタㇺプ NounInfl-Common ; ! wart
-アユㇲニ:アユㇲニ NounInfl-Common ; ! korean raspberry
-エモ:エモ NounInfl-Common ; ! potato
-アパウㇲタ:アパウㇲタ NounInfl-Common ; ! doctor
-タンヌ:タンヌ NounInfl-Common ; ! dolphin
-イヨㇷ゚:イヨㇷ゚ NounInfl-Common ; ! container
-ワッカ:ワッカ NounInfl-Common ; ! water
-ポンチェㇷ゚:ポンチェㇷ゚ NounInfl-Common ; ! sardine
-パサ:パサ NounInfl-Common ; ! carriage
-カ:カ NounInfl-Common ; ! top
-テㇲカㇽ:テㇲカㇽ NounInfl-Common ; ! errand
-ペコ:ペコ NounInfl-Common ; ! cow
-ニス:ニス NounInfl-Common ; ! mortar
-ピリ:ピリ  NounInfl-Common ; ! vortex
-シノㇳチャ:シノㇳチャ NounInfl-Common ; ! song
-イㇼ:イㇼ NounInfl-Common ; ! kin
-チェㇷ゚:チェㇷ゚  NounInfl-Common ; ! fish
-ラㇺ:ラㇺ NounInfl-Common ; ! scales
-ミㇺ:ミㇺ NounInfl-Common ; ! fish meat
-ノカ:ノカ NounInfl-Common ; ! picture
-イモㇰ:イモㇰ NounInfl-Common ; ! bait
-ニテㇰ:ニテㇰ NounInfl-Common ; ! branch
-ノコ:ノコ NounInfl-Common ; ! saw
-ヌマト゚シ:ヌマト゚シ NounInfl-Common ; ! collar
-アㇳコチ:アㇳコチ NounInfl-Common ; ! fishtail
-ユㇰ:ユㇰ NounInfl-Common ; ! deer
-アピㇼ:アピㇼ NounInfl-Common ; ! deer tail
-カㇻク:カㇽク NounInfl-Common ; ! nephew
-ヤ:ヤ NounInfl-Common ; ! land/shore
-ホㇿケゥ:ホㇿケゥ NounInfl-Common ; ! wolf
-アワンキ:アワンキ NounInfl-Common ; ! fan
-シㇼ:シㇼ NounInfl-Common ; ! appearance
-セㇾマカセㇽマカ NounInfl-Common ; ! behind
-トピㇱキ:トピㇱキ NounInfl-Common ; ! malaria
-ウオサ:ウオサ NounInfl-Common ; ! weaving instrument
-アチャ:アチャ NounInfl-Common ; ! uncle
-パロ:パロ NounInfl-Common ; ! mouth
-オハゥ:オハゥ NounInfl-Common ; ! soup
-アキヒ:アキヒ NounInfl-Common ; ! younger brother
-ウナㇻペ:ウナㇽペ NounInfl-Common ; ! aunt
-クㇳ:クㇳ NounInfl-Common ; ! sash
-ケㇲ:ケㇲ NounInfl-Common ; ! end
-ホク:ホク NounInfl-Common ; ! husband
-ト゚リ:ト゚リ NounInfl-Common ; ! pole
-セィ:セィ NounInfl-Common ; ! shell
-ネ:ネ NounInfl-Common ; ! what
-マッカチ:マッカチ NounInfl-Common ; ! girl
-ネン:ネン NounInfl-Common ; ! who
-ネㇷ゚:ネㇷ゚ NounInfl-Common ; ! what
-ムイェ:ムイェ NounInfl-Common ; ! sheaf
-パㇻカ:パㇻカ NounInfl-Common ; ! shelf
-オッケオッケ:オッケオッケ NounInfl-Common ; ! stick
-ウォㇿ:ウォㇿ NounInfl-Common ; ! water (old)
-ニ:ニ NounInfl-Common ; ! firewood
-オㇿ:オㇿ NounInfl-Common ; ! noun locative
-ウタㇻ:ウタㇻ NounInfl-Common ; ! kin
-タスㇺ:タスㇺ NounInfl-Common ; ! sickness
-オルㇱペ:オルㇱペ NounInfl-Common ; ! story
-Eq%<n%>:Eq  # ; ! units
-kg%<n%>:kg  # ; ! units
-m2%<n%>:m2  # ; ! units
-q%<n%>:q  # ; ! units
-テ%<n%>%<nloc%>:テ  # ; ! here
-モシㇼ:モシㇼ NounInfl-Common ; ! land
-アパ:アパ NounInfl-Common ; ! door
-エスペラント:エスペラント NounInfl-Common ; ! Esperanto
-アイヌイタㇰ:アイヌイタㇰ NounInfl-Common ; ! Ainu Language
-アイヌウタㇻ:アイヌウタㇻ NounInfl-Common ; ! Ainu People
-アイヌタイム:アイヌタイム  NounInfl-Common ; ! Ainu Times
+エ:エ # a noun
+チ:チ #
+エチ:エチ #
+ク:ク #
+イセ:イセ #
+ポンペ:ポンペ #
+チカㇷ゚:チカㇷ゚ #
+オッカィ:オッカィ #
+チイカナィ:チイカナィ #
+チㇱナィ:チㇱナィ #
+ト゚カラ:ト゚カラ #
+イキリ:イキリ # a seam 
+アット゚ㇱ:アット゚ㇱ # cloth 
+シセイ:シセイ # a house
+チセ:チセ # house
+ハウ:ハウ # the voice
+ホニ:ホニ # the stomach
+カヤ:カヤ # a sail
+アイアイ:アイアイ[utara] #
+アイヌ:アイヌ[utara] # human/the Ainu
+アシキペㇳ:アシキペㇳ[U] #
+アㇳ:ア{Tt}[U] #
+アㇺ:ア{Mm}[U] #
+イクㇱペ:{i}クㇱペ[preU] #
+イタㇰ:イタ{Kk}[U] #
+イリワㇰ:イリワㇰ[preU] #
+ウㇺマ:ウㇺマ[utara] #
+クㇳ:ク{t}[U] #
+ケマ:ケマ[preU] #
+チェㇷ゚:チェㇷ゚[Nu] #
+ニシ:ニシ[U] #
+ニマキ:ニマキ[preU] #
+フラ:フラ[Nu] #
+ペ:ペ{pe}[Irreg] #
+ペㇳ:ペㇳ[Irreg] #
+チコイキㇷ゚:チコイキㇷ゚ #
+チセイ:チセイ #
+シウェンテㇷ゚:シウェンテㇷ゚ #
+クル:クル #
+チェㇷ゚:チェㇷ゚[Nu] #
+クッペ:クッペ[preU] #
+セタ:セタ #
+アアㇰ:アアㇰ
+アトノ:アトノ
+アニㇱ:アニㇱ
+アポホ:アポホ
+アミチ:アミチ
+アユポ:アユポ
+アㇰ:アㇰ
+ト゚レㇱ:ト゚レㇱ
+シㇰ:シㇰ # eye
+シキ:シキ # eye TODO: Fix possessive noun (see above entry)
+カムィ:カムィ
+パ:パ
+ル:ル
+ニㇱパ:ニㇱパ
+ポネ:ポネ # bone
+シタ:シタ # dog
+ウパㇱ:ウパㇱ # snow
+イㇽ:イㇽ # family/kin
+フチ:フチ # grandmother/old woman
+フㇺイ:フㇺイ # sound (possessive)
+アペ:アペ # fire
+ワッカ:ワッカ # water
+ケㇺ:ケㇺ # blood
+アト゚ィ:アト゚ィ # sea/ocean
+アマㇺ:アマㇺ # meal (lit. rice/cereals)
+アㇷ゚ト:アㇷ゚ト # rain
+マチヤ:マチヤ # town
+ヌㇷ゚:ヌㇷ゚ # field
+オㇱケ:オㇱケ # inside (noun locative)
+ヌプリ:ヌプリ # mountain
+モンラィケ:モンラィケ # work
+ケラ:ケラ # taste
+パロ:パロ # mouth (possessive)
+イタピルㇷ゚:イタピルㇷ゚ # cloth
+カヤ:カヤ # sail
+チュㇰ:チュㇰ # autumn
+クㇽ:クㇽ # person
+ポト゚ㇽケㇱ:ポト゚ㇽケㇱ # bruise
+オヤシㇺ:オヤシㇺ # day after tomorrow
+オヤシㇺシㇺケ:オヤシㇺシㇺケ # 2 days after tomorrow
+ケマ:ケマ # leg
+サパ:サパ # head
+シケ:シケ # luggage
+プィ:プィ # hole
+スㇺ:スㇺ # oil
+イト゚ンナㇷ゚:イト゚ンナㇷ゚ # ant
+カィテ:カィテ # anchor
+サポ:サポ # older sister
+チㇷ゚:チㇷ゚ # ship
+ト゚ィ:ト゚ィ # stomach
+チュㇷ゚:チュㇷ゚ # sun/moon/month
+ニペㇰ:ニペㇰ # light (moon)
+#ムン:ムン # grass NEW
+ラㇳチャコ:ラㇳチャコ # light
+アィアィ:アィアィ # baby
+タペト:タペト # businessman
+ノㇳキリ:ノㇳキリ # chin
+トゥカㇽ:トゥカㇽ # seal
+ポト゚ㇽケス:ポト゚ㇽケス # bruise
+ケマ:ケマ # leg
+チキㇼ:チキㇼ # animal's leg
+ルウェ:ルウェ # trace/footprint
+トコㇺポネ:トコㇺポネ # ankle
+ウルペㇳ:ウルペㇳ # toe
+アントゥキ:アントゥキ # red bean
+ポッペ:ポッペ # sweat
+サパ:サパ # head
+プィ:プィ # hole
+ユピ:ユピ # older brother
+サポ:サポ # older sister
+シラゥ:シラゥ # horsefly
+スㇺ:スㇺ # oil
+フィペ:フィペ # grease/fat
+アマㇺ:アマㇺ # rice
+イチェン:イチェン # money
+ヤ:ヤ # net
+クト゚:クト゚ # fish trap
+アㇷ゚ト:アㇷ゚ト # rain
+ト:ト # day
+ルヤㇺペ:ルヤㇺペ # storm
+ニㇲクㇽ:ニㇲクㇽ # cloud
+カゥカゥ:カゥカゥ # hail
+イト゚ンナㇷ゚:イト゚ンナㇷ゚ # ant
+カㇺピ:カㇺピ # paper
+ポㇷ゚:ポㇷ゚ # blister
+ウㇺマ:ウㇺマ # horse
+ムンチロ:ムンチロ # millet
+アィペ:アィペ # abalone
+オッカイポ:オッカイポ # boy
+メノコ:メノコ # woman
+ニテㇲ:ニテㇲ # raft
+カィテ:カィテ # anchor
+ト゚ㇲ:ト゚ㇲ # net/rope
+マウェ:マウェ # breath
+ト゚ミ:ト゚ミ # war
+トパット゚ミ:トパット゚ミ # burglary
+ヘㇺパㇰ:ヘㇺパㇰ # how many
+スィ:スィ # times
+メㇺ:メㇺ # pond
+スマ:スマ # stone
+ルィ:ルィ # grinding stone
+スシルㇷ゚:スシルㇷ゚ # pumice stone
+エポタラ:エポタラ # doctor
+ナィ:ナィ # stream
+トペニ:トペニ # maple tree
+チュルㇷ゚:チュルㇷ゚ # january
+エマゥリ:エマゥリ # strawberry
+ヘㇺパラ:ヘㇺパラ # when
+トケィ:トケィ # clock
+アシㇰネ:アシㇰネ # five
+シㇺプィ:シㇺプィ # well
+オマキルㇲ:オマキルㇲ # locust
+イメル:イメル # lightning
+エㇽメタㇺプ:エㇽメタㇺプ # wart
+アユㇲニ:アユㇲニ # korean raspberry
+エモ:エモ # potato
+アパウㇲタ:アパウㇲタ # doctor
+タンヌ:タンヌ # dolphin
+イヨㇷ゚:イヨㇷ゚ # container
+ワッカ:ワッカ # water
+ポンチェㇷ゚:ポンチェㇷ゚ # sardine
+パサ:パサ # carriage
+カ:カ # top
+テㇲカㇽ:テㇲカㇽ # errand
+ペコ:ペコ # cow
+ニス:ニス # mortar
+ピリ:ピリ # vortex
+シノㇳチャ:シノㇳチャ # song
+イㇼ:イㇼ # kin
+チェㇷ゚:チェㇷ゚ # fish
+ラㇺ:ラㇺ # scales
+ミㇺ:ミㇺ # fish meat
+ノカ:ノカ # picture
+イモㇰ:イモㇰ # bait
+ニテㇰ:ニテㇰ # branch
+ノコ:ノコ # saw
+ヌマト゚シ:ヌマト゚シ # collar
+アㇳコチ:アㇳコチ # fishtail
+ユㇰ:ユㇰ # deer
+アピㇼ:アピㇼ # deer tail
+カㇻク:カㇽク # nephew
+ヤ:ヤ # land/shore
+ホㇿケゥ:ホㇿケゥ # wolf
+アワンキ:アワンキ # fan
+シㇼ:シㇼ # appearance
+セㇾマカセㇽマカ # behind
+トピㇱキ:トピㇱキ # malaria
+ウオサ:ウオサ # weaving instrument
+アチャ:アチャ # uncle
+パロ:パロ # mouth
+オハゥ:オハゥ # soup
+アキヒ:アキヒ # younger brother
+ウナㇻペ:ウナㇽペ # aunt
+クㇳ:クㇳ # sash
+ケㇲ:ケㇲ # end
+ホク:ホク # husband
+ト゚リ:ト゚リ # pole
+セィ:セィ # shell
+ネ:ネ # what
+マッカチ:マッカチ # girl
+ネン:ネン # who
+ネㇷ゚:ネㇷ゚ # what
+ムイェ:ムイェ # sheaf
+パㇻカ:パㇻカ # shelf
+オッケオッケ:オッケオッケ # stick
+ウォㇿ:ウォㇿ # water (old)
+ニ:ニ # firewood
+オㇿ:オㇿ # noun locative
+ウタㇻ:ウタㇻ # kin
+タスㇺ:タスㇺ # sickness
+オルㇱペ:オルㇱペ # story
+Eq<n>:Eq  # units
+kg<n>:kg  # units
+m2<n>:m2  # units
+q<n>:q  # units
+テ<n><nloc>:テ  # here
+モシㇼ:モシㇼ # land
+アパ:アパ # door
+エスペラント:エスペラント # Esperanto
+アイヌイタㇰ:アイヌイタㇰ # Ainu Language
+アイヌウタㇻ:アイヌウタㇻ # Ainu People
+アイヌタイム:アイヌタイム # Ainu Times
+
+LEXICON RelationalNounRoot
+サㇺ:サㇺ
 
 LEXICON Clitic
 
-アナㇰ%<cli%>%<top%>:アナㇰ # ;
-アナㇰネ%<cli%>%<top%>:アナㇰネ # ;
-ヒケ%<cli%>%<nmlz%>:ヒケ  # ; ! with regards to X
+アナㇰ<cli><top>:アナㇰ
+アナㇰネ<cli><top>:アナㇰネ
+ヒケ<cli><nmlz>:ヒケ  # with regards to X
 
 LEXICON Pronoun
 
-アオカィ%<n%>%<pn%>:アオカィ # ;
+アオカィ<n><pn>:アオカィ
 
 LEXICON VerbRoot
 
-モィレ:モィレ Verb-IV ; ! be late
-ラチ:ラチ Verb-IV ; ! be gentle (old)
-ハゥケ:ハゥケ Verb-IV ; ! be calm/cheap
-ソン:ソン Verb-IV ; ! be true (old) 
-ハロ:ハロ Verb-IV ;
-ラム:ラム Verb-IV ;
-ヌチャㇰ:ヌチャㇰ Verb-IV ;
-アㇱカン:アㇱカン Verb-IV ;
-ケㇺ:ケㇺ Verb-TV ; ! lick
-ヌペキ:ヌペキ Verb-IV ; ! bright
-パセ:パセ Verb-IV ; ! heavy
-ポロ:ポロ Verb-IV ; ! large
-キ:キ Verb-IV ; ! do (auxiliary)
-アマ:アマ Verb-TV ; ! put/place
-クパ:クパ Verb-TV ; ! bite
-ペレパ:ペレパ Verb-TV ; ! cleave/split/break (old)
-テレケ:テレケ Verb-IV ; ! jump
-イセ:イセ Verb-IV ; ! squeak/sqeal (old)
-ミㇰ:ミㇰ Verb-IV ; ! bark
-ミナ:ミナ Verb-IV ; ! laugh
-キラ:キラ Verb-IV ; ! escape
-イタㇰ:イタㇰ Verb-IV ; ! speak
-エ:エ Verb-TV ; ! eat
-イェ:イェ Verb-TV ; ! say/tell
-ヌ:ヌ Verb-TV ; ! hear
-ヌイェ:ヌイェ Verb-TV ; ! carve/write/tattoo
-ライケ:ライケ Verb-TV ; ! kill
-セ:セ Verb-IV ; ! squeak/squeal
-ルㇲカ:ルㇲカ Verb-IV ; ! be angry with something
-ネ:ネ Copula ; ! copula
-ピㇼカ:ピㇼカ Verb-IV ; ! be good
-ウェン:ウェン  Verb-IV ; ! be bad/poor
-ハロコロ:ハロコロ Verb-IV ; ! be fat (old)
-ポン:ポン Verb-IV ; ! be small (old)
-アン:アン Verb-IV ; ! exist/live
-ハウェアン:ハウェアン Verb-IV ; ! say
-シノㇳ:シノㇳ Verb-IV ; ! play (have fun)
-ル:ル Verb-IV ; ! melt
-エセ:エセ Verb-TV ; ! answer
-キ:キ Verb-TV ; ! do (tv)
-アㇽパ:アㇽパ Verb-IV ; ! go (iv)
-エㇰ:エㇰ Verb-IV ; ! come (iv)
-ラィ:ラィ Verb-IV ; ! die (iv)
-ペゥレ:ペゥレ Verb-IV ; ! be young
-ヌカㇽ:ヌカㇽ Verb-TV ; ! see
-モンラィケ:モンラィケ Verb-IV ; ! do work 
-イッカ:イッカ Verb-IV ; ! steal
-チㇱ:チㇱ Verb-IV ; ! cry
-モコㇽ:モコㇽ Verb-IV ; ! sleep
-アㇱ:アㇱ Verb-IV ; ! stand
-アㇷ゚カㇱ:アㇷ゚カㇱ Verb-IV ; ! walk
-ヘト゚ク:ヘト゚ク Verb-IV ; ! come out/be born
-アフン:アフン Verb-IV ; ! enter (sg) TODO: figure out how to deal with this
-カリ:カリ Verb-IV ; ! spin
-ニン:ニン Verb-IV ; ! decrease
-チ:チ Verb-TV ; ! get burnt/dry/boiled
-アㇽカ:アㇽカ Verb-IV ; ! hurt
-オハ:オハ Verb-IV ; ! be open/vacant NEW
-フレ:フレ Verb-IV ; ! be red/pink NEW
-イヨマㇷ゚:イヨマㇷ゚ Verb-IV ; ! meet
-ウヌカㇽ:ウヌカㇽ Verb-IV ; ! be red 
-ラㇺテ:ラㇺテ Verb-TV ; ! dim
-マゥソㇰ:マゥソㇰ Verb-IV ; ! yawn
-オハレ:オハレ Verb-TV ; ! open/empty
-ヤンケ:ヤンケ Verb-TV ; ! raise/lift
-オハㇰ:オハㇰ Verb-IV ; ! be shallow
-ケㇺ:ケㇺ Verb-IV ; ! lick
-シネウェ:シネウェ Verb-IV ; ! visit
-シㇼポㇷ゚ケ:シㇼポㇷ゚ケ Verb-IV ; ! be warm
-アシㇼ:アシㇼ Verb-IV ; ! be new
-シㇼセセㇰ:シㇼセセㇰ Verb-IV ; ! be hot
-イロンネ:イロンネ Verb-IV ; ! be thick
-ウウェカㇻパ:ウウェカㇻパ Verb-IV ; ! gather
-オマレ:オマレ Verb-TV ; ! dig
-ハルコㇿ:ハルコㇿ Verb-IV ; ! be fatty
-ハルサㇰ:ハルサㇰ Verb-IV ; ! be thin
-イカ:イカ Verb-IV ; ! overflow
-オペン:オペン Verb-IV ; ! be sweet
-イカㇲマ:イカㇲマ Verb-IV ; ! excessive
-ホㇰ:ホㇰ Verb-TV ; ! buy
-テㇲカオ:テㇲカオ Verb-TV ; ! knit
-ヤヤパプ:ヤヤパプ Verb-IV ; ! apologize
-ヤㇲケ:ヤㇲケ Verb-IV ; ! wash hands
-エウォンネ:エウォンネ Verb-IV ; ! wash face
-フライェ:フライェ Verb-TV ; ! wash
-サㇳ:サㇳ Verb-IV ; ! be dry
-エパゥレ:エパゥレ Verb-IV ; ! fight
-イサㇺ:イサㇺ Verb-IV ; ! not exist
-オカ:オカ Verb-IV ; ! exist (pl)
-ウㇲ:ウㇲ Verb-TV ; ! attach to
-エラㇺポキウェン:エラㇺポキウェン Verb-TV ; ! have pity
-ルラ:ルラ Verb-TV ; ! carry
-ヘセ:ヘセ Verb-IV ; ! breathe
-キロㇿコㇿ:キロㇿコㇿ Verb-IV ; ! be forceful/vigorous
-トゥミコㇿ:トゥミコㇿ Verb-IV ; ! fight
-プㇽプㇽセ:プㇽプㇽセ Verb-IV ; ! gush forth
-モナサㇷ゚:モナサㇷ゚ Verb-IV ; ! be busy
-チゥ:チゥ Verb-TV ; ! sting
-ヌカㇽ:ヌカㇽ Verb-TV ; ! see
-オケウェ:オケウェ Verb-TV ; ! chase
-イノンノタㇰ:イノンノタㇰ Verb-IV ; ! pray
-エィワンケ:エィワンケ Verb-TV ; ! use
-トゥカン:トゥカン Verb-TV ; ! attack (with guns/bows)
-アㇰ:アㇰ Verb-IV ; ! shoot
-シヌイェ:シヌイェ Verb-IV ; ! get a tattoo
-オマレ:オマレ Verb-IV ; ! fill
-ペカンケ:ペカンケ Verb-IV ; ! float
-テㇲカㇻ:テㇲカㇻ Verb-IV ; ! send a message
-アフㇷ゚カㇻ:アフㇷ゚カㇻ Verb-TV ; ! receive
-スンケ:スンケ Verb-IV ; ! lie
-キㇰ:キㇰ Verb-TV ; ! hit
-ヘトゥク:ヘトゥク Verb-IV ; ! be born
-ヌワㇷ゚:ヌワㇷ゚ Verb-IV ; ! give birth
-チュプ:チュプ Verb-TV ; ! reverse
-ヤィコプンテㇰ:ヤィコプンテㇰ Verb-IV ; ! be happy
-チ:チ Verb-IV ; ! be ripe
-トゥラシ:トゥラシ Verb-IV ; ! go upstream
-ヨㇺクㇽ:ヨㇺクㇽ Verb-IV ; ! vomit
-ニㇳネ:ニㇳネ Verb-IV ; ! be fierce
-ケセアンパ:ケセアンパ Verb-TV ; ! chase
-オㇲコニ:オㇲコニ Verb-TV ; ! catch up to
-オンネ:オンネ Verb-IV ; ! grow older
-ウォセ:ウォセ Verb-IV ; ! howl
-ポロ:ポロ Verb-IV ; ! be big
-アマ:アマ Verb-TV ; ! put
-アヌ:アヌ Verb-TV ; ! put/place (sg)
-トゥラㇺコㇿ:トゥラㇺコㇿ Verb-IV ; ! be cowardly
-ウㇳチケ:ウㇳチケ Verb-IV ; ! be shy
-アンテ:アンテ Verb-TV ; ! send
-モソソ:モソソ Verb-TV ; ! wake someone up
-イルㇲカ:イルㇲカ Verb-IV ; ! get mad
-イパカㇲヌ:イパカㇲヌ Verb-IV ; ! teach
-リテン:リテン Verb-IV ; ! be soft/gentle
-ルィ:ルィ Verb-IV ; ! be violent
-イラㇺクㇽセレ:イラㇺクㇽセレ Verb-IV ; ! be frightful
-ハチㇼ:ハチㇼ Verb-IV ; ! fall down
-トゥㇽセ:トゥㇽセ Verb-IV ; ! drop
-タㇷ゚カㇻ:タㇷ゚カㇻ Verb-IV ; ! dance
-マ:マ Verb-IV ; ! swim
-カィ:カィ Verb-IV ; ! be broken
-マィアィケ:マィアィケ Verb-IV ; ! be itchy
-エラミㇱカリ:エラミㇱカリ Verb-TV ; ! not know
-エシカルン:エシカルン Verb-TV ; ! recall
-パカㇱヌ:パカㇱヌ Verb-TV ; ! teach to
-カㇻ:カㇻ Verb-TV ; ! make
-シㇰ:シㇰ Verb-IV ; ! be full
-オカイ:オカイ Verb-IV ; ! exist (pl)
-ラㇷ゚:ラㇷ゚ Verb-IV ; !
-アリ:アリ Verb-TV ; ! place  (pl)
-アシㇼ:アシㇼ Verb-IV ; ! be new
-イワンケ:イワンケ Verb-IV ; ! be healthy
-ホプン:ホプン Verb-IV ; ! get up
-インネ:インネ Verb-IV ; ! be numerous
-ラン:ラン Verb-IV ; ! descend
-ラマン:ラマン Verb-IV ; ! clever
-コㇿ:コㇿ Verb-TV ; ! have
-ヤイヌ:ヤイヌ Verb-TV ; ! imagine
-ネヤ%<cop%>%<q%>:ネヤ # ; ! suggestive question
+モィレ:モィレ[iv] # be late
+ラチ:ラチ[iv] # be gentle (old)
+ハゥケ:ハゥケ[iv] # be calm/cheap
+ソン:ソン[iv] # be true (old) 
+ハロ:ハロ[iv]
+ラム:ラム[iv]
+ヌチャㇰ:ヌチャㇰ[iv]
+アㇱカン:アㇱカン[iv]
+ケㇺ:ケㇺ[tv] # lick
+ヌペキ:ヌペキ[iv] # bright
+パセ:パセ[iv] # heavy
+ポロ:ポロ[iv] # large
+キ:キ[iv] # do (auxiliary)
+アマ:アマ[tv] # put/place
+クパ:クパ[tv] # bite
+ペレパ:ペレパ[tv] # cleave/split/break (old)
+テレケ:テレケ[iv] # jump
+イセ:イセ[iv] # squeak/sqeal (old)
+ミㇰ:ミㇰ[iv] # bark
+ミナ:ミナ[iv] # laugh
+キラ:キラ[iv] # escape
+イタㇰ:イタㇰ[iv] # speak
+エ:エ[tv] # eat
+イェ:イェ[tv] # say/tell
+ヌ:ヌ[tv] # hear
+ヌイェ:ヌイェ[tv] # carve/write/tattoo
+ライケ:ライケ[tv] # kill
+セ:セ[iv] # squeak/squeal
+ルㇲカ:ルㇲカ[iv] # be angry with something
+ピㇼカ:ピㇼカ[iv] # be good
+ウェン:ウェン[iv] # be bad/poor
+ハロコロ:ハロコロ[iv] # be fat (old)
+ポン:ポン[iv] # be small (old)
+アン:アン[iv] # exist/live
+ハウェアン:ハウェアン[iv] # say
+シノㇳ:シノㇳ[iv] # play (have fun)
+ル:ル[iv] # melt
+エセ:エセ[tv] # answer
+キ:キ[tv] # do (tv)
+アㇽパ:アㇽパ[iv] # go (iv)
+エㇰ:エㇰ[iv] # come (iv)
+ラィ:ラィ[iv] # die (iv)
+ペゥレ:ペゥレ[iv] # be young
+ヌカㇽ:ヌカㇽ[tv] # see
+モンラィケ:モンラィケ[iv] # do work 
+イッカ:イッカ[iv] # steal
+チㇱ:チㇱ[iv] # cry
+モコㇽ:モコㇽ[iv] # sleep
+アㇱ:アㇱ[iv] # stand
+アㇷ゚カㇱ:アㇷ゚カㇱ[iv] # walk
+ヘト゚ク:ヘト゚ク[iv] # come out/be born
+アフン:アフン[iv] # enter (sg) TODO: figure out how to deal with this
+カリ:カリ[iv] # spin
+ニン:ニン[iv] # decrease
+チ:チ[tv] # get burnt/dry/boiled
+アㇽカ:アㇽカ[iv] # hurt
+オハ:オハ[iv] # be open/vacant NEW
+フレ:フレ[iv] # be red/pink NEW
+イヨマㇷ゚:イヨマㇷ゚[iv] # meet
+ウヌカㇽ:ウヌカㇽ[iv] # be red 
+ラㇺテ:ラㇺテ[tv] # dim
+マゥソㇰ:マゥソㇰ[iv] # yawn
+オハレ:オハレ[tv] # open/empty
+ヤンケ:ヤンケ[tv] # raise/lift
+オハㇰ:オハㇰ[iv] # be shallow
+ケㇺ:ケㇺ[iv] # lick
+シネウェ:シネウェ[iv] # visit
+シㇼポㇷ゚ケ:シㇼポㇷ゚ケ[iv] # be warm
+アシㇼ:アシㇼ[iv] # be new
+シㇼセセㇰ:シㇼセセㇰ[iv] # be hot
+イロンネ:イロンネ[iv] # be thick
+ウウェカㇻパ:ウウェカㇻパ[iv] # gather
+オマレ:オマレ[tv] # dig
+ハルコㇿ:ハルコㇿ[iv] # be fatty
+ハルサㇰ:ハルサㇰ[iv] # be thin
+イカ:イカ[iv] # overflow
+オペン:オペン[iv] # be sweet
+イカㇲマ:イカㇲマ[iv] # excessive
+ホㇰ:ホㇰ[tv] # buy
+テㇲカオ:テㇲカオ[tv] # knit
+ヤヤパプ:ヤヤパプ[iv] # apologize
+ヤㇲケ:ヤㇲケ[iv] # wash hands
+エウォンネ:エウォンネ[iv] # wash face
+フライェ:フライェ[tv] # wash
+サㇳ:サㇳ[iv] # be dry
+エパゥレ:エパゥレ[iv] # fight
+イサㇺ:イサㇺ[iv] # not exist
+オカ:オカ[iv] # exist (pl)
+ウㇲ:ウㇲ[tv] # attach to
+エラㇺポキウェン:エラㇺポキウェン[tv] # have pity
+ルラ:ルラ[tv] # carry
+ヘセ:ヘセ[iv] # breathe
+キロㇿコㇿ:キロㇿコㇿ[iv] # be forceful/vigorous
+トゥミコㇿ:トゥミコㇿ[iv] # fight
+プㇽプㇽセ:プㇽプㇽセ[iv] # gush forth
+モナサㇷ゚:モナサㇷ゚[iv] # be busy
+チゥ:チゥ[tv] # sting
+ヌカㇽ:ヌカㇽ[tv] # see
+オケウェ:オケウェ[tv] # chase
+イノンノタㇰ:イノンノタㇰ[iv] # pray
+エィワンケ:エィワンケ[tv] # use
+トゥカン:トゥカン[tv] # attack (with guns/bows)
+アㇰ:アㇰ[iv] # shoot
+シヌイェ:シヌイェ[iv] # get a tattoo
+オマレ:オマレ[iv] # fill
+ペカンケ:ペカンケ[iv] # float
+テㇲカㇻ:テㇲカㇻ[iv] # send a message
+アフㇷ゚カㇻ:アフㇷ゚カㇻ[tv] # receive
+スンケ:スンケ[iv] # lie
+キㇰ:キㇰ[tv] # hit
+ヘトゥク:ヘトゥク[iv] # be born
+ヌワㇷ゚:ヌワㇷ゚[iv] # give birth
+チュプ:チュプ[tv] # reverse
+ヤィコプンテㇰ:ヤィコプンテㇰ[iv] # be happy
+チ:チ[iv] # be ripe
+トゥラシ:トゥラシ[iv] # go upstream
+ヨㇺクㇽ:ヨㇺクㇽ[iv] # vomit
+ニㇳネ:ニㇳネ[iv] # be fierce
+ケセアンパ:ケセアンパ[tv] # chase
+オㇲコニ:オㇲコニ[tv] # catch up to
+オンネ:オンネ[iv] # grow older
+ウォセ:ウォセ[iv] # howl
+ポロ:ポロ[iv] # be big
+アマ:アマ[tv] # put
+アヌ:アヌ[tv] # put/place (sg)
+トゥラㇺコㇿ:トゥラㇺコㇿ[iv] # be cowardly
+ウㇳチケ:ウㇳチケ[iv] # be shy
+アンテ:アンテ[tv] # send
+モソソ:モソソ[tv] # wake someone up
+イルㇲカ:イルㇲカ[iv] # get mad
+イパカㇲヌ:イパカㇲヌ[iv] # teach
+リテン:リテン[iv] # be soft/gentle
+ルィ:ルィ[iv] # be violent
+イラㇺクㇽセレ:イラㇺクㇽセレ[iv] # be frightful
+ハチㇼ:ハチㇼ[iv] # fall down
+トゥㇽセ:トゥㇽセ[iv] # drop
+タㇷ゚カㇻ:タㇷ゚カㇻ[iv] # dance
+マ:マ[iv] # swim
+カィ:カィ[iv] # be broken
+マィアィケ:マィアィケ[iv] # be itchy
+エラミㇱカリ:エラミㇱカリ[tv] # not know
+エシカルン:エシカルン[tv] # recall
+パカㇱヌ:パカㇱヌ[tv] # teach to
+カㇻ:カㇻ[tv] # make
+シㇰ:シㇰ[iv] # be full
+オカイ:オカイ[iv] # exist (pl)
+ラㇷ゚:ラㇷ゚[iv] #
+アリ:アリ[tv] # place  (pl)
+アシㇼ:アシㇼ[iv] # be new
+イワンケ:イワンケ[iv] # be healthy
+ホプン:ホプン[iv] # get up
+インネ:インネ[iv] # be numerous
+ラン:ラン[iv] # descend
+ラマン:ラマン[iv] # clever
+コㇿ:コㇿ[tv] # have
+ヤイヌ:ヤイヌ[tv] # imagine
+ネヤ<cop><q>:ネヤ # suggestive question
 
 LEXICON Adverb
 
-エネ%<adv%>:エネ # ; ! thus/so/in such a way
-ソモ%<adv%>:ソモ # ; ! negation
-イテキ%<adv%>:イテキ # ; ! negative command
-オㇿタ%<adv%>:オㇿタ # ; ! in which
-オラノ%<adv%>:オラノ # ; ! then 
-ポロンノ%<adv%>:ポロンノ # ; ! very much
-ウサ%<adv%>:ウサ  # ; ! various
-アシンノ%<adv%>:アシンノ  # ; ! first time
-タネ%<adv%>:タネ  # ; ! now
-ネノ%<adv%>:ネノ  # ; ! same as
-アッカリ%<adv%>:アッカリ  # ; ! than (comparative) TODO: get prefixes to work here
-シノ%<adv%>:シノ  # ; ! truly 
+エネ<adv>:エネ # thus/so/in such a way
+ソモ<adv>:ソモ # negation
+イテキ<adv>:イテキ # negative command
+オㇿタ<adv>:オㇿタ # in which
+オラノ<adv>:オラノ # then 
+ポロンノ<adv>:ポロンノ # very much
+ウサ<adv>:ウサ  # various
+アシンノ<adv>:アシンノ  # first time
+タネ<adv>:タネ  # now
+ネノ<adv>:ネノ  # same as
+アッカリ<adv>:アッカリ  # than (comparative) TODO: get prefixes to work here
+シノ<adv>:シノ  # truly 
 
 LEXICON PostPosition
 
-タ%<pp%>:タ # ; ! at
-パㇰノ%<pp%>:パㇰノ # ; ! until
-アニ%<pp%>:アニ # ; ! final particle/
-ピㇱノ%<pp%>:ピㇱノ # ; ! every TODO: fix no-suffix 
-ウン%<pp%>:ウン # ; ! to
-ワノ%<pp%>:ワノ # ; ! from
-ㇷ゚%<pp%>%<nmlz%>:ㇷ゚ # ; ! -thing
-オロ%<pp%>:オロ  # ; ! place-poss (TODO: reconsider POSS-suffixing)
-エウン%<pp%>:エウン  # ; ! there.at/to
+タ<pp>:タ # at
+パㇰノ<pp>:パㇰノ # until
+アニ<pp>:アニ # final particle/
+ピㇱノ<pp>:ピㇱノ # every TODO: fix no-suffix 
+ウン<pp>:ウン # to
+ワノ<pp>:ワノ # from
+ㇷ゚<pp><nmlz>:ㇷ゚ # -thing
+オロ<pp>:オロ  # place-poss (TODO: reconsider POSS-suffixing)
+エウン<pp>:エウン  # there.at/to
 
 
 LEXICON Auxiliary
 
-ア%<perf%>%<sg%>:ア # ; 
-ナンコㇿ%<v%>%<vaux%>:ナンコㇿ # ; ! TODO: fix this logic
-クニ%<comp%>:クニ # ; ! comparative mood
-エアㇱカィ%<v%>%<vaux%>:エアㇱカィ # ; ! be able to X
-エアㇱカイ%<v%>%<vaux%>:エアㇱカイ # ; ! Dir/LR
-エアイカㇷ゚%<v%>%<vaux%>:エアイカㇷ゚  # ; ! be unable to X
+ア<perf><sg>:ア
+ナンコㇿ<v><vaux>:ナンコㇿ # TODO: fix this logic
+クニ<comp>:クニ # comparative mood
+エアㇱカィ<v><vaux>:エアㇱカィ # be able to X
+エアㇱカイ<v><vaux>:エアㇱカイ # Dir/LR
+エアイカㇷ゚<v><vaux>:エアイカㇷ゚  # be unable to X
 
 
 LEXICON Conjunction
 
-コ%<cnjsub%>:コ # ;
-クス%<cnjsub%>:クス # ;
-ワ%<cnjcoo%>:ワ # ; ! and
-オロワ%<cnjcoo%>:オロワ # ;
-ノ%<cnjcoo%>:ノ # ; ! and (old)
-ヒネ%<cnjcoo%>:ヒネ # ; ! and (old)
-コㇿカ%<cnjcoo%>:コㇿカ # ; ! but
-コㇿ%<cnjcoo%>:コㇿ # ; ! when/if
-セコㇿ%<quot%>:セコㇿ # ; ! quotation marker
-ヤㇰ%<cnjsub%>:ヤㇰ # ; ! if
-ヤクン%<cnjsub%>:ヤクン # ; ! if (plus conjunction)
-ヤッカ%<cnjcoo%>:ヤッカ  # ; ! if-even
-ノイネ%<cnjcoo%>:ノイネ  # ; ! look as if 
+コ<cnjsub>:コ
+クス<cnjsub>:クス
+ワ<cnjcoo>:ワ # and
+オロワ<cnjcoo>:オロワ
+ノ<cnjcoo>:ノ # and (old)
+ヒネ<cnjcoo>:ヒネ # and (old)
+コㇿカ<cnjcoo>:コㇿカ # but
+コㇿ<cnjcoo>:コㇿ # when/if
+セコㇿ<quot>:セコㇿ # quotation marker
+ヤㇰ<cnjsub>:ヤㇰ # if
+ヤクン<cnjsub>:ヤクン # if (plus conjunction)
+ヤッカ<cnjcoo>:ヤッカ  # if-even
+ノイネ<cnjcoo>:ノイネ  # look as if 
 
 LEXICON Determiner
 
-ト゚ㇷ゚%<bn%>%<ndet%>:ト゚ㇷ゚ # ;
+ト゚ㇷ゚<bn><ndet>:ト゚ㇷ゚
 
 LEXICON Nominalizer
 
-ヒ%<nmlz%>:ヒ # ;
-イ%<nmlz%>:イ # ;
-ルウェ%<nmlz%>%<ev%>%<infr%>:ルウェ # ;
+ヒ<nmlz>:ヒ
+イ<nmlz>:イ
+ルウェ<nmlz><ev><infr>:ルウェ
 
 LEXICON Particle 
 
-カ%<prt%>%<adv%>:カ # ;
-ロ%<prt%>%<chrt%>:ロ # ;
+カ<prt><adv>:カ
+ロ<prt><chrt>:ロ
 
 LEXICON Exclamation
 
-アニ%<exc%>:アニ # ;
+アニ<exc>:アニ
 
 LEXICON ProperNoun
 
-アㇱカンネ% ラマㇳ%<np%>:アㇱカンネ% ラマㇳ # ;
-ヨロタン%<np%>:ヨロタン # ; ! jordan
-イェス%<np%>:イェス # ; ! jesus
+アㇱカンネ\ ラマㇳ<np>:アㇱカンネ\ ラマㇳ
+ヨロタン<np>:ヨロタン # jordan
+イェス<np>:イェス # jesus
 
 LEXICON Number
 
-%0%<num%>:%0  # ;
-1%<num%>:1  # ;
-2%<num%>:2  # ;
-3%<num%>:3  # ;
-4%<num%>:4  # ;
-5%<num%>:5  # ;
-6%<num%>:6  # ;
-7%<num%>:7  # ;
-8%<num%>:8  # ;
-9%<num%>:9  # ;
-10%<num%>:10  # ;
-11%<num%>:11  # ;
-12%<num%>:12  # ;
+0<num>:0
+1<num>:1
+2<num>:2
+3<num>:3
+4<num>:4
+5<num>:5
+6<num>:6
+7<num>:7
+8<num>:8
+9<num>:9
+10<num>:10
+11<num>:11
+12<num>:12
 
 LEXICON Punctuation
 
-.%<sent%>:. # ;
-..%<sent%>:.. # ;
-...%<sent%>:... # ;
-%;%<sent%>:%; # ;
-%:%<sent%>:%: # ;
-%!%<sent%>:%! # ;
-%-%<guio%>:%- # ;
-%—%<guio%>:%— # ;
-,%<cm%>:, # ;
-%?%<sent%>:%? # ;
-%'%<apos%>:%' # ;
-%"%<sent%>:%" # ;
-%«%<lquot%>:%« # ;
-%»%<rquot%>:%» # ;
-%”%<rquot%>:%” # ;
-%“%<lquot%>:%“ # ;
-%(%<lpar%>:%( # ;
-%]%<rpar%>:%] # ;
-%[%<lpar%>:%[ # ;
-%)%<rpar%>:%) # ;
-\%<sent%>:\ # ;
-/%<sent%>:/ # ;
+.<sent>:.
+..<sent>:..
+...<sent>:...
+;<sent>:;
+\:<sent>:\:
+!<sent>:!
+-<guio>:-
+—<guio>:—
+,<cm>:,
+?<sent>:?
+'<apos>:'
+"<sent>:"
+«<lquot>:«
+»<rquot>:»
+”<rquot>:”
+“<lquot>:“
+(<lpar>:(
+\]<rpar>:\]
+\[<lpar>:\[
+)<rpar>:)
+\\<sent>:\\
+\/<sent>:\/
 
-! Resources:
-! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Lexicon
-! http://wiki.apertium.org/wiki/Lttoolbox_and_lexc
-! http://wiki.apertium.org/wiki/Apertium-specific_conventions_for_lexc
-! https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
-! http://hfst.sourceforge.net/
-! http://www.cis.upenn.edu/~cis639/docs/lexc.html
-! http://wiki.apertium.org/wiki/Hfst
+# Resources:
+# http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Lexicon
+# http://wiki.apertium.org/wiki/Lttoolbox_and_lexc
+# http://wiki.apertium.org/wiki/Apertium-specific_conventions_for_lexc
+# https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
+# http://hfst.sourceforge.net/
+# http://www.cis.upenn.edu/~cis639/docs/lexc.html
+# http://wiki.apertium.org/wiki/Hfst
 

@@ -1,6 +1,6 @@
 AC_PREREQ(2.52)
 
-AC_INIT([Apertium Ainu], [0.1.0], [popcorn.tomato.dude@gmail.com], [apertium-ain], [http://wiki.apertium.org/wiki/Apertium-ain])
+AC_INIT([Apertium Ainu], [0.1.0], [dwurtel1@swarthmore.edu], [apertium-ain], [http://wiki.apertium.org/wiki/Apertium-ain])
 AM_INIT_AUTOMAKE
 AC_PROG_AWK
 
