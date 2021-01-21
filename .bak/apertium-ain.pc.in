@@ -3,6 +3,6 @@ exec_prefix=${prefix}
 srcdir=@datarootdir@/apertium/apertium-ain
 
 Name: apertium-ain
-Description: Finite-state morphological transducer and constraint grammar for Ainu
+Description: Finite-state morphological transducer and constraint grammar for Ainu 
 Version: @VERSION@
 
