@@ -144,7 +144,7 @@ Adverb
 Number
 
 PATTERN Noun
-[:ク] NounRoot [<n><cn><pos>:イヒ]
+#[:ク] NounRoot [<n><cn><pos>:イヒ]
 :NounInfl-Prefix NounRoot NounInfl-Prefix:
 NounRoot NounInfl-Suffix
 :NounPlural(1)[utara] NounRoot[utara] [<n><pl>:] :NounPlural(2)[utara]
@@ -187,7 +187,7 @@ LEXICON NounInfl-Relational(2)
 
 LEXICON DiminutiveNounInfl
 <n>:
-<pn><px1sg><mf>:>コロ
+<n><pn><px1sg><mf>:>コロ
 
 LEXICON Diminutive
 <dim>:>ポ
@@ -200,8 +200,8 @@ CopulaStem [<v><cop>:]
 [:ア] CopulaStem [<v><cop><p4>:]
 
 PATTERN Verb
-VerbStemPersonNumber > VerbSuffix-ClassVI > VerbPersonalSuffix
-:Passive VerbStem Passive: [<nmlz>:>\ ㇷ゚]
+VerbStemPersonNumber
+:Passive VerbStem Passive: [<nmlz>:>\ ㇷ゚]?
 
 :Passive VerbRoot[tv] [<v><tv>:] Passive:
 [:エ>] VerbRoot[iv] [<v><iv><tvx>:]
@@ -213,8 +213,11 @@ PATTERN VerbStem
 VerbRoot[tv] [<v><tv>:]
 VerbRoot[iv] [<v><iv>:]
 
+PATTERN VerbStemVI
+VerbStem > VerbSuffix-ClassVI
+
 PATTERN VerbStemIII
-VerbStem
+VerbStemVI
 :VerbPrefix-ClassIII VerbStem VerbPrefix-ClassIII:
 
 PATTERN VerbStemII
@@ -226,8 +229,9 @@ VerbStemII
 :VerbPrefix-ClassI VerbStemII VerbPrefix-ClassI:
 
 PATTERN VerbStemPersonNumber
-:VerbSubjectPrefix VerbObjectPrefix VerbStemI VerbSubjectPrefix:
+:VerbSubjectPrefix :VerbObjectPrefix VerbStemI VerbSubjectPrefix: VerbObjectPrefix:
 :VerbSubjectPrefixNoObj VerbStemI VerbSubjectPrefixNoObj:
+VerbStemI
 
 LEXICON Passive
 <pasv1>:チ>
@@ -239,21 +243,26 @@ LEXICON VerbPrefix-NoPers
 <int>:イ>
 
 LEXICON VerbSubjectPrefix
-<sg><2pS>:エチ>
-<pl><2pS>:エ>
-<1pS>
-<1pS>:イ>
-<p4>:ア>
+<sg><1pS>:ク>
+<pl><1pS>:チ>
+<sg><2pS>:エ>
+<pl><2pS>:エチ>
+<4pS>:ア>
 
 LEXICON VerbSubjectPrefixNoObj
 <p1><sg>:ク>
-<p2><pos>:エ>
+<p1><pl>:チ>
+<p2><sg>:エ>
+<p2><pl>:エチ>
+<p4>:ア>
 
 LEXICON VerbObjectPrefix
 
-:エ>
-:エチ>
-:イ>
+<sg><1pO>:ク>
+<pl><1pO>:ウン>
+<sg><2pO>:エ>
+<pl><2pO>:エチ>
+<4pO>:イ>
 
 LEXICON RegVerbInfl
 <nmlz><abs>:>\ イ
@@ -270,6 +279,7 @@ LEXICON VerbPrefix-ClassI
 LEXICON VerbPrefix-ClassII 
 <apass>:イ
 <refl>:ヤイ
+<refl>:ウ
 <acaus>:シ
 
 LEXICON VerbPrefix-ClassIII
@@ -280,9 +290,7 @@ LEXICON VerbPrefix-ClassIII
 LEXICON VerbSuffix-ClassVI 
 <caus>:>レ
 <caus>:>テ
-
-LEXICON VerbPersonalSuffix
-<p4>:アン
+<caus>:>エ
 
 
 ###############################################################################
