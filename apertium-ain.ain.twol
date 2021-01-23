@@ -21,63 +21,134 @@ Alphabet
 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 a b c d e f g h i j k l m n o p q r s t u v w x y z
 
-
-%{I%}:ヒ ! %{I%}:0 %{I%}:イ
-
-%{i%}:イ  ! %{i%}:0
-
-%{U%}:ウ ! %{U%}:ム %{U%}:ト゚ %{U%}:ク %{U%}:ュ %{U%}:0
-
-%{pe%}:0 ! %{pe}:ペ
-
-
-%{K%}:ク ! %{K%}:カ %{K%}:コ %{K%}:キ %{K%}:ケ
-
-%{w%}:0 ! %{w%}:ウ
-
-%{t%}:0 ! %{t%}:ッ 
-
-%{Tt%}:ㇳ ! %{Tt%}:0 %{Tt%}:ト゚ 
-%{Kk%}:ㇰ ! %{Kk%}:0 %{Kk%}:ク 
-%{Mm%}:ㇺ ! %{Kk%}:0 %{Kk%}:ム 
+! 
+! %{I%}:ヒ ! %{I%}:0 %{I%}:イ
+! 
+! %{i%}:イ  ! %{i%}:0
+! 
+! %{U%}:ウ ! %{U%}:ム %{U%}:ト゚ %{U%}:ク %{U%}:ュ %{U%}:0
+! 
+! %{pe%}:0 ! %{pe}:ペ
+! 
+! 
+! %{K%}:ク ! %{K%}:カ %{K%}:コ %{K%}:キ %{K%}:ケ
+! 
+! %{w%}:0 ! %{w%}:ウ
+! 
+! %{t%}:0 ! %{t%}:ッ 
+! 
+! %{Tt%}:ㇳ ! %{Tt%}:0 %{Tt%}:ト゚ 
+! %{Kk%}:ㇰ ! %{Kk%}:0 %{Kk%}:ク 
+! %{Mm%}:ㇺ ! %{Kk%}:0 %{Kk%}:ム 
+! 
 
 %>:0 
 ;
 
-
 Rules 
 
-"have {w} be ウ when before e or E"
-%{w%}:ウ <=> _ :ェ ;
-	     _ :エ ; 
+"remove Katakana vowel after consonant"
+Cx:0 <=> Cy: %>:* _ ;
+    where Cx in ( ア イ ウ エ オ )
+          Cy in ( ㇰ ㇱ ッ ン ㇷ゚ ㇺ ㇻ ㇼ ㇽ ㇾ ㇿ ) ;
 
-"have {K} be ka only before ra"
-%{K%}:カ <=> _ :ラ ;
+"convert k before vowel into one Katakana"
+ㇰ:Cy <=> _ %>:* Cx: ;
+    where Cx in ( ア イ ウ エ オ )
+          Cy in ( カ キ ク ケ コ )
+    matched ;
 
+"convert s before vowel into one Katakana"
+ㇱ:Cy <=> _ %>:* Cx: ;
+    where Cx in ( ア イ ウ エ オ )
+          Cy in ( サ シ ス セ ソ )
+    matched ;
 
-"have {U} be small yu only after shi"
-%{U%}:ュ <=> :シ %>: _ ;
+"convert t before vowel into one Katakana"
+ッ:Cy <=> _ %>:* Cx: ;
+    where Cx in ( ア イ エ オ )
+          Cy in ( タ チ テ ト )
+    matched ;
 
-"have {U} be ム only after {Mm}"
-%{U%}:ム <=> %{Mm%}: %>: _ ;
+"convert n before vowel into one Katakana"
+ン:Cy <=> _ %>:* Cx: ;
+    where Cx in ( ア イ ウ エ オ )
+          Cy in ( ナ ニ ヌ ネ ノ )
+    matched ;
 
-"have {Mm} be null before {U} is mu"
-%{Mm%}:0 <=> _ %>: %{U%}:ム ;
+!"convert p before vowel into one Katakana"
+!ㇷ゚:Cy <=> _ %>:* Cx: ;
+!    where Cx in ( ア イ ウ エ オ )
+!          Cy in ( パ ピ プ ペ ポ )
+!    matched ;
 
-"have {U} be ト゚ only after {Tt}"
-%{U%}:ト゚ <=> %{Tt%}: %>: _ ;
+"convert m before vowel into one Katakana"
+ㇺ:Cy <=> _ %>:* Cx: ;
+    where Cx in ( ア イ ウ エ オ )
+          Cy in ( マ ミ ム メ モ )
+    matched ;
 
-"have {Tt} be null before {U} is tu"
-%{Tt%}:0 <=> _ %>: %{U%}:ト゚ ;
+"convert ra before vowel into one Katakana"
+ㇻ:Cy <=> _ %>:* Cx: ;
+    where Cx in ( ア イ ウ エ オ )
+          Cy in ( ラ リ ル レ ロ )
+    matched ;
 
-"have {U} be ku only after {Kk}"
-%{U%}:ク <=> %{Kk%}: %>: _ ;
+"convert ri before vowel into one Katakana"
+ㇼ:Cy <=> _ %>:* Cx: ;
+    where Cx in ( ア イ ウ エ オ )
+          Cy in ( ラ リ ル レ ロ )
+    matched ;
 
-"have {Kk} be null before {U} is ku}"
-%{Kk%}:0 <=> _ %>: %{U%}:ク ;
+"convert ru before vowel into one Katakana"
+ㇽ:Cy <=> _ %>:* Cx: ;
+    where Cx in ( ア イ ウ エ オ )
+          Cy in ( ラ リ ル レ ロ )
+    matched ;
 
-"have {i} be null after {U} is U"
-%{i%}:0 <=> %{U%}:ウ %>: _ ;
+"convert re before vowel into one Katakana"
+ㇾ:Cy <=> _ %>:* Cx: ;
+    where Cx in ( ア イ ウ エ オ )
+          Cy in ( ラ リ ル レ ロ )
+    matched ;
+
+"convert ro before vowel into one Katakana"
+ㇿ:Cy <=> _ %>:* Cx: ;
+    where Cx in ( ア イ ウ エ オ )
+          Cy in ( ラ リ ル レ ロ )
+    matched ;
+
+! "have {w} be ウ when before e or E"
+! %{w%}:ウ <=> _ :ェ ;
+! 	     _ :エ ; 
+! 
+! "have {K} be ka only before ra"
+! %{K%}:カ <=> _ :ラ ;
+! 
+! 
+! "have {U} be small yu only after shi"
+! %{U%}:ュ <=> :シ %>: _ ;
+! 
+! "have {U} be ム only after {Mm}"
+! %{U%}:ム <=> %{Mm%}: %>: _ ;
+! 
+! "have {Mm} be null before {U} is mu"
+! %{Mm%}:0 <=> _ %>: %{U%}:ム ;
+! 
+! "have {U} be ト゚ only after {Tt}"
+! %{U%}:ト゚ <=> %{Tt%}: %>: _ ;
+! 
+! "have {Tt} be null before {U} is tu"
+! %{Tt%}:0 <=> _ %>: %{U%}:ト゚ ;
+! 
+! "have {U} be ku only after {Kk}"
+! %{U%}:ク <=> %{Kk%}: %>: _ ;
+! 
+! "have {Kk} be null before {U} is ku}"
+! %{Kk%}:0 <=> _ %>: %{U%}:ク ;
+! 
+! "have {i} be null after {U} is U"
+! %{i%}:0 <=> %{U%}:ウ %>: _ ;
 
 ! Resources:
 ! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol

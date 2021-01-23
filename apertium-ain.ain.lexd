@@ -66,7 +66,7 @@
 # <p1>                         # First Person
 # <p2>                         # Second Person
 # <p3>			       # Third Person
-# <p4.                         # Fourth Person
+# <p4>                         # Fourth Person
 # <2pS>				# Second person subject
 
 # Clitic tags
@@ -170,12 +170,12 @@ LEXICON NounInfl-Suffix
 <n><end1>:>\ トノケ
 <n><end2>:>\ ポ
 <n><hon>:>\ ニㇱパケ
-<n><poss>:>{w}ェ
+#<n><poss>:>{w}ェ
 <n>:
 
 LEXICON NounPlural(2)
 :ウ> :>\ ウタラ[utara]
-: :>{U}[U]
+: :>ウ[U]
 :ウ> :[preU]
 : :>ヌ[Nu]
 : :[Irreg]
@@ -320,19 +320,19 @@ LEXICON NounRoot
 アイアイ:アイアイ[utara] #
 アイヌ:アイヌ[utara] # human/the Ainu
 アシキペㇳ:アシキペㇳ[U] #
-アッ:ア{Tt}[U] #
-アㇺ:ア{Mm}[U] #
-イクㇱペ:{i}クㇱペ[preU] #
-イタㇰ:イタ{Kk}[U] #
+アッ:アッ[U] #
+アㇺ:アㇺ[U] #
+イクㇱペ:ククㇱペ[preU] #
+イタㇰ:イタㇰ[U] #
 イリワㇰ:イリワㇰ[preU] #
 ウンマ:ウンマ[utara] #
-クッ:ク{t}[U] #
+クッ:クッ[U] #
 ケマ:ケマ[preU] #
 チェㇷ゚:チェㇷ゚[Nu] #
 ニシ:ニシ[U] #
 ニマキ:ニマキ[preU] #
 フラ:フラ[Nu] #
-ペ:ペ{pe}[Irreg] #
+ペ:ペ[Irreg] #
 ペッ:ペッ[Irreg] #
 チコイキㇷ゚:チコイキㇷ゚ #
 チセイ:チセイ #
