@@ -76,11 +76,11 @@ Cx:0 <=> Cy: %>:* _ ;
           Cy in ( ナ ニ ヌ ネ ノ )
     matched ;
 
-!"convert p before vowel into one Katakana"
-!ㇷ゚:Cy <=> _ %>:* Cx: ;
-!    where Cx in ( ア イ ウ エ オ )
-!          Cy in ( パ ピ プ ペ ポ )
-!    matched ;
+"convert p before vowel into one Katakana"
+ㇷ゚:Cy <=> _ %>:* Cx: ;
+    where Cx in ( ア イ ウ エ オ )
+          Cy in ( パ ピ プ ペ ポ )
+    matched ;
 
 "convert m before vowel into one Katakana"
 ㇺ:Cy <=> _ %>:* Cx: ;

@@ -142,6 +142,7 @@ ProperNoun
 Clitic
 Adverb
 Number
+Interjection
 
 PATTERN Noun
 #[:ク] NounRoot [<n><cn><pos>:イヒ]
@@ -360,7 +361,7 @@ q<n>:q  # units
 ウルペッ:ウルペッ # toe
 ウンマ:ウンマ # horse
 ウンマ:ウンマ[utara] #
-エ:エ # a noun
+#エ:エ # a noun
 エスペラント:エスペラント # Esperanto
 エチ:エチ #
 エポタラ:エポタラ # doctor
@@ -775,6 +776,14 @@ LEXICON ProperNoun
 アㇱカンネ\ ラマッ<np>:アㇱカンネ\ ラマッ
 イェス<np>:イェス # jesus
 ヨロタン<np>:ヨロタン # jordan
+
+LEXICON Interjection
+
+イヤイライケレ<ij>:イヤイライケレ # thank you
+イランカラㇷ゚テ<ij>:イランカラㇷ゚テ # greetings
+エ<ij>:エ # okay
+ヒオイオイ<ij>:ヒオイオイ # thanks
+ホ<ij>:ホ # yeah
 
 LEXICON Number
 
