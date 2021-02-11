@@ -13,8 +13,8 @@
 
   <mode name="ain-morph" install="yes">
     <pipeline>
-      <program name="lt-proc -w">
-        <file name="ain.automorf.bin"/>
+      <program name="hfst-proc -w">
+        <file name="ain.automorf.hfst"/>
       </program>
     </pipeline>
   </mode>
@@ -37,8 +37,8 @@
 
   <mode name="ain-tagger" install="yes">
     <pipeline>
-      <program name="lt-proc -w">
-        <file name="ain.automorf.bin"/>
+      <program name="hfst-proc -w">
+        <file name="ain.automorf.hfst"/>
       </program>
       <program name="cg-proc -w">
         <file name="ain.rlx.bin"/>
@@ -48,8 +48,8 @@
 
   <mode name="ain-disam" install="yes">
     <pipeline>
-      <program name="lt-proc -w">
-        <file name="ain.automorf.bin"/>
+      <program name="hfst-proc -w">
+        <file name="ain.automorf.hfst"/>
       </program>
       <program name="cg-conv -a"/>
       <program name="vislcg3 --trace --grammar">
