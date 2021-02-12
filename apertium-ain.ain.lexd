@@ -305,54 +305,51 @@ Eq<n>:Eq  # units
 kg<n>:kg  # units
 m2<n>:m2  # units
 q<n>:q  # units
-アアㇰ:アアㇰ
-アイアイ:アイアイ[utara] #
+#アアㇰ:アアㇰ
+アイアイ:アイアイ[utara] # baby
 アイヌ:アイヌ[utara] # human/the Ainu
 アイヌイタㇰ:アイヌイタㇰ # Ainu Language
 アイヌウタㇻ:アイヌウタㇻ # Ainu People
 アイヌタイム:アイヌタイム # Ainu Times
 アイペ:アイペ # abalone
 アキヒ:アキヒ # younger brother
-アシキペㇳ:アシキペㇳ[U] #
+#アシキペㇳ:アシキペㇳ[U] #
 アシㇰネ:アシㇰネ # five
 アチャ:アチャ # uncle
-アッ:アッ[U] #
+アッ:アッ[U] # string
 アッコチ:アッコチ # fishtail
 アットゥㇱ:アットゥㇱ # cloth 
 アトゥイ:アトゥイ # sea/ocean
-アトノ:アトノ
-アニㇱ:アニㇱ
+#アトノ:アトノ
+#アニㇱ:アニㇱ
 アパ:アパ # door
 アパウㇱタ:アパウㇱタ # doctor
 アピㇼ:アピㇼ # deer tail
 アペ:アペ # fire
-アポホ:アポホ
+#アポホ:アポホ
 アマㇺ:アマㇺ # meal (lit. rice/cereals)
-アマㇺ:アマㇺ # rice
-アミチ:アミチ
-アヤイ:アヤイ # baby
-アユポ:アユポ
+#アミチ:アミチ
+アヤイ:アヤイ[utara] # baby
+#アユポ:アユポ
 アユㇱニ:アユㇱニ # korean raspberry
 アワンキ:アワンキ # fan
 アントゥキ:アントゥキ # red bean
-アㇰ:アㇰ
+アㇰ:アㇰ # younger brother
 アㇷ゚ト:アㇷ゚ト # rain
-アㇷ゚ト:アㇷ゚ト # rain
-アㇺ:アㇺ[U] #
+アㇺ:アㇺ[U] # nail
 イキリ:イキリ # a seam 
-イクㇱペ:ククㇱペ[preU] #
-イセ:イセ #
+イクㇱペ:ククㇱペ[preU] # pillar
+#イセ:イセ # 
 イタピルㇷ゚:イタピルㇷ゚ # cloth
-イタㇰ:イタㇰ[U] #
+イタㇰ:イタㇰ[U] # language
 イチェン:イチェン # money
 イトゥンナㇷ゚:イトゥンナㇷ゚ # ant
 イトゥンナㇷ゚:イトゥンナㇷ゚ # ant
 イメル:イメル # lightning
 イモㇰ:イモㇰ # bait
 イヨㇷ゚:イヨㇷ゚ # container
-イリワㇰ:イリワㇰ[preU] #
+#イリワㇰ:イリワㇰ[preU] #
 イㇼ:イㇼ # family/kin
-イㇼ:イㇼ # kin
 ウォㇿ:ウォㇿ # water (old)
 ウオサ:ウオサ # weaving instrument
 ウタㇻ:ウタㇻ # kin
@@ -360,15 +357,15 @@ q<n>:q  # units
 ウパㇱ:ウパㇱ # snow
 ウルペッ:ウルペッ # toe
 ウンマ:ウンマ # horse
-ウンマ:ウンマ[utara] #
+#ウンマ:ウンマ[utara] #
 #エ:エ # a noun
 エスペラント:エスペラント # Esperanto
-エチ:エチ #
+#エチ:エチ # 
 エポタラ:エポタラ # doctor
 エマウリ:エマウリ # strawberry
 エモ:エモ # potato
 エㇾメタンプ:エㇾメタンプ # wart
-オッカィ:オッカィ #
+オッカィ:オッカィ # man
 オッカイポ:オッカイポ # boy
 オッケオッケ:オッケオッケ # stick
 オハウ:オハウ # soup
@@ -380,32 +377,27 @@ q<n>:q  # units
 オㇿ:オㇿ # noun locative
 カ:カ # top
 カイテ:カイテ # anchor
-カイテ:カイテ # anchor
 カウカウ:カウカウ # hail
-カムイ:カムイ
-カヤ:カヤ # a sail
+カムイ:カムイ # god
 カヤ:カヤ # sail
 カンピ:カンピ # paper
 カㇻク:カㇻク # nephew
-ク:ク #
+ク:ク # arrow
 クッ:クッ # sash
-クッ:クッ[U] #
-クッペ:クッペ[preU] #
+#クッ:クッ[U] #
+#クッペ:クッペ[preU] #
 クトゥ:クトゥ # fish trap
-クル:クル #
+#クル:クル # 
 クㇽ:クㇽ # person
 ケマ:ケマ # leg
-ケマ:ケマ # leg
-ケマ:ケマ[preU] #
+#ケマ:ケマ[preU] #
 ケラ:ケラ # taste
 ケㇱ:ケㇱ # end
 ケㇺ:ケㇺ # blood
 コㇿケウ:ホㇿケウ # wolf
 サパ:サパ # head
-サパ:サパ # head
 サポ:サポ # older sister
-サポ:サポ # older sister
-シウェンテㇷ゚:シウェンテㇷ゚ #
+シウェンテㇷ゚:シウェンテㇷ゚ # woman
 シキ:シキ # eye TODO: Fix possessive noun (see above entry)
 シケ:シケ # luggage
 シセイ:シセイ # a house
@@ -419,37 +411,34 @@ q<n>:q  # units
 スシルㇷ゚:スシルㇷ゚ # pumice stone
 スマ:スマ # stone
 スㇺ:スㇺ # oil
-スㇺ:スㇺ # oil
 セイ:セイ # shell
-セタ:セタ #
+セタ:セタ # dog
 セㇾマカ:セㇾマカ # behind
 タスㇺ:タスㇺ # sickness
 タペト:タペト # businessman
 タンヌ:タンヌ # dolphin
-チ:チ #
-チイカナィ:チイカナィ #
+チ:チ # penis
+#チイカナィ:チイカナィ #
 チェㇷ゚:チェㇷ゚ # fish
-チェㇷ゚:チェㇷ゚[Nu] #
-チェㇷ゚:チェㇷ゚[Nu] #
-チカㇷ゚:チカㇷ゚ #
+#チェㇷ゚:チェㇷ゚[Nu] #
+チカㇷ゚:チカㇷ゚ # bird
 チキㇼ:チキㇼ # animal's leg
-チコイキㇷ゚:チコイキㇷ゚ #
+チコイキㇷ゚:チコイキㇷ゚ # beast
 チセ:チセ # house
-チセイ:チセイ #
+#チセイ:チセイ # 
 チュルㇷ゚:チュルㇷ゚ # january
 チュㇰ:チュㇰ # autumn
 チュㇷ゚:チュㇷ゚ # sun/moon/month
-チㇱナィ:チㇱナィ #
+#チㇱナィ:チㇱナィ # 
 チㇷ゚:チㇷ゚ # ship
 テ<n><nloc>:テ  # here
 テㇱカㇻ:テㇱカㇻ # errand
 ト:ト # day
 トゥイ:トゥイ # stomach
-トゥカラ:トゥカラ #
 トゥカㇻ:トゥカㇻ # seal
 トゥミ:トゥミ # war
 トゥリ:トゥリ # pole
-トゥレㇱ:トゥレㇱ
+トゥレㇱ:トゥレㇱ # younger sister
 トゥㇱ:トゥㇱ # net/rope
 トケイ:トケイ # clock
 トコンポネ:トコンポネ # ankle
@@ -458,14 +447,14 @@ q<n>:q  # units
 トペニ:トペニ # maple tree
 ナイ:ナイ # stream
 ニ:ニ # firewood
-ニシ:ニシ[U] #
+ニシ:ニシ[U] # tree
 ニス:ニス # mortar
 ニテㇰ:ニテㇰ # branch
 ニテㇱ:ニテㇱ # raft
 ニペㇰ:ニペㇰ # light (moon)
-ニマキ:ニマキ[preU] #
+ニマキ:ニマキ[preU] # tooth
 ニㇱクㇽ:ニㇱクㇽ # cloud
-ニㇱパ:ニㇱパ
+ニㇱパ:ニㇱパ # boss
 ヌプリ:ヌプリ # mountain
 ヌマトゥシ:ヌマトゥシ # collar
 ヌㇷ゚:ヌㇷ゚ # field
@@ -476,31 +465,28 @@ q<n>:q  # units
 ノコ:ノコ # saw
 ノッキリ:ノッキリ # chin
 ハウ:ハウ # the voice
-パ:パ
+パ:パ # year
 パサ:パサ # carriage
 パロ:パロ # mouth
-パロ:パロ # mouth (possessive)
 パㇻカ:パㇻカ # shelf
 ピリ:ピリ # vortex
 フイペ:フイペ # grease/fat
 フチ:フチ # grandmother/old woman
 フミ:フミ # sound (possessive)
-フラ:フラ[Nu] #
-プイ:プイ # hole
+フラ:フラ[Nu] # smell
 プイ:プイ # hole
 ヘンパラ:ヘンパラ # when
 ヘンパㇰ:ヘンパㇰ # how many
-ペ:ペ[Irreg] #
+ペ:ペ[Irreg] # thing
 ペコ:ペコ # cow
-ペッ:ペッ[Irreg] #
+ペッ:ペッ[Irreg] # river
 ホク:ホク # husband
 ホニ:ホニ # the stomach
 ポッペ:ポッペ # sweat
-ポトゥㇽケス:ポトゥㇽケス # bruise
 ポトゥㇽケㇱ:ポトゥㇽケㇱ # bruise
 ポネ:ポネ # bone
 ポンチェㇷ゚:ポンチェㇷ゚ # sardine
-ポンペ:ポンペ #
+ポンペ:ポンペ # small thing
 ポㇷ゚:ポㇷ゚ # blister
 マウェ:マウェ # breath
 マチヤ:マチヤ # town
@@ -518,11 +504,10 @@ q<n>:q  # units
 ユㇰ:ユㇰ # deer
 ラッチャコ:ラッチャコ # light
 ラㇺ:ラㇺ # scales
-ル:ル
+ル:ル # path
 ルイ:ルイ # grinding stone
 ルウェ:ルウェ # trace/footprint
 ルヤンペ:ルヤンペ # storm
-ワッカ:ワッカ # water
 ワッカ:ワッカ # water
 
 LEXICON RelationalNounRoot
@@ -530,8 +515,8 @@ LEXICON RelationalNounRoot
 
 LEXICON Clitic
 
-アナㇰ<cli><top>:アナㇰ
-アナㇰネ<cli><top>:アナㇰネ
+アナㇰ<cli><top>:アナㇰ # topic marker
+アナㇰネ<cli><top>:アナㇰネ # topic marker
 ヒケ<cli><nmlz>:ヒケ  # with regards to X
 
 LEXICON Pronoun
@@ -541,11 +526,9 @@ LEXICON Pronoun
 LEXICON VerbRoot
 
 アシㇼ:アシㇼ[iv] # be new
-アシㇼ:アシㇼ[iv] # be new
 アヌ:アヌ[tv] # put/place (sg)
 アフン:アフン[iv] # enter (sg) TODO: figure out how to deal with this
 アフㇷ゚カㇻ:アフㇷ゚カㇻ[tv] # receive
-アマ:アマ[tv] # put
 アマ:アマ[tv] # put/place
 アリ:アリ[tv] # place  (pl)
 アン:アン[iv] # exist/live
@@ -607,7 +590,6 @@ LEXICON VerbRoot
 キㇰ:キㇰ[tv] # hit
 クパ:クパ[tv] # bite
 ケセアンパ:ケセアンパ[tv] # chase
-ケㇺ:ケㇺ[iv] # lick
 ケㇺ:ケㇺ[tv] # lick
 コㇿ:コㇿ[tv] # have
 サッ:サッ[iv] # be dry
@@ -639,8 +621,7 @@ LEXICON VerbRoot
 ヌ:ヌ[tv] # hear
 ヌイェ:ヌイェ[tv] # carve/write/tattoo
 ヌカㇻ:ヌカㇻ[tv] # see
-ヌカㇻ:ヌカㇻ[tv] # see
-ヌチャㇰ:ヌチャㇰ[iv]
+#ヌチャㇰ:ヌチャㇰ[iv]
 ヌペキ:ヌペキ[iv] # bright
 ヌワㇷ゚:ヌワㇷ゚[iv] # give birth
 ネヤ<cop><q>:ネヤ # suggestive question
@@ -649,7 +630,7 @@ LEXICON VerbRoot
 ハチㇼ:ハチㇼ[iv] # fall down
 ハルコㇿ:ハルコㇿ[iv] # be fatty
 ハルサㇰ:ハルサㇰ[iv] # be thin
-ハロ:ハロ[iv]
+#ハロ:ハロ[iv] 
 ハロコロ:ハロコロ[iv] # be fat (old)
 パカㇱヌ:パカㇱヌ[tv] # teach to
 パセ:パセ[iv] # heavy
@@ -658,15 +639,13 @@ LEXICON VerbRoot
 フレ:フレ[iv] # be red/pink NEW
 プㇽプㇽセ:プㇽプㇽセ[iv] # gush forth
 ヘセ:ヘセ[iv] # breathe
-ヘトゥク:ヘトゥク[iv] # be born
 ヘトゥク:ヘトゥク[iv] # come out/be born
 ペウレ:ペウレ[iv] # be young
 ペカンケ:ペカンケ[iv] # float
 ペレパ:ペレパ[tv] # cleave/split/break (old)
 ホプン:ホプン[iv] # get up
 ホㇰ:ホㇰ[tv] # buy
-ポロ:ポロ[iv] # be big
-ポロ:ポロ[iv] # large
+ポロ:ポロ[iv] # be big/large
 ポン:ポン[iv] # be small (old)
 マ:マ[iv] # swim
 マイアイケ:マイアイケ[iv] # be itchy
@@ -688,9 +667,9 @@ LEXICON VerbRoot
 ライケ:ライケ[tv] # kill
 ラチ:ラチ[iv] # be gentle (old)
 ラマン:ラマン[iv] # clever
-ラム:ラム[iv]
+ラム:ラム[iv] # think
 ラン:ラン[iv] # descend
-ラㇷ゚:ラㇷ゚[iv] #
+ラㇷ゚:ラㇷ゚[iv] # go down
 ラㇺテ:ラㇺテ[tv] # dim
 リテン:リテン[iv] # be soft/gentle
 ル:ル[iv] # melt
@@ -729,7 +708,7 @@ LEXICON PostPosition
 LEXICON Auxiliary
 
 # エアㇱカィ<v><vaux>:エアㇱカィ # be able to X
-ア<perf><sg>:ア
+ア<perf><sg>:ア # have done
 エアイカㇷ゚<v><vaux>:エアイカㇷ゚  # be unable to X
 エアㇱカイ<v><vaux>:エアㇱカイ # Dir/LR
 クニ<comp>:クニ # comparative mood
@@ -738,8 +717,8 @@ LEXICON Auxiliary
 
 LEXICON Conjunction
 
-オロワ<cnjcoo>:オロワ
-クス<cnjsub>:クス
+オロワ<cnjcoo>:オロワ # and then
+クス<cnjsub>:クス # therefore
 コ<cnjsub>:コ
 コㇿ<cnjcoo>:コㇿ # when/if
 コㇿカ<cnjcoo>:コㇿカ # but
@@ -764,7 +743,7 @@ LEXICON Nominalizer
 
 LEXICON Particle 
 
-カ<prt><adv>:カ
+カ<prt><adv>:カ # also
 ロ<prt><chrt>:ロ
 
 LEXICON Exclamation
